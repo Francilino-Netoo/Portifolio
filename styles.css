@@ -21,6 +21,9 @@ nav {
   justify-content: space-between;
   padding: 25px 30px;
 }
+.minha-foto {
+  display: none;
+}
 
 .portfolio {
   color: #ffffff;
@@ -359,9 +362,21 @@ footer p {
   }
 }
 
+/* Restante do CSS ... */
+
 @media (max-width: 360px) {
   .portfolio {
     font-size: 25px;
+  }
+
+  .meu-nome img.minha-foto {
+    display: block;
+    height: 100px;
+    width: 80px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
 
   li {
@@ -371,10 +386,6 @@ footer p {
 
   h1 {
     font-size: 20px;
-  }
-  .cards {
-    width: 90%;
-    margin-bottom: 20px;
   }
 
   .meu-nome h3 {
@@ -386,7 +397,8 @@ footer p {
   }
 
   section img {
-    height: 90px;
+    height: 0;
+    display: none;
   }
 
   section div p {
@@ -409,12 +421,21 @@ footer p {
     transition: 0.5s;
   }
 
+  .projetos {
+    padding-top: 20px;
+  }
   .projetos h2 {
-    font-size: 20px;
+    font-size: 25px;
     color: #ffffff;
     text-align: center;
   }
-
+  .cards-projetos {
+    margin-top: 30px;
+  }
+  .cards {
+    width: 80%;
+    margin-bottom: 20px;
+  }
   .cards h5 {
     font-size: 15px;
   }
@@ -436,7 +457,7 @@ footer p {
   }
 
   .caixa-principal {
-    background-size: 50%;
-    background-position: right 45px bottom 40px;
+    background-size: 0%;
+    background-position: right 0px bottom 0px;
   }
 }

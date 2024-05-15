@@ -397,7 +397,7 @@ footer p {
   }
 
   section img {
-    /* Remova height: 0 e display: none */
+    display: none;
   }
 
   section div p {

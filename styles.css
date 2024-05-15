@@ -306,65 +306,9 @@ footer p {
   }
 }
 
-@media (max-width: 576px) {
-  .portfolio {
-    font-size: 25px;
-  }
-
-  li {
-    font-size: 16px;
-    margin-top: 20px;
-  }
-
-  h1 {
-    font-size: 30px;
-  }
-
-  .meu-nome h3 {
-    font-size: 15px;
-  }
-
-  section div h2 {
-    font-size: 30px;
-  }
-
-  section img {
-    height: 200px;
-  }
-
-  section div p {
-    font-size: 20px;
-  }
-
-  .cards h5 {
-    font-size: 20px;
-  }
-
-  .cards p {
-    font-size: 14px;
-  }
-
-  .cards a {
-    font-size: 14px;
-  }
-
-  footer h5 {
-    font-size: 25px;
-  }
-
-  footer p {
-    font-size: 16px;
-  }
-
-  .caixa-principal {
-    background-size: 40%;
-    background-position: right 40px bottom 30px;
-  }
-}
-
 /* Restante do CSS ... */
 
-@media (max-width: 400px) {
+@media (max-width: 576px) {
   .portfolio {
     font-size: 25px;
   }

@@ -276,136 +276,65 @@ footer p {
 
 @media (max-width: 768px) {
   .portfolio {
-    font-size: 25px;
+    font-size: 30px;
   }
 
   li {
-    font-size: 13px;
-    margin-top: 20px;
+    font-size: 18px;
+    margin-right: 10px;
   }
 
   h1 {
-    font-size: 20px;
-  }
-
-  .meu-nome h3 {
-    font-size: 10px;
+    font-size: 50px;
   }
 
   section div h2 {
-    font-size: 20px;
+    font-size: 40px;
   }
 
-  section img {
-    height: 90px;
-  }
-
-  section div p {
-    font-size: 15px;
-  }
-
-  section div button {
-    color: #ffffff;
-    background-color: #f9004d;
-    height: 25px;
-    width: 160px;
-    font-size: 13px;
-    border: none;
-    border-radius: 16px;
-  }
-
-  section div button:hover {
-    color: #000;
-    border: 3px solid #f9004d;
-    transition: 0.5s;
-  }
-
-  .projetos h2 {
-    font-size: 20px;
-    color: #ffffff;
-    text-align: center;
-  }
-
-  .cards h5 {
-    font-size: 15px;
-  }
-
-  .cards p {
-    font-size: 14px;
-  }
-
-  .cards a {
-    font-size: 14px;
-  }
-
-  footer h5 {
-    font-size: 20px;
-  }
-
-  footer p {
-    font-size: 16px;
+  .cards {
+    width: 90%;
+    margin-bottom: 20px;
   }
 
   .caixa-principal {
-    background-size: 30%;
-    background-position: right 40px bottom 30px;
+    background-size: 50%;
+    background-position: right 30px bottom 30px;
   }
 }
 
-@media (max-width: 340px) {
+@media (max-width: 576px) {
   .portfolio {
     font-size: 25px;
   }
 
   li {
-    font-size: 13px;
+    font-size: 16px;
     margin-top: 20px;
   }
 
   h1 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .meu-nome h3 {
-    font-size: 10px;
+    font-size: 15px;
   }
 
   section div h2 {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   section img {
-    height: 90px;
+    height: 200px;
   }
 
   section div p {
-    font-size: 15px;
-  }
-
-  section div button {
-    color: #ffffff;
-    background-color: #f9004d;
-    height: 25px;
-    width: 160px;
-    font-size: 13px;
-    border: none;
-    border-radius: 16px;
-  }
-
-  section div button:hover {
-    color: #000;
-    border: 3px solid #f9004d;
-    transition: 0.5s;
-  }
-
-  .projetos h2 {
     font-size: 20px;
-    color: #ffffff;
-    text-align: center;
   }
 
   .cards h5 {
-    font-size: 15px;
+    font-size: 20px;
   }
 
   .cards p {
@@ -417,7 +346,7 @@ footer p {
   }
 
   footer h5 {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   footer p {
@@ -425,12 +354,12 @@ footer p {
   }
 
   .caixa-principal {
-    background-size: 30%;
+    background-size: 40%;
     background-position: right 40px bottom 30px;
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 350px) {
   .portfolio {
     font-size: 25px;
   }

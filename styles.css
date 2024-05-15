@@ -397,7 +397,7 @@ footer p {
   }
 
   section img {
-    /* Remova height: 0 e display: none */
+    height: 90px;
   }
 
   section div p {
@@ -429,7 +429,7 @@ footer p {
     text-align: center;
   }
   .cards-projetos {
-    margin-top: 30px;
+    padding-bottom: -50px;
   }
   .cards {
     width: 80%;

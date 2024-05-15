@@ -274,7 +274,7 @@ footer p {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 792px) {
   .portfolio {
     font-size: 30px;
   }
@@ -436,7 +436,7 @@ footer p {
   }
 
   .caixa-principal {
-    background-size: 30%;
-    background-position: right 40px bottom 30px;
+    background-size: 50%;
+    background-position: right 45px bottom 40px;
   }
 }

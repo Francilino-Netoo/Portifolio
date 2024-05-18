@@ -132,11 +132,12 @@ section div button:hover {
 
 .cards {
   background-color: #000;
-  height: 365px;
+  height: 400px;
   width: 335px;
   border-radius: 20px;
   padding: 20px 35px;
   text-align: center;
+  flex-direction: column;
 }
 
 .cards img {
@@ -162,8 +163,11 @@ section div button:hover {
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+  text-decoration: none;
+  display: block;
+  margin: 5px 0;
+  text-align: center;
 }
-
 .cards a:hover {
   background-color: transparent;
   border: 2px solid #f9004d;

@@ -148,4 +148,18 @@ h1 span {
     background-size: 0%;
     background-position: right 0px bottom 0px;
   }
+
+  .caixa-principal .video-explicativo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%; /* Defina a largura desejada */
+    height: 65vh; /* Defina a altura desejada */
+  }
+
+  .caixa-principal .video-explicativo iframe {
+    width: 100%; /* Garante que o vídeo preencha a caixa */
+    height: 100%; /* Garante que o vídeo preencha a caixa */
+  }
 }

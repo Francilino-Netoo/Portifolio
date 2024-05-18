@@ -154,8 +154,8 @@ h1 span {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 70%; /* Defina a largura desejada */
-    height: 65vh; /* Defina a altura desejada */
+    width: 35vh; /* Defina a largura desejada */
+    height: 60vh; /* Defina a altura desejada */
   }
 
   .caixa-principal .video-explicativo iframe {

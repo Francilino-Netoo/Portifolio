@@ -283,30 +283,98 @@ footer p {
 
 @media (max-width: 792px) {
   .portfolio {
-    font-size: 30px;
+    font-size: 35px;
+  }
+
+  .meu-nome img.minha-foto {
+    display: block;
+    height: 150px;
+    width: 105px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
 
   li {
-    font-size: 18px;
-    margin-right: 10px;
+    font-size: 25px;
+    margin-top: 20px;
   }
 
   h1 {
-    font-size: 50px;
+    font-size: 20px;
+  }
+
+  .meu-nome h3 {
+    font-size: 10px;
   }
 
   section div h2 {
-    font-size: 40px;
+    font-size: 20px;
   }
 
+  section img {
+    display: none;
+  }
+
+  section div p {
+    font-size: 15px;
+  }
+
+  section div button {
+    color: #ffffff;
+    background-color: #f9004d;
+    height: 25px;
+    width: 160px;
+    font-size: 13px;
+    border: none;
+    border-radius: 16px;
+  }
+
+  section div button:hover {
+    color: #000;
+    border: 3px solid #f9004d;
+    transition: 0.5s;
+  }
+
+  .projetos {
+    padding-top: 20px;
+  }
+  .projetos h2 {
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+  }
+  .cards-projetos {
+    margin-top: 30px;
+  }
   .cards {
-    width: 90%;
+    width: 80%;
     margin-bottom: 20px;
+  }
+  .cards h5 {
+    font-size: 15px;
+  }
+
+  .cards p {
+    font-size: 14px;
+  }
+
+  .cards a {
+    font-size: 14px;
+  }
+
+  footer h5 {
+    font-size: 20px;
+  }
+
+  footer p {
+    font-size: 16px;
   }
 
   .caixa-principal {
-    background-size: 50%;
-    background-position: right 30px bottom 30px;
+    background-size: 0%;
+    background-position: right 0px bottom 0px;
   }
 }
 

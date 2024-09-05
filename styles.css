@@ -448,8 +448,8 @@ footer p {
 
   .meu-nome img.minha-foto {
     display: block;
-    height: 120px;
-    width: 90px;
+    height: 200px;
+    width: 150px;
     border-radius: 50%;
     border: 2px solid #f9004d;
     margin: 0 auto;
@@ -554,8 +554,8 @@ footer p {
   }
   .botoes {
     display: flex;
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    margin-top: 20px; /* Espaço acima dos botões */
+    justify-content: center;
+    margin-top: 20px;
   }
 
   .prev-btn,

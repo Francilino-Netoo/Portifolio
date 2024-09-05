@@ -150,7 +150,7 @@ section div button:hover {
 }
 
 .cards {
-  position: relative; /* Necessário para posicionar o texto sobre a imagem */
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -159,7 +159,7 @@ section div button:hover {
   height: 420px;
   width: 335px;
   border-radius: 20px;
-  overflow: hidden; /* Garante que o conteúdo excedente seja cortado */
+  overflow: hidden;
   text-align: center;
   margin: 10px;
   box-shadow: 0 2px 8px rgba(193, 34, 241, 0.7),
@@ -167,21 +167,21 @@ section div button:hover {
 }
 
 .cards img {
-  position: absolute; /* Posiciona a imagem sobre o fundo do container */
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%; /* Faz com que a imagem ocupe toda a largura do container */
-  height: 100%; /* Faz com que a imagem ocupe toda a altura do container */
-  object-fit: cover; /* Mantém a proporção da imagem enquanto cobre o container */
-  object-position: center; /* Centraliza a imagem dentro do container */
-  z-index: 0; /* Coloca a imagem atrás do texto e botões */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
 }
 
 .cards h5,
 .cards p,
 .cards a {
-  position: relative; /* Posiciona o texto e os botões acima da imagem */
-  color: #141414; /* Define a cor do texto */
+  position: relative;
+  color: #141414;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 5px;
   padding: 10px;
@@ -211,8 +211,8 @@ section div button:hover {
   cursor: pointer;
   text-decoration: none;
   width: 100%;
-  max-width: 200px; /* Largura fixa para manter consistência */
-  margin: 10px 0; /* Espaçamento entre botões e outros elementos */
+  max-width: 200px;
+  margin: 10px 0;
   text-align: center;
   transition: background-color 0.5s, border-color 0.5s, color 0.5s;
 }

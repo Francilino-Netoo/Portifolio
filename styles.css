@@ -17,20 +17,20 @@
 
 /* Estilo específico para o botão de download */
 .download-button {
-  background-color: #4caf50; /* Cor de fundo do botão */
-  color: white; /* Cor do texto do botão */
-  padding: 10px 20px; /* Espaçamento interno */
-  border: none; /* Remove bordas */
-  border-radius: 5px; /* Bordas arredondadas */
-  cursor: pointer; /* Cursor de mãozinha */
-  font-size: 16px; /* Tamanho da fonte */
-  text-align: center; /* Centraliza o texto */
-  display: inline-block; /* Faz o link parecer um botão */
-  text-decoration: none; /* Remove o sublinhado */
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .download-button:hover {
-  background-color: #45a049; /* Cor de fundo do botão ao passar o mouse */
+  background-color: #45a049;
 }
 
 nav {
@@ -140,6 +140,7 @@ section div button:hover {
   background-color: #191919;
   padding-top: 50px;
   padding-bottom: 100px;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .projetos h2 {
@@ -149,48 +150,56 @@ section div button:hover {
 }
 
 .cards {
+  position: relative; /* Necessário para posicionar o texto sobre a imagem */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   background-color: #000;
   height: 420px;
   width: 335px;
   border-radius: 20px;
-  padding: 20px 35px;
+  overflow: hidden; /* Garante que o conteúdo excedente seja cortado */
   text-align: center;
-  flex-direction: column;
+  margin: 10px;
+  box-shadow: 0 2px 8px rgba(193, 34, 241, 0.7),
+    0 4px 8px rgba(34, 34, 180, 0.7);
 }
 
 .cards img {
-  height: 90px;
+  position: absolute; /* Posiciona a imagem sobre o fundo do container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Faz com que a imagem ocupe toda a largura do container */
+  height: 100%; /* Faz com que a imagem ocupe toda a altura do container */
+  object-fit: cover; /* Mantém a proporção da imagem enquanto cobre o container */
+  object-position: center; /* Centraliza a imagem dentro do container */
+  z-index: 0; /* Coloca a imagem atrás do texto e botões */
+}
+
+.cards h5,
+.cards p,
+.cards a {
+  position: relative; /* Posiciona o texto e os botões acima da imagem */
+  color: #141414; /* Define a cor do texto */
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .cards h5 {
-  color: #ffffff;
   font-size: 24px;
   margin-top: 10px;
 }
 
 .cards p {
-  color: #d6585f;
+  color: #3801fd;
+  background: rgba(255, 255, 255, 0.7);
   font-size: 16px;
   margin-top: 15px;
+  padding: 10px;
   margin-bottom: 20px;
-}
-
-.cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 20px;
-
-  border-radius: 8px;
-  margin: 10px;
-}
-
-.cards .tamanhoimg {
-  height: 200px;
-}
-.cards .mudarbotao {
-  margin-top: 10px;
+  border-radius: 10px;
 }
 
 .cards a {
@@ -201,9 +210,9 @@ section div button:hover {
   border-radius: 20px;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
-  width: 200px; /* Largura fixa para todos os botões */
-  margin: 10px 0; /* Espaçamento vertical entre os botões */
+  width: 100%;
+  max-width: 200px; /* Largura fixa para manter consistência */
+  margin: 10px 0; /* Espaçamento entre botões e outros elementos */
   text-align: center;
   transition: background-color 0.5s, border-color 0.5s, color 0.5s;
 }

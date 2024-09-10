@@ -8,52 +8,82 @@
 .caixa-principal {
   height: 100vh;
   width: 100%;
-  background-image: url(./img/BD-Web-Design-Process.gif);
   background-size: 30%;
   background-position: right 100px bottom 100px;
   background-repeat: no-repeat;
-  background-color: #191919;
+  background-color: #ebebeb;
+  z-index: 1;
 }
 
-/* Estilo específico para o botão de download */
-.download-button {
-  background-color: #4caf50;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-  display: inline-block;
+/* Estilo do Menu Lateral */
+.side-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: #333;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+.side-menu a {
+  padding: 8px 8px 8px 32px;
   text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
 
-.download-button:hover {
-  background-color: #45a049;
+.side-menu a:hover {
+  color: #f1f1f1;
+}
+
+.side-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  z-index: 1000;
+  display: none;
 }
 
 nav {
+  position: fixed;
   display: flex;
+  top: 0;
+  left: 0;
   align-items: center;
   justify-content: space-between;
-  padding: 25px 30px;
+  width: 100%;
+  background: linear-gradient(to right, #116574, #c122f1);
+  padding: 0.01% 5%;
+  z-index: 1000;
 }
+
+.logo img {
+  height: 100px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
 .minha-foto {
   display: none;
 }
 
-.portfolio {
-  color: #ffffff;
-  font-size: 35px;
-}
-
-.portfolio span {
-  color: #f9004d;
-}
-
 li {
-  color: white;
   list-style: none;
   display: inline-block;
   font-size: 20px;
@@ -64,58 +94,200 @@ li {
 .link-menu {
   text-decoration: none;
   color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  line-height: 1.5;
+  text-align: center;
 }
 
-li:hover {
-  color: #f9004d;
-  transition: 0.5s;
+li {
+  display: inline;
+  margin-right: 20px;
 }
 
+li:hover .link-menu,
+.link-menu:hover {
+  color: #00f929;
+  border-color: #f9004d;
+}
+
+/* Contêiner principal */
 .meu-nome {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+/* Contêiner do slider */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: opacity 1s ease-in-out;
+}
+
+/* Slide individual */
+.slide {
   position: absolute;
-  top: 50%;
-  left: 5%;
-  transform: translateY(-50%);
-  text-align: left;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  align-items: center;
+  justify-content: center;
 }
 
-h1 {
-  color: #ffffff;
-  font-size: 75px;
+/* Slide ativo */
+.slide.active {
+  opacity: 1;
 }
 
-h1 span {
+/* Texto sobreposto */
+.slider-text {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  font-size: 50px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 10;
+  text-align: center;
+}
+
+/* Setas de navegação */
+.prev,
+.next {
+  position: absolute;
+  bottom: 50%;
+  width: auto;
+  padding: 25px;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  font-size: 40px;
+  border-radius: 0 3px 3px 0;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+
+  z-index: 3;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Dots de navegação */
+.nav-dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+}
+
+.dot {
+  background-color: #ffffff;
+  border-radius: 50%;
+  height: 10px;
+  width: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: #f9004d;
+}
+
+.agendar {
+  text-align: center;
+  margin-top: 10vh;
+}
+
+.agendar h2 {
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  color: #000000;
+  font-size: 36px;
+  margin: 0;
+}
+
+.agendar h2 span {
+  display: inline;
+}
+
+.agendar h2 .fisiolife {
+  color: #008000;
+}
+
+.agendar h2 .fisiolife-live {
+  color: #00ff00;
+}
+
+.agendar h2 a {
   color: #f9004d;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.meu-nome h3 {
-  color: #ffffff;
+.agendar h2 a:hover {
+  text-decoration: underline;
 }
 
 section {
   display: flex;
   align-items: center;
-  padding: 60px 10%;
-  background-color: #000;
+  padding: 50px 10%;
+  background-color: #ddd0d0;
   flex-wrap: wrap;
 }
 
 section img {
-  height: 400px;
+  height: 300px;
   border-radius: 50%;
   border: 2px solid #f9004d;
-  margin-right: 20px;
+  margin-right: 40px;
   margin-bottom: 20px;
+  margin-top: 80px;
+}
+section#sobre p {
+  margin-bottom: 15px;
+}
+
+section#sobre ul {
+  margin-bottom: 10px;
+}
+
+section#sobre ul li {
+  margin-bottom: 10px;
+}
+section#sobre ul li strong {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 section div h2 {
-  color: #ffffff;
-  font-size: 75px;
+  color: #000000;
+  font-size: 40px;
 }
 
 section div p {
-  color: #d6585f;
-  font-size: 24px;
+  color: #474041;
+  font-size: 20px;
   margin-top: 40px;
   margin-bottom: 60px;
 }
@@ -136,102 +308,124 @@ section div button:hover {
   transition: 0.5s;
 }
 
+/*********************************/
 .projetos {
-  background-color: #191919;
   padding-top: 50px;
   padding-bottom: 100px;
-  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+  text-align: center;
+}
+
+.fundo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.fundo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .projetos h2 {
   font-size: 50px;
   color: #ffffff;
-  text-align: center;
+  margin-bottom: 50px;
+  margin-top: 90px;
 }
 
-.cards {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #000;
-  height: 420px;
-  width: 335px;
-  border-radius: 20px;
-  overflow: hidden;
-  text-align: center;
-  margin: 10px;
-  box-shadow: 0 2px 8px rgba(193, 34, 241, 0.7),
-    0 4px 8px rgba(34, 34, 180, 0.7);
-}
-
-.cards img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  z-index: 0;
-}
-
-.cards h5,
-.cards p,
-.cards a {
-  position: relative;
-  color: #141414;
-  background: rgba(255, 255, 255, 0.7);
-  border-radius: 5px;
-  padding: 10px;
-}
-
-.cards h5 {
-  font-size: 24px;
-  margin-top: 10px;
-}
-
-.cards p {
-  color: #3801fd;
-  background: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
-  margin-top: 15px;
-  padding: 10px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-}
-
-.cards a {
-  background-color: #f9004d;
-  font-size: 16px;
-  color: #ffffff;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  text-decoration: none;
-  width: 100%;
-  max-width: 200px;
-  margin: 10px 0;
-  text-align: center;
-  transition: background-color 0.5s, border-color 0.5s, color 0.5s;
-}
-
-.cards a:hover {
-  background-color: transparent;
-  border: 2px solid #f9004d;
-  color: #f9004d;
-}
-
+/* Estilo para o contêiner dos cartões */
 .cards-projetos {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 1px;
+  justify-items: center;
   margin-top: 100px;
 }
 
+/* Estilo para cada cartão */
+.cards {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+    0 4px 8px rgba(34, 34, 180, 0.7);
+  background-color: #fff;
+}
+
+/* Contêiner da imagem dentro do cartão */
+.cards a img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Estilo para o texto sobre a imagem */
+.cards h5 {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 25px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+/************************************* */
+
+.video-clinica {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.video iframe {
+  width: 90%;
+  height: 500px;
+  border: 0;
+}
+.video,
+.map {
+  flex: 1;
+}
+.map h2 {
+  margin-top: 10px;
+  font-size: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.map a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  transition: color 0.3s;
+}
+
+.map a:hover {
+  color: #007bff;
+}
+
+iframe {
+  max-width: 100%;
+  height: 500px;
+}
+
+/************************************* */
 footer {
-  background-color: #000;
+  background-color: #ffffff;
   padding-top: 100px;
   padding-bottom: 120px;
   display: flex;
@@ -241,12 +435,12 @@ footer {
 }
 
 footer h5 {
-  color: #ffffff;
+  color: #000;
   font-size: 30px;
 }
 
 footer p {
-  color: #ffffff;
+  color: #000;
   font-size: 18px;
   margin-top: 14px;
   margin-bottom: 30px;
@@ -279,105 +473,304 @@ footer p {
   transition: 0.5s;
 }
 
-/* Media Queries for Responsiveness */
-@media (max-width: 1200px) {
-  h1 {
-    font-size: 60px;
-  }
-
-  section div h2 {
-    font-size: 60px;
-  }
-}
-
-@media (max-width: 992px) {
-  nav {
-    flex-direction: column;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .meu-nome {
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-
-  section {
-    padding: 60px 5%;
-  }
-
-  section img {
-    height: 300px;
-    margin-bottom: 20px;
-  }
-
-  section div h2 {
-    font-size: 50px;
-  }
-
+/*********************************/
+/*********************************/
+/*********************************/
+/* Media queries para ajustar o layout em diferentes tamanhos de tela */
+@media (max-width: 2600px) {
   .cards-projetos {
-    flex-direction: column;
-    align-items: center;
+    grid-template-columns: repeat(3, 1fr);
   }
-
-  .caixa-principal {
-    background-size: 60%;
-    background-position: right 10px bottom 10px;
+  .agendar {
+    margin-top: 5vh;
+  }
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media (max-width: 1200px) {
+  .cards-projetos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .agendar {
+    margin-top: 5vh;
   }
 }
 
-@media (max-width: 792px) {
-  .portfolio {
-    font-size: 35px;
+@media (max-width: 900px) {
+  .cards-projetos {
+    grid-template-columns: repeat(2, 1fr);
   }
-
-  .meu-nome img.minha-foto {
-    display: block;
-    height: 150px;
-    width: 105px;
-    border-radius: 50%;
-    border: 2px solid #f9004d;
-    margin: 0 auto;
-    margin-bottom: 50px;
+  .agendar {
+    margin-top: 5vh;
   }
+}
 
-  li {
-    font-size: 25px;
+@media (max-width: 600px) {
+  nav {
+    position: fixed;
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    padding: 0.01% 2%;
+    z-index: 1000;
+  }
+  .logo img {
+    height: 50px;
     margin-top: 20px;
   }
-
-  h1 {
-    font-size: 20px;
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
   }
-
-  .meu-nome h3 {
-    font-size: 10px;
-  }
-
-  section div h2 {
-    font-size: 20px;
-  }
-
-  section img {
+  .minha-foto {
     display: none;
   }
 
-  section div p {
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+
+  .link-menu {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 1px 1px;
+    border-radius: 4px;
+    display: inline-block;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  li:hover .link-menu,
+  .link-menu:hover {
+    color: #00f929;
+    border-color: #f9004d;
+  }
+
+  /* Contêiner principal */
+  .meu-nome {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Imagem dentro do slide */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Slide ativo */
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Texto sobreposto */
+  .slider-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
     font-size: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    text-align: center;
+  }
+
+  /* Setas de navegação */
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots de navegação */
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #f9004d;
+  }
+
+  .agendar {
+    text-align: center;
+    margin-top: 10vh;
+  }
+
+  .agendar h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .agendar h2 span {
+    display: inline;
+  }
+
+  .agendar h2 .fisiolife {
+    color: #008000;
+  }
+
+  .agendar h2 .fisiolife-live {
+    color: #00ff00;
+  }
+
+  .agendar h2 a {
+    color: #f9004d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .agendar h2 a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ddd0d0;
+    flex-wrap: wrap;
+  }
+
+  section img {
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    margin-top: 45px;
+  }
+  section#sobre p {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul li {
+    margin-bottom: 10px;
+  }
+  section#sobre ul li strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  section div h2 {
+    color: #000000;
+    font-size: 20px;
+  }
+
+  section div p {
+    color: #474041;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 80px;
   }
 
   section div button {
     color: #ffffff;
     background-color: #f9004d;
-    height: 25px;
-    width: 160px;
-    font-size: 13px;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
     border: none;
-    border-radius: 16px;
+    border-radius: 5x;
   }
 
   section div button:hover {
@@ -386,191 +779,2261 @@ footer p {
     transition: 0.5s;
   }
 
+  /*********************************/
   .projetos {
-    padding-top: 20px;
-  }
-  .projetos h2 {
-    font-size: 25px;
-    color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    position: relative;
     text-align: center;
   }
-  .cards-projetos {
-    margin-top: 30px;
+
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
   }
+
+  .fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projetos h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 50px;
+    margin-top: 60px;
+  }
+
+  /* Estilo para o contêiner dos cartões */
+  .cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px 1px;
+    justify-items: center;
+    margin-top: 100px;
+  }
+
+  /* Estilo para cada cartão */
   .cards {
-    width: 80%;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 130px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+      0 4px 8px rgba(34, 34, 180, 0.7);
+    background-color: #fff;
+  }
+
+  /* Contêiner da imagem dentro do cartão */
+  .cards .a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cards .a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #f9004d;
+    border-radius: 10px;
+  }
+
+  .cards .a:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .cards h4 {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
   }
   .cards h5 {
-    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
-
   .cards p {
-    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 16px;
+  }
+  /************************************* */
+
+  .video-clinica {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .video iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .map iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .video,
+  .map {
+    flex: 1;
+  }
+  .map h2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .map a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: color 0.3s;
   }
 
-  .cards a {
-    font-size: 14px;
+  .map a:hover {
+    color: #007bff;
+  }
+
+  /************************************* */
+  footer {
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   footer h5 {
+    color: #000;
     font-size: 20px;
   }
 
   footer p {
-    font-size: 16px;
+    color: #000;
+    font-size: 13px;
+    margin-top: 14px;
+    margin-bottom: 20px;
   }
 
-  .caixa-principal {
-    background-size: 0%;
-    background-position: right 0px bottom 0px;
+  .social {
+    display: flex;
+    gap: 20px;
   }
-  .download-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 5px 10px;
-    border: none;
-    border-radius: 5px;
+
+  .social img {
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .social a {
+    background-color: #f9004d;
+    padding: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
     cursor: pointer;
-    font-size: 16px;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none;
+  }
+
+  .social a:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
   }
 }
 
-/* Restante do CSS ... */
-
-@media (max-width: 576px) {
-  .portfolio {
-    font-size: 25px;
+@media (max-width: 480px) {
+  nav {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    padding: 2%;
+    z-index: 1000;
   }
 
-  .meu-nome img.minha-foto {
-    display: block;
-    height: 200px;
-    width: 150px;
-    border-radius: 50%;
-    border: 2px solid #f9004d;
-    margin: 0 auto;
-    margin-bottom: 50px;
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
-  li {
-    font-size: 10px;
-    margin-top: 20px;
-    margin-right: 10px;
+  /* Estilo do Menu Lateral */
+  .side-menu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background-color: #333;
+    width: 30%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    overflow-x: hidden;
+    padding-top: 15vh;
+    z-index: 1000;
+    transition: right 0.8s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
   }
-  .download-button {
-    background-color: transparent;
-    color: green;
-    padding: 1px 5px;
-    cursor: pointer;
-    font-size: 10px;
-    text-align: center;
-    display: inline-block;
-    text-decoration: none;
-  }
-
-  h1 {
-    font-size: 20px;
-  }
-
-  .meu-nome h3 {
-    font-size: 10px;
-  }
-
-  section div h2 {
-    font-size: 20px;
-  }
-
-  section img {
+  .hidden {
     display: none;
   }
 
-  section div p {
+  .side-menu a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    transition: color 0.3s;
+  }
+  .openbtn:hover {
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    color: #0e0d0d;
+  }
+  .side-menu a:hover {
+    color: #f1f1f1;
+  }
+
+  .side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .openbtn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    display: none;
+    transition: color 0.3s;
+    border-radius: 5px;
+  }
+  .openbtn {
+    display: block;
+    background: linear-gradient(to right, #fff, #fff);
+    color: #000;
+  }
+
+  .side-menu {
+    left: 0;
+  }
+
+  .side-menu img {
+    width: 20vh;
+    height: 20vh;
+
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+
+  .minha-foto {
+    display: none;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+
+  .link-menu {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid;
+    padding: 1px 1px;
+    border-radius: 4px;
+    display: none;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  li:hover .link-menu,
+  .link-menu:hover {
+    color: #00f929;
+    border-color: #f9004d;
+  }
+
+  /* Contêiner principal */
+  .meu-nome {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Imagem dentro do slide */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Slide ativo */
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Texto sobreposto */
+  .slider-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
     font-size: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    text-align: center;
+  }
+
+  /* Setas de navegação */
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots de navegação */
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #f9004d;
+  }
+
+  .agendar {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .agendar h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .agendar h2 span {
+    display: inline;
+  }
+
+  .agendar h2 .fisiolife {
+    color: #008000;
+  }
+
+  .agendar h2 .fisiolife-live {
+    color: #00ff00;
+  }
+
+  .agendar h2 a {
+    color: #f9004d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .agendar h2 a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ddd0d0;
+    flex-wrap: wrap;
+  }
+
+  section img {
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  section#sobre p {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul li {
+    margin-bottom: 10px;
+  }
+  section#sobre ul li strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  section div h2 {
+    color: #000000;
+    font-size: 20px;
+  }
+
+  section div p {
+    color: #474041;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 80px;
   }
 
   section div button {
     color: #ffffff;
     background-color: #f9004d;
-    height: 25px;
-    width: 160px;
-    font-size: 13px;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
     border: none;
-    border-radius: 16px;
+    border-radius: 5x;
   }
 
   section div button:hover {
-    color: #000000;
+    color: #000;
     border: 3px solid #f9004d;
     transition: 0.5s;
   }
 
-  .projetos h2 {
-    font-size: 25px;
-    color: #ffffff;
-    text-align: center;
-  }
+  /*********************************/
   .projetos {
     padding-top: 20px;
-    flex-direction: row;
+    padding-bottom: 30px;
+    position: relative;
+    text-align: center;
   }
-  .cards-projetos {
+
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projetos h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
     margin-top: 30px;
-    display: flex;
-    justify-content: space-between;
   }
 
+  /* Estilo para o contêiner dos cartões */
+  .cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 1px;
+    justify-items: center;
+    margin-top: 80px;
+  }
+
+  /* Estilo para cada cartão */
   .cards {
-    width: 90%;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 150px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+      0 4px 8px rgba(34, 34, 180, 0.7);
+    background-color: #fff;
   }
 
+  /* Contêiner da imagem dentro do cartão */
+  .cards .a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cards .a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #f9004d;
+    border-radius: 10px;
+  }
+
+  .cards .a:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .cards h4 {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
   .cards h5 {
-    font-size: 15px;
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
-
   .cards p {
-    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 16px;
+  }
+  /************************************* */
+
+  .video-clinica {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .video iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .map iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .video,
+  .map {
+    flex: 1;
+  }
+  .map h2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .map a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: color 0.3s;
   }
 
-  .cards a {
-    font-size: 14px;
+  .map a:hover {
+    color: #007bff;
+  }
+
+  /************************************* */
+  footer {
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 
   footer h5 {
+    color: #000;
     font-size: 20px;
   }
 
   footer p {
-    font-size: 16px;
+    color: #000;
+    font-size: 10px;
+    margin-top: 14px;
+    margin-bottom: 20px;
   }
 
-  .caixa-principal {
-    background-size: 0%;
-    background-position: right 0px bottom 0px;
-  }
-  .botoes {
+  .social {
     display: flex;
-    justify-content: center;
-    margin-top: 20px;
+    gap: 20px;
   }
 
-  .prev-btn,
-  .next-btn {
-    font-size: 20px;
+  .social img {
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .social a {
     background-color: #f9004d;
-    color: white;
-    border: none;
-    padding: 10px 20px;
+    padding: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
     cursor: pointer;
+  }
+
+  .social a:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
+  }
+}
+
+@media (max-width: 390px) {
+  nav {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    padding: 2%;
+    z-index: 1000;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Estilo do Menu Lateral */
+  .side-menu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background-color: #333;
+    width: 30%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    overflow-x: hidden;
+    padding-top: 15vh;
+    z-index: 1000;
+    transition: right 0.8s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .side-menu a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    transition: color 0.3s;
+  }
+  .openbtn:hover {
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    color: #0e0d0d;
+  }
+  .side-menu a:hover {
+    color: #f1f1f1;
+  }
+
+  .side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .openbtn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    display: none;
+    transition: color 0.3s;
     border-radius: 5px;
   }
+  .openbtn {
+    display: block;
+    background: linear-gradient(to right, #fff, #fff);
+    color: #000;
+  }
 
-  .prev-btn:hover,
-  .next-btn:hover {
-    background-color: #d60041;
+  .side-menu {
+    left: 0;
+  }
+
+  .side-menu img {
+    width: 20vh;
+    height: 20vh;
+
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+
+  .minha-foto {
+    display: none;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+
+  .link-menu {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid;
+    padding: 1px 1px;
+    border-radius: 4px;
+    display: none;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  li:hover .link-menu,
+  .link-menu:hover {
+    color: #00f929;
+    border-color: #f9004d;
+  }
+
+  /* Contêiner principal */
+  .meu-nome {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Imagem dentro do slide */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Slide ativo */
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Texto sobreposto */
+  .slider-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    text-align: center;
+  }
+
+  /* Setas de navegação */
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots de navegação */
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #f9004d;
+  }
+
+  .agendar {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .agendar h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .agendar h2 span {
+    display: inline;
+  }
+
+  .agendar h2 .fisiolife {
+    color: #008000;
+  }
+
+  .agendar h2 .fisiolife-live {
+    color: #00ff00;
+  }
+
+  .agendar h2 a {
+    color: #f9004d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .agendar h2 a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ddd0d0;
+    flex-wrap: wrap;
+  }
+
+  section img {
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  section#sobre p {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul li {
+    margin-bottom: 10px;
+  }
+  section#sobre ul li strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  section div h2 {
+    color: #000000;
+    font-size: 20px;
+  }
+
+  section div p {
+    color: #474041;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 80px;
+  }
+
+  section div button {
+    color: #ffffff;
+    background-color: #f9004d;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5x;
+  }
+
+  section div button:hover {
+    color: #000;
+    border: 3px solid #f9004d;
+    transition: 0.5s;
+  }
+
+  /*********************************/
+  .projetos {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    position: relative;
+    text-align: center;
+  }
+
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projetos h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  /* Estilo para o contêiner dos cartões */
+  .cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 1px;
+    justify-items: center;
+    margin-top: 80px;
+  }
+
+  /* Estilo para cada cartão */
+  .cards {
+    width: 100%;
+    max-width: 150px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+      0 4px 8px rgba(34, 34, 180, 0.7);
+    background-color: #fff;
+  }
+
+  /* Contêiner da imagem dentro do cartão */
+  .cards .a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cards .a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #f9004d;
+    border-radius: 10px;
+  }
+
+  .cards .a:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .cards h4 {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .cards h5 {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .cards p {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 16px;
+  }
+  /************************************* */
+
+  .video-clinica {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .video iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .map iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .video,
+  .map {
+    flex: 1;
+  }
+  .map h2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .map a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: color 0.3s;
+  }
+
+  .map a:hover {
+    color: #007bff;
+  }
+
+  /************************************* */
+  footer {
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer h5 {
+    color: #000;
+    font-size: 20px;
+  }
+
+  footer p {
+    color: #000;
+    font-size: 12px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .social {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social img {
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .social a {
+    background-color: #f9004d;
+    padding: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .social a:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
+  }
+}
+
+@media (max-width: 360px) {
+  nav {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    padding: 2%;
+    z-index: 1000;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Estilo do Menu Lateral */
+  .side-menu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background-color: #333;
+    width: 30%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    overflow-x: hidden;
+    padding-top: 15vh;
+    z-index: 1000;
+    transition: right 0.8s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .side-menu a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    transition: color 0.3s;
+  }
+  .openbtn:hover {
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    color: #0e0d0d;
+  }
+  .side-menu a:hover {
+    color: #f1f1f1;
+  }
+
+  .side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .openbtn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    display: none;
+    transition: color 0.3s;
+    border-radius: 5px;
+  }
+  .openbtn {
+    display: block;
+    background: linear-gradient(to right, #fff, #fff);
+    color: #000;
+  }
+
+  .side-menu {
+    left: 0;
+  }
+
+  .side-menu img {
+    width: 20vh;
+    height: 20vh;
+
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+
+  .minha-foto {
+    display: none;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+
+  .link-menu {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid;
+    padding: 1px 1px;
+    border-radius: 4px;
+    display: none;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  li:hover .link-menu,
+  .link-menu:hover {
+    color: #00f929;
+    border-color: #f9004d;
+  }
+
+  /* Contêiner principal */
+  .meu-nome {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Imagem dentro do slide */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Slide ativo */
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Texto sobreposto */
+  .slider-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    text-align: center;
+  }
+
+  /* Setas de navegação */
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots de navegação */
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #f9004d;
+  }
+
+  .agendar {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .agendar h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .agendar h2 span {
+    display: inline;
+  }
+
+  .agendar h2 .fisiolife {
+    color: #008000;
+  }
+
+  .agendar h2 .fisiolife-live {
+    color: #00ff00;
+  }
+
+  .agendar h2 a {
+    color: #f9004d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .agendar h2 a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ddd0d0;
+    flex-wrap: wrap;
+  }
+
+  section img {
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  section#sobre p {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul li {
+    margin-bottom: 10px;
+  }
+  section#sobre ul li strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  section div h2 {
+    color: #000000;
+    font-size: 20px;
+  }
+
+  section div p {
+    color: #474041;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 80px;
+  }
+
+  section div button {
+    color: #ffffff;
+    background-color: #f9004d;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5x;
+  }
+
+  section div button:hover {
+    color: #000;
+    border: 3px solid #f9004d;
+    transition: 0.5s;
+  }
+
+  /*********************************/
+  .projetos {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    position: relative;
+    text-align: center;
+  }
+
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projetos h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  /* Estilo para o contêiner dos cartões */
+  .cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 1px;
+    justify-items: center;
+    margin-top: 80px;
+  }
+
+  /* Estilo para cada cartão */
+  .cards {
+    width: 100%;
+    max-width: 150px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+      0 4px 8px rgba(34, 34, 180, 0.7);
+    background-color: #fff;
+  }
+
+  /* Contêiner da imagem dentro do cartão */
+  .cards .a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cards .a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #f9004d;
+    border-radius: 10px;
+  }
+
+  .cards .a:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .cards h4 {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .cards h5 {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .cards p {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 16px;
+  }
+  /************************************* */
+
+  .video-clinica {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .video iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .map iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .video,
+  .map {
+    flex: 1;
+  }
+  .map h2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .map a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: color 0.3s;
+  }
+
+  .map a:hover {
+    color: #007bff;
+  }
+
+  /************************************* */
+  footer {
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer h5 {
+    color: #000;
+    font-size: 20px;
+  }
+
+  footer p {
+    color: #000;
+    font-size: 12px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .social {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social img {
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .social a {
+    background-color: #f9004d;
+    padding: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .social a:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
+  }
+}
+
+@media (max-width: 330px) {
+  nav {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    padding: 2%;
+    z-index: 1000;
+  }
+
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Estilo do Menu Lateral */
+  .side-menu {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background-color: #333;
+    width: 30%;
+    background: linear-gradient(to right, #116574, #c122f1);
+    overflow-x: hidden;
+    padding-top: 15vh;
+    z-index: 1000;
+    transition: right 0.8s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+  }
+  .hidden {
+    display: none;
+  }
+
+  .side-menu a {
+    padding: 8px 8px 8px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fff;
+    display: block;
+    transition: color 0.3s;
+  }
+  .openbtn:hover {
+    background: linear-gradient(to right, #ffffff, #ffffff);
+    color: #0e0d0d;
+  }
+  .side-menu a:hover {
+    color: #f1f1f1;
+  }
+
+  .side-menu .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .openbtn {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 1000;
+    display: none;
+    transition: color 0.3s;
+    border-radius: 5px;
+  }
+  .openbtn {
+    display: block;
+    background: linear-gradient(to right, #fff, #fff);
+    color: #000;
+  }
+
+  .side-menu {
+    left: 0;
+  }
+
+  .side-menu img {
+    width: 20vh;
+    height: 20vh;
+
+    left: 0;
+    top: 0;
+    right: 0;
+  }
+
+  .minha-foto {
+    display: none;
+  }
+
+  li {
+    list-style: none;
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 1px;
+    cursor: pointer;
+  }
+
+  .link-menu {
+    text-decoration: none;
+    color: #ffffff;
+    border: 2px solid;
+    padding: 1px 1px;
+    border-radius: 4px;
+    display: none;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  li:hover .link-menu,
+  .link-menu:hover {
+    color: #00f929;
+    border-color: #f9004d;
+  }
+
+  /* Contêiner principal */
+  .meu-nome {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+  }
+
+  /* Contêiner do slider */
+  .slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    transition: opacity 1s ease-in-out;
+  }
+
+  /* Slide individual */
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  /* Imagem dentro do slide */
+  .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Slide ativo */
+  .slide.active {
+    opacity: 1;
+  }
+
+  /* Texto sobreposto */
+  .slider-text {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    text-align: center;
+  }
+
+  /* Setas de navegação */
+  .prev,
+  .next {
+    position: absolute;
+    bottom: 50%;
+    width: auto;
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 0 3px 3px 0;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    z-index: 3;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+
+  /* Dots de navegação */
+  .nav-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 5px;
+    width: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dot.active {
+    background-color: #f9004d;
+  }
+
+  .agendar {
+    text-align: center;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+  }
+
+  .agendar h2 {
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    color: #000000;
+    font-size: 12px;
+    margin: 0;
+  }
+
+  .agendar h2 span {
+    display: inline;
+  }
+
+  .agendar h2 .fisiolife {
+    color: #008000;
+  }
+
+  .agendar h2 .fisiolife-live {
+    color: #00ff00;
+  }
+
+  .agendar h2 a {
+    color: #f9004d;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .agendar h2 a:hover {
+    text-decoration: underline;
+  }
+
+  section {
+    display: flex;
+    align-items: center;
+    padding: 50px 10%;
+    background-color: #ddd0d0;
+    flex-wrap: wrap;
+  }
+
+  section img {
+    height: 150px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin-right: 40px;
+    margin-bottom: 10px;
+    margin-top: 15px;
+  }
+  section#sobre p {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul {
+    margin-bottom: 5px;
+  }
+
+  section#sobre ul li {
+    margin-bottom: 10px;
+  }
+  section#sobre ul li strong {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+
+  section div h2 {
+    color: #000000;
+    font-size: 20px;
+  }
+
+  section div p {
+    color: #474041;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 80px;
+  }
+
+  section div button {
+    color: #ffffff;
+    background-color: #f9004d;
+    height: 30px;
+    width: 100px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5x;
+  }
+
+  section div button:hover {
+    color: #000;
+    border: 3px solid #f9004d;
+    transition: 0.5s;
+  }
+
+  /*********************************/
+  .projetos {
+    padding-top: 20px;
+    padding-bottom: 30px;
+    position: relative;
+    text-align: center;
+  }
+
+  .fundo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+
+  .fundo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .projetos h2 {
+    font-size: 20px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+
+  /* Estilo para o contêiner dos cartões */
+  .cards-projetos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px 1px;
+    justify-items: center;
+    margin-top: 80px;
+  }
+
+  /* Estilo para cada cartão */
+  .cards {
+    width: 100%;
+    max-width: 150px;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
+      0 4px 8px rgba(34, 34, 180, 0.7);
+    background-color: #fff;
+  }
+
+  /* Contêiner da imagem dentro do cartão */
+  .cards .a img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cards .a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #f9004d;
+    border-radius: 10px;
+  }
+
+  .cards .a:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .cards h4 {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 10px;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  .cards h5 {
+    font-family: "Montserrat", sans-serif;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .cards p {
+    font-family: "Montserrat", sans-serif;
+    color: #474041;
+    font-size: 16px;
+  }
+  /************************************* */
+
+  .video-clinica {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-direction: column;
+  }
+  .video iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .map iframe {
+    width: 100%;
+    height: 200px;
+    border: 0;
+  }
+  .video,
+  .map {
+    flex: 1;
+  }
+  .map h2 {
+    margin-top: 10px;
+    font-size: 12px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  }
+  .map a {
+    text-decoration: none;
+    color: #000;
+    display: block;
+    transition: color 0.3s;
+  }
+
+  .map a:hover {
+    color: #007bff;
+  }
+
+  /************************************* */
+  footer {
+    background-color: #ffffff;
+    padding-top: 70px;
+    padding-bottom: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  footer h5 {
+    color: #000;
+    font-size: 20px;
+  }
+
+  footer p {
+    color: #000;
+    font-size: 12px;
+    margin-top: 14px;
+    margin-bottom: 20px;
+    max-width: 80%;
+    text-align: center;
+  }
+
+  .social {
+    display: flex;
+    gap: 20px;
+  }
+
+  .social img {
+    height: 50px;
+    border-radius: 50%;
+  }
+
+  .social a {
+    background-color: #f9004d;
+    padding: 20px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+  }
+
+  .social a:hover {
+    transform: scale(1.3);
+    transition: 0.5s;
   }
 }

@@ -17,47 +17,167 @@
       href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,500;1,500&display=swap"
       rel="stylesheet"
     />
-    <title>Francilino Neto</title>
+    <title>Dra. Tainá Sousa</title>
   </head>
 
   <body>
     <div class="caixa-principal" id="home">
+      <!-- Menu Lateral -->
+      <div class="side-menu" id="side-menu">
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Atuação</a>
+        <a href="#clinica">Clínica</a>
+        <a href="#fale-comigo">Contato</a>
+      </div>
+      <span class="openbtn" onclick="toggleMenu()">☰</span>
+
       <nav>
-        <h2 class="portfolio">Portfo<span>lio</span></h2>
+        <div class="logo" href="#home">
+          <img
+            src="./img/Fisioterapia/logo.png"
+            alt="Logo foto"
+            class="logo-foto"
+          />
+        </div>
+
         <ul>
           <li><a class="link-menu" href="#home">Home</a></li>
           <li><a class="link-menu" href="#sobre">Sobre</a></li>
-          <li><a class="link-menu" href="#projetos">Projetos</a></li>
+          <li><a class="link-menu" href="#projetos">Área de atuação</a></li>
+          <li><a class="link-menu" href="#clinica">Clínica</a></li>
           <li><a class="link-menu" href="#fale-comigo">Contato</a></li>
-          <li>
-            <a
-              href="./img/curriculo.pdf"
-              download="curriculo"
-              class="download-button"
-              >Baixar CV</a
-            >
-          </li>
         </ul>
       </nav>
+
       <div class="meu-nome">
-        <img src="./img/18.jpg" alt="Minha foto" class="minha-foto" />
-        <h1>Francilino <span>Neto</span></h1>
-        <h3>Programador Full Stack</h3>
+        <div class="slider">
+          <div class="slide">
+            <img
+              src="./img/Fisioterapia/scrow/fisioterapia.png"
+              alt="Minha foto 1"
+              class="slide-img"
+            />
+            <div class="slider-text">Fisioterapia</div>
+            <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+            <div class="next" onclick="plusSlides(1)">&#10095;</div>
+          </div>
+          <div class="slide">
+            <img
+              src="./img/Fisioterapia/scrow/funciona.png"
+              alt="Minha foto 2"
+              class="slide-img"
+            />
+            <div class="slider-text">Treinamento Funcional</div>
+            <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+            <div class="next" onclick="plusSlides(1)">&#10095;</div>
+          </div>
+          <div class="slide">
+            <img
+              src="./img/Fisioterapia/scrow/pilates-2.png"
+              alt="Minha foto 3"
+              class="slide-img"
+            />
+            <div class="slider-text">Pilates</div>
+            <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+            <div class="next" onclick="plusSlides(1)">&#10095;</div>
+          </div>
+          <div class="slide">
+            <img
+              src="./img/Fisioterapia/scrow/Postural.png"
+              alt="Minha foto 4"
+              class="slide-img"
+            />
+            <div class="slider-text">Reeducação Postural Global - RPG</div>
+            <div class="prev" onclick="plusSlides(-1)">&#10094;</div>
+            <div class="next" onclick="plusSlides(1)">&#10095;</div>
+          </div>
+        </div>
+
+        <!-- Optional: Add navigation dots -->
+        <div class="nav-dots">
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+      <div class="agendar">
+        <h2>
+          Na <span class="fisiolife">FISIO</span
+          ><span class="fisiolife-live">Life</span> você mesmo pode
+          <a href="#fale-comigo">agendar a sua avaliação</a>
+          fácil e rápido!
+        </h2>
       </div>
     </div>
 
     <section id="sobre">
-      <img src="./img/18.jpg" alt="Minha foto" />
+      <img src="./img/perfil.png" alt="Minha foto" />
       <div>
-        <h2>Sobre mim</h2>
+        <h2>Dra. Tainá Sousa</h2>
         <p>
-          Atuo como freelancer, utilizando Python para criação de APIs e
-          Node.js. Tenho experiência em técnicas de web scraping para análise de
-          dados e automações baseadas nessas análises. Desenvolvo aplicativos
-          móveis com React Native e sites com JavaScript e React.js,
-          integrando-os a bancos de dados para oferecer soluções completas e
-          funcionais.
+          Especialista em uma ampla gama de áreas da fisioterapia e terapias
+          complementares, com uma abordagem focada na recuperação e bem-estar
+          dos pacientes. Minha experiência abrange:
         </p>
+        <ul>
+          <li>
+            <strong>Fisioterapia Neurológica:</strong> Atendimento especializado
+            para pacientes com condições neurológicas, utilizando técnicas
+            avançadas para promover a recuperação e a funcionalidade.
+          </li>
+          <li>
+            <strong>Pilates:</strong> Implementação de exercícios personalizados
+            para melhorar a força, flexibilidade e controle corporal, adaptados
+            para atender às necessidades individuais.
+          </li>
+          <li>
+            <strong>Fisioterapia Geral:</strong> Abordagem holística para tratar
+            uma variedade de condições musculoesqueléticas e ortopédicas,
+            promovendo a recuperação e o bem-estar geral.
+          </li>
+          <li>
+            <strong>Fisioterapia Cardiorrespiratória:</strong> Tratamento de
+            condições cardíacas e respiratórias, focando na reabilitação e no
+            aumento da capacidade funcional.
+          </li>
+          <li>
+            <strong>Fisioterapia Pélvica:</strong> Especialização no manejo de
+            disfunções pélvicas e uro-ginecológicas, proporcionando alívio e
+            melhorando a qualidade de vida dos pacientes.
+          </li>
+          <li>
+            <strong>Fisioterapia Geriátrica:</strong> Cuidados direcionados a
+            idosos para manter e melhorar a mobilidade, força e independência,
+            abordando questões específicas do envelhecimento.
+          </li>
+          <li>
+            <strong>Fisioterapia Funcional:</strong> Implementação de
+            estratégias para restaurar e melhorar a função física, com ênfase na
+            reabilitação funcional e na prevenção de lesões.
+          </li>
+          <li>
+            <strong>Neurofuncional:</strong> Integração de abordagens
+            neurológicas e funcionais para tratar e reabilitar pacientes com
+            condições neuromusculares e neurológicas.
+          </li>
+          <li>
+            <strong>Pediatria:</strong> Atendimento especializado para crianças,
+            focando no desenvolvimento motor e na reabilitação de condições
+            pediátricas.
+          </li>
+          <li>
+            <strong>Redução Postural e Global:</strong> Aplicação de técnicas
+            para melhorar a postura e promover a correção postural, contribuindo
+            para a saúde global do paciente.
+          </li>
+          <li>
+            <strong>Terapias Complementares com Combos Relaxantes:</strong>
+            Oferecimento de terapias complementares que integram técnicas
+            relaxantes e restauradoras para um bem-estar holístico.
+          </li>
+        </ul>
         <a href="https://www.linkedin.com/in/francilino-neto" target="_blank">
           <button>Entre em contato</button>
         </a>
@@ -65,145 +185,197 @@
     </section>
 
     <div class="projetos" id="projetos">
-      <h2>Principais Projetos</h2>
+      <div class="fundo">
+        <img src="./img/Fisioterapia/capa-pilates.png" alt="caps" />
+      </div>
+      <h2>ÁREAS DE ATUAÇÃO</h2>
 
       <div class="cards-projetos">
         <div class="cards">
-          <img
-            class="tamanhoimg"
-            src="./img/Site_Fisio.jpg"
-            alt="Projeto Fisio"
-          />
-          <h5>Fiseoterapia</h5>
-          <p>
-            Este projeto tem o intuito de divulgar o trabalho da profissional em
-            Fisioterapia de forma mais organizada.
-          </p>
-          <a
-            class="mudarbotao"
-            href="https://dratainasousa.com.br/"
-            target="_blank"
-            >Acessar Site</a
+          <a href="./public/projeto1/index.html"
+            ><h5>Fisioterapia Cardiológica</h5></a
           >
+          <a href="./public/projeto1/index.html"
+            ><img src="./img/Fisioterapia/1.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto2/index.html"
+            ><h5>Fisioterapia Desportiva</h5></a
+          >
+          <a href="./public/projeto2/index.html"
+            ><img src="./img/Fisioterapia/2.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto3/index.html"
+            ><h5>Fisioterapia Domiciliar</h5>
+            <img src="./img/Fisioterapia/3.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto4/index.html"
+            ><h5>Treinamento Funcional</h5>
+            <img src="./img/Fisioterapia/4.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto5/index.html"
+            ><h5>Fisioterapia Geriátrica</h5>
+            <img src="./img/Fisioterapia/5.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto6/index.html"
+            ><h5>Massoterapia</h5>
+            <img src="./img/Fisioterapia/6.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto7/index.html"
+            ><h5>Fisioterapia Neurológica</h5>
+            <img src="./img/Fisioterapia/7.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto8/index.html"
+            ><h5>Fisioterapia Ortopédica</h5>
+            <img src="./img/Fisioterapia/8.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto9/index.html"
+            ><h5>Pilates</h5>
+            <img src="./img/Fisioterapia/9.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto10/index.html"
+            ><h5>Fisioterapia Respiratória</h5>
+            <img src="./img/Fisioterapia/10.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto11/index.html"
+            ><h5>RPG</h5>
+            <img src="./img/Fisioterapia/11.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+        <div class="cards">
+          <a href="./public/projeto12/index.html"
+            ><h5>Fisioterapia Pélvica</h5>
+            <img src="./img/Fisioterapia/12.png" alt="Projeto Bac Bo"
+          /></a>
+        </div>
+      </div>
+      <div class="cards-projetos"></div>
+    </div>
+
+    <section id="sobre">
+      <div>
+        <h2>Benefícios da Fisioterapia</h2>
+        <ul>
+          <li>
+            <strong>1. Alívio da Dor:</strong> Redução da dor muscular e
+            articular através de técnicas como terapia manual, exercícios e
+            calor/frio. Tratamento de lesões e distensões para alívio da dor
+            associada e recuperação.
+          </li>
+          <li>
+            <strong>2. Melhora da Mobilidade:</strong> Aumento da flexibilidade
+            e recuperação da mobilidade após cirurgias. Exercícios específicos
+            para melhorar a amplitude de movimento das articulações.
+          </li>
+          <li>
+            <strong>3. Reabilitação e Recuperação:</strong> Programas
+            personalizados para reabilitação após cirurgias ortopédicas e
+            neurológicas. Tratamento de lesões esportivas para retorno seguro e
+            eficaz ao esporte.
+          </li>
+          <li>
+            <strong>4. Prevenção de Futuras Lesões:</strong> Fortalecimento
+            muscular para reduzir o risco de lesões repetitivas. Educação sobre
+            postura para evitar problemas relacionados.
+          </li>
+          <li>
+            <strong>5. Melhoria da Função Física:</strong> Aprimoramento da
+            coordenação e aumento da resistência através de exercícios de
+            condicionamento físico.
+          </li>
+          <li>
+            <strong>6. Gestão de Condições Crônicas:</strong> Controle da dor
+            crônica e apoio a condições neuromusculares, como artrite e
+            esclerose múltipla.
+          </li>
+          <li>
+            <strong>7. Melhora da Qualidade de Vida:</strong> Aumento da
+            independência e promoção do bem-estar geral por meio de exercícios e
+            técnicas de relaxamento.
+          </li>
+          <li>
+            <strong>8. Educação e Autoajuda:</strong> Orientações sobre
+            exercícios em casa e educação sobre cuidados preventivos para manter
+            a saúde e prevenir problemas futuros.
+          </li>
+        </ul>
+        <a
+          href="https://api.whatsapp.com/send/?phone=%2B558897015525&text&type=phone_number&app_absent=0"
+          target="_blank"
+        >
+          <button>Entre em contato</button>
+        </a>
+      </div>
+    </section>
+
+    <div class="projetos" id="clinica">
+      <div class="fundo">
+        <img src="./img/Fisioterapia/capa-pilates.png" alt="caps" />
+      </div>
+      <h2>CONHEÇA NOSSA CLÍNICA</h2>
+
+      <div class="video-clinica">
+        <div class="video">
+          <iframe
+            src="https://www.youtube.com/embed/IU50Let_0aQ?rel=0&modestbranding=1&controls=1"
+            title="Vídeo do YouTube"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope"
+            allowfullscreen
+          ></iframe>
         </div>
 
-        <div class="cards">
-          <img
-            class="tamanhoimg"
-            src="./img/Site_Apps.jpg"
-            alt="Projeto IA-Apps"
-          />
-          <h5>Apps e IAs</h5>
-          <p>
-            Utilizei aprendizado por reforço e uma ferramenta de catalogação
-            para armazenar os resultados em um banco de dados, enviando as
-            melhores entradas para os jogadores.
-          </p>
-          <a
-            class="mudarbotao"
-            href="https://apiafobada.com.br/"
-            target="_blank"
-            >Acessar Site</a
-          >
-        </div>
-
-        <div class="cards">
-          <img src="./img/3d.png" alt="Portfólio 3D" />
-
-          <h5>Portfólio 3D</h5>
-          <p>
-            Este projeto foi desenvolvido com o objetivo de criar um portfólio
-            interativo e diferenciado. Utilizei o Blender para modelar em 3D do
-            meu quarto e a biblioteca Three.js para controlar as posições das
-            câmeras, as iluminações do cenário e interações com objetos
-            específicos da cena.
-          </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/Porfolio-3D"
-            >Repositório</a
-          >
-        </div>
-        <div class="cards">
-          <img class="tamanhoimg" src="./img/imgapp/1.jpg" alt="Portfólio 3D" />
-          <h5>Barbeiro Afobado</h5>
-          <p>
-            Este é um novo projeto React Native para Android, onde você pode
-            simular agendamentos de horário em barbeiros cadastrados no
-            aplicativo.
-          </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/barbeiro"
-            target="_blank"
-            >Repositório</a
-          >
-        </div>
-        <div class="cards">
-          <img src="./img/17.png" alt="APIs" />
-          <h5>APIs-Pragmatic-Evolution-Ezugi</h5>
-          <p>
-            Essa API pega os resultados des 3 provedoras de games Pragmatic
-            Play, Evolution e Ezugi. Com elas você vai ter acesso a resultados
-            de 217 games em tempo real, sendo 63 da Pragmatic, 99 da Evolution e
-            55 da Ezugi.
-          </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/APIs-Pragmatic-Evolution-Ezugi-Atualizadas"
-            target="_blank"
-            >Repositório</a
-          >
-        </div>
-        <div class="cards">
-          <img src="./img/15.png" alt="API Loja Virtual" />
-
-          <h5>API Loja Virtual</h5>
-          <p>
-            Esta é uma API basica de uma loja virtual onde podemos cadastrar
-            usuarios, adicionar produtos, editar produtos entre outras
-            funcionalidades, usei o Mongoose para armazenar os dados da API.
-          </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/Back-And-API-Basica"
-            target="_blank"
-            >Repositório</a
-          >
-        </div>
-        <div class="cards">
-          <img src="./img/15.png" alt="Chat WebSocket" />
-
-          <h5>Chat WebSocket</h5>
-          <p>
-            Empreguei o protocolo WebSocket na criação de um chat simples, com a
-            finalidade de aplicar os conhecimentos adquirido em aulas.
-          </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/chat-simples-websoket"
-            target="_blank"
-            >Repositório</a
-          >
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.820586284855!2d-39.29602032409478!3d-6.791673566424104!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7a3b49dc5597b9f%3A0x62aee1d06b13b2bb!2sR.%20Chagas%20Bezerra%2C%2075%20-%20V%C3%A1rzea%20Alegre%2C%20CE%2C%2063540-000!5e0!3m2!1spt-BR!2sbr!4v1723305039565!5m2!1spt-BR!2sbr"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <a href="https://maps.app.goo.gl/seSGHQyEJdbw6qQJ6" target="_blank">
+            <h2>R. Chagas Bezerra, 75 - Várzea Alegre, CE, 63540-000</h2>
+          </a>
         </div>
       </div>
     </div>
+
     <footer id="fale-comigo">
-      <h5>Francilino Neto</h5>
-      <p>Para mais informações</p>
+      <h5>Dra. Tainá Sousa</h5>
+      <p>
+        Para mais informações e agendamentos, siga-me nas redes sociais ou entre
+        em contato
+      </p>
 
       <div class="social">
-        <a href="https://www.linkedin.com/in/francilino-neto" target="_blank"
-          ><img src="./img/LinkedIn_icon.svg.png" alt="LinkedIn"
+        <a href="https://www.youtube.com/@Dra.Tain%C3%A1Sousa" target="_blank"
+          ><img src="./img/you.png" alt="LinkedIn"
         /></a>
-        <a href="https://t.me/programador_python" target="_blank"
-          ><img src="./img/tel.png" alt="Telegram"
+        <a href="" target="_blank"
+          ><img src="./img/tick.png" alt="Telegram"
         /></a>
-        <a href="https://github.com/Francilino-Netoo" target="_blank"
-          ><img src="./img/git.png" alt="GitHub"
+        <a href="https://www.instagram.com/dra_tai_sousa_costa" target="_blank"
+          ><img src="./img/insta.png" alt="GitHub"
         /></a>
         <a
-          href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text&type=phone_number&app_absent=0"
+          href="https://api.whatsapp.com/send/?phone=%2B558897015525&text&type=phone_number&app_absent=0"
           target="_blank"
           ><img src="./img/wha.png" alt="WhatsApp"
         /></a>
@@ -211,22 +383,143 @@
     </footer>
     <script>
       let slideIndex = 0;
+      const slideInterval = 3000;
 
-      function moveSlider(n) {
-        const slides = document.querySelectorAll(".cards");
-        slideIndex += n;
+      function showSlides() {
+        let slides = document.querySelectorAll(".slide");
+        let dots = document.querySelectorAll(".dot");
 
-        if (slideIndex < 0) {
-          slideIndex = slides.length - 1;
-        } else if (slideIndex >= slides.length) {
-          slideIndex = 0;
-        }
+        slides.forEach((slide, index) => {
+          slide.classList.remove("active");
+          if (index === slideIndex) {
+            slide.classList.add("active");
+          }
+        });
 
-        slides[slideIndex].scrollIntoView({
-          behavior: "smooth",
-          inline: "start",
+        dots.forEach((dot, index) => {
+          dot.className = dot.className.replace(" active", "");
+          if (index === slideIndex) {
+            dot.className += " active";
+          }
         });
       }
+
+      function plusSlides(n) {
+        slideIndex += n;
+        if (slideIndex >= document.querySelectorAll(".slide").length) {
+          slideIndex = 0;
+        }
+        if (slideIndex < 0) {
+          slideIndex = document.querySelectorAll(".slide").length - 1;
+        }
+        showSlides();
+      }
+
+      function currentSlide(n) {
+        slideIndex = n;
+        showSlides();
+      }
+
+      function startSlideShow() {
+        showSlides();
+        setInterval(() => {
+          slideIndex++;
+          if (slideIndex >= document.querySelectorAll(".slide").length) {
+            slideIndex = 0;
+          }
+          showSlides();
+        }, slideInterval);
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        startSlideShow();
+
+        document
+          .querySelector(".prev")
+          .addEventListener("click", () => plusSlides(-1));
+        document
+          .querySelector(".next")
+          .addEventListener("click", () => plusSlides(1));
+
+        const dots = document.querySelectorAll(".dot");
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => currentSlide(index));
+        });
+      });
+      document.addEventListener("DOMContentLoaded", () => {
+        const links = document.querySelectorAll("nav .link-menu");
+
+        links.forEach((link) => {
+          link.addEventListener("click", () => {
+            links.forEach((l) => l.classList.remove("active"));
+
+            link.classList.add("active");
+          });
+        });
+      });
+      function toggleMenu() {
+        const sideMenu = document.getElementById("side-menu");
+        const menuButton = document.querySelector(".openbtn");
+
+        if (sideMenu.classList.contains("hidden")) {
+          sideMenu.classList.remove("hidden");
+          menuButton.textContent = "☰";
+        } else {
+          sideMenu.classList.add("hidden");
+          menuButton.textContent = "☰";
+        }
+      }
+
+      function closeMenu() {
+        const sideMenu = document.getElementById("side-menu");
+        const menuButton = document.querySelector(".openbtn");
+
+        if (!sideMenu.classList.contains("hidden")) {
+          sideMenu.classList.add("hidden");
+          menuButton.textContent = "☰";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const menuLinks = document.querySelectorAll(".menu-link");
+        menuLinks.forEach((link) => {
+          link.addEventListener("click", () => {
+            closeMenu();
+          });
+        });
+
+        const menuLinks1 = document.querySelectorAll(".side-menu");
+        menuLinks1.forEach((link) => {
+          link.addEventListener("click", () => {
+            closeMenu();
+          });
+        });
+
+        document
+          .querySelector(".prev")
+          .addEventListener("click", () => plusSlides(-1));
+        document
+          .querySelector(".next")
+          .addEventListener("click", () => plusSlides(1));
+
+        const dots = document.querySelectorAll(".dot");
+        dots.forEach((dot, index) => {
+          dot.addEventListener("click", () => currentSlide(index));
+        });
+
+        document.addEventListener("click", (event) => {
+          const sideMenu = document.getElementById("side-menu");
+          const menuButton = document.querySelector(".openbtn");
+
+          if (
+            !sideMenu.contains(event.target) &&
+            !menuButton.contains(event.target) &&
+            !sideMenu.classList.contains("hidden")
+          ) {
+            closeMenu();
+          }
+        });
+      });
     </script>
   </body>
 </html>

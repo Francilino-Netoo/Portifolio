@@ -279,7 +279,7 @@ footer p {
   transition: 0.5s;
 }
 
-/* Media Queries for Responsiveness */
+/* Media Queries for Responsivenes */
 @media (max-width: 1200px) {
   h1 {
     font-size: 60px;

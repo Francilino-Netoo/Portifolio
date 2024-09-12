@@ -8,82 +8,52 @@
 .caixa-principal {
   height: 100vh;
   width: 100%;
+  background-image: url(./img/BD-Web-Design-Process.gif);
   background-size: 30%;
   background-position: right 100px bottom 100px;
   background-repeat: no-repeat;
-  background-color: #ebebeb;
-  z-index: 1;
+  background-color: #191919;
 }
 
-/* Estilo do Menu Lateral */
-.side-menu {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: -250px;
-  background-color: #333;
-  overflow-x: hidden;
-  transition: 0.3s;
-  padding-top: 60px;
-  z-index: 1000;
-}
-
-.side-menu a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-.side-menu a:hover {
-  color: #f1f1f1;
-}
-
-.side-menu .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.openbtn {
-  font-size: 20px;
+/* Estilo específico para o botão de download */
+.download-button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  position: fixed;
-  top: 10px;
-  left: 10px;
-  z-index: 1000;
-  display: none;
+  font-size: 16px;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.download-button:hover {
+  background-color: #45a049;
 }
 
 nav {
-  position: fixed;
   display: flex;
-  top: 0;
-  left: 0;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  background: linear-gradient(to right, #116574, #c122f1);
-  padding: 0.01% 5%;
-  z-index: 1000;
+  padding: 25px 30px;
 }
-
-.logo img {
-  height: 100px;
-  margin-right: 20px;
-  margin-bottom: 20px;
-}
-
 .minha-foto {
   display: none;
 }
 
+.portfolio {
+  color: #ffffff;
+  font-size: 35px;
+}
+
+.portfolio span {
+  color: #f9004d;
+}
+
 li {
+  color: white;
   list-style: none;
   display: inline-block;
   font-size: 20px;
@@ -94,200 +64,58 @@ li {
 .link-menu {
   text-decoration: none;
   color: #ffffff;
-  padding: 3px 10px;
-  border-radius: 8px;
-  display: inline-block;
-  line-height: 1.5;
-  text-align: center;
 }
 
-li {
-  display: inline;
-  margin-right: 20px;
-}
-
-li:hover .link-menu,
-.link-menu:hover {
-  color: #00f929;
-  border-color: #f9004d;
-}
-
-/* Contêiner principal */
-.meu-nome {
-  position: relative;
-  width: 100%;
-  max-width: 100%;
-  overflow: hidden;
-  height: 500px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 100px;
-}
-
-/* Contêiner do slider */
-.slider {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  transition: opacity 1s ease-in-out;
-}
-
-/* Slide individual */
-.slide {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Slide ativo */
-.slide.active {
-  opacity: 1;
-}
-
-/* Texto sobreposto */
-.slider-text {
-  position: absolute;
-  bottom: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-  font-size: 50px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  z-index: 10;
-  text-align: center;
-}
-
-/* Setas de navegação */
-.prev,
-.next {
-  position: absolute;
-  bottom: 50%;
-  width: auto;
-  padding: 25px;
-  color: rgb(255, 255, 255);
-  font-weight: bold;
-  font-size: 40px;
-  border-radius: 0 3px 3px 0;
-  cursor: pointer;
-  user-select: none;
-  text-align: center;
-
-  z-index: 3;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-/* Dots de navegação */
-.nav-dots {
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 10px;
-}
-
-.dot {
-  background-color: #ffffff;
-  border-radius: 50%;
-  height: 10px;
-  width: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.dot.active {
-  background-color: #f9004d;
-}
-
-.agendar {
-  text-align: center;
-  margin-top: 10vh;
-}
-
-.agendar h2 {
-  font-family: "Josefin Sans", sans-serif;
-  font-weight: 700;
-  color: #000000;
-  font-size: 36px;
-  margin: 0;
-}
-
-.agendar h2 span {
-  display: inline;
-}
-
-.agendar h2 .fisiolife {
-  color: #008000;
-}
-
-.agendar h2 .fisiolife-live {
-  color: #00ff00;
-}
-
-.agendar h2 a {
+li:hover {
   color: #f9004d;
-  text-decoration: none;
-  font-weight: bold;
+  transition: 0.5s;
 }
 
-.agendar h2 a:hover {
-  text-decoration: underline;
+.meu-nome {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translateY(-50%);
+  text-align: left;
+}
+
+h1 {
+  color: #ffffff;
+  font-size: 75px;
+}
+
+h1 span {
+  color: #f9004d;
+}
+
+.meu-nome h3 {
+  color: #ffffff;
 }
 
 section {
   display: flex;
   align-items: center;
-  padding: 50px 10%;
-  background-color: #ddd0d0;
+  padding: 60px 10%;
+  background-color: #000;
   flex-wrap: wrap;
 }
 
 section img {
-  height: 300px;
+  height: 400px;
   border-radius: 50%;
   border: 2px solid #f9004d;
-  margin-right: 40px;
+  margin-right: 20px;
   margin-bottom: 20px;
-  margin-top: 80px;
-}
-section#sobre p {
-  margin-bottom: 15px;
-}
-
-section#sobre ul {
-  margin-bottom: 10px;
-}
-
-section#sobre ul li {
-  margin-bottom: 10px;
-}
-section#sobre ul li strong {
-  display: block;
-  margin-top: 10px;
-  font-weight: bold;
 }
 
 section div h2 {
-  color: #000000;
-  font-size: 40px;
+  color: #ffffff;
+  font-size: 75px;
 }
 
 section div p {
-  color: #474041;
-  font-size: 20px;
+  color: #d6585f;
+  font-size: 24px;
   margin-top: 40px;
   margin-bottom: 60px;
 }
@@ -308,124 +136,102 @@ section div button:hover {
   transition: 0.5s;
 }
 
-/*********************************/
 .projetos {
+  background-color: #191919;
   padding-top: 50px;
   padding-bottom: 100px;
-  position: relative;
-  text-align: center;
-}
-
-.fundo {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-}
-
-.fundo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  grid-template-columns: repeat(3, 1fr);
 }
 
 .projetos h2 {
   font-size: 50px;
   color: #ffffff;
-  margin-bottom: 50px;
-  margin-top: 90px;
+  text-align: center;
 }
 
-/* Estilo para o contêiner dos cartões */
+.cards {
+  position: relative; /* Necessário para posicionar o texto sobre a imagem */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  height: 420px;
+  width: 335px;
+  border-radius: 20px;
+  overflow: hidden; /* Garante que o conteúdo excedente seja cortado */
+  text-align: center;
+  margin: 10px;
+  box-shadow: 0 2px 8px rgba(193, 34, 241, 0.7),
+    0 4px 8px rgba(34, 34, 180, 0.7);
+}
+
+.cards img {
+  position: absolute; /* Posiciona a imagem sobre o fundo do container */
+  top: 0;
+  left: 0;
+  width: 100%; /* Faz com que a imagem ocupe toda a largura do container */
+  height: 100%; /* Faz com que a imagem ocupe toda a altura do container */
+  object-fit: cover; /* Mantém a proporção da imagem enquanto cobre o container */
+  object-position: center; /* Centraliza a imagem dentro do container */
+  z-index: 0; /* Coloca a imagem atrás do texto e botões */
+}
+
+.cards h5,
+.cards p,
+.cards a {
+  position: relative; /* Posiciona o texto e os botões acima da imagem */
+  color: #141414; /* Define a cor do texto */
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  padding: 10px;
+}
+
+.cards h5 {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.cards p {
+  color: #3801fd;
+  background: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  margin-top: 15px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+}
+
+.cards a {
+  background-color: #f9004d;
+  font-size: 16px;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  width: 100%;
+  max-width: 200px; /* Largura fixa para manter consistência */
+  margin: 10px 0; /* Espaçamento entre botões e outros elementos */
+  text-align: center;
+  transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+}
+
+.cards a:hover {
+  background-color: transparent;
+  border: 2px solid #f9004d;
+  color: #f9004d;
+}
+
 .cards-projetos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px 1px;
-  justify-items: center;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
   margin-top: 100px;
 }
 
-/* Estilo para cada cartão */
-.cards {
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  position: relative;
-  border-radius: 10px;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
-    0 4px 8px rgba(34, 34, 180, 0.7);
-  background-color: #fff;
-}
-
-/* Contêiner da imagem dentro do cartão */
-.cards a img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Estilo para o texto sobre a imagem */
-.cards h5 {
-  position: absolute;
-  width: 100%;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: #ffffff;
-  font-size: 25px;
-  margin: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-/************************************* */
-
-.video-clinica {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-}
-.video iframe {
-  width: 90%;
-  height: 500px;
-  border: 0;
-}
-.video,
-.map {
-  flex: 1;
-}
-.map h2 {
-  margin-top: 10px;
-  font-size: 20px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-.map a {
-  text-decoration: none;
-  color: #000;
-  display: block;
-  transition: color 0.3s;
-}
-
-.map a:hover {
-  color: #007bff;
-}
-
-iframe {
-  max-width: 100%;
-  height: 500px;
-}
-
-/************************************* */
 footer {
-  background-color: #ffffff;
+  background-color: #000;
   padding-top: 100px;
   padding-bottom: 120px;
   display: flex;
@@ -435,12 +241,12 @@ footer {
 }
 
 footer h5 {
-  color: #000;
+  color: #ffffff;
   font-size: 30px;
 }
 
 footer p {
-  color: #000;
+  color: #ffffff;
   font-size: 18px;
   margin-top: 14px;
   margin-bottom: 30px;
@@ -473,820 +279,105 @@ footer p {
   transition: 0.5s;
 }
 
-/*********************************/
-/*********************************/
-/*********************************/
-/* Media queries para ajustar o layout em diferentes tamanhos de tela */
-@media (max-width: 2600px) {
-  .cards-projetos {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .agendar {
-    margin-top: 5vh;
-  }
-  /* Contêiner do slider */
-  .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    transition: opacity 1s ease-in-out;
-  }
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  /* Slide individual */
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    align-items: center;
-    justify-content: center;
-  }
-}
+/* Media Queries for Responsiveness */
 @media (max-width: 1200px) {
-  .cards-projetos {
-    grid-template-columns: repeat(3, 1fr);
+  h1 {
+    font-size: 60px;
   }
-  .agendar {
-    margin-top: 5vh;
+
+  section div h2 {
+    font-size: 60px;
   }
 }
 
-@media (max-width: 900px) {
-  .cards-projetos {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .agendar {
-    margin-top: 5vh;
-  }
-}
-
-@media (max-width: 600px) {
+@media (max-width: 992px) {
   nav {
-    position: fixed;
-    display: flex;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background: linear-gradient(to right, #116574, #c122f1);
-    padding: 0.01% 2%;
-    z-index: 1000;
+    flex-direction: column;
   }
-  .logo img {
-    height: 50px;
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .meu-nome {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+
+  section {
+    padding: 60px 5%;
+  }
+
+  section img {
+    height: 300px;
+    margin-bottom: 20px;
+  }
+
+  section div h2 {
+    font-size: 50px;
+  }
+
+  .cards-projetos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .caixa-principal {
+    background-size: 60%;
+    background-position: right 10px bottom 10px;
+  }
+}
+
+@media (max-width: 792px) {
+  .portfolio {
+    font-size: 35px;
+  }
+
+  .meu-nome img.minha-foto {
+    display: block;
+    height: 150px;
+    width: 105px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  li {
+    font-size: 25px;
     margin-top: 20px;
   }
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ajusta a imagem para preencher o contêiner */
-  }
-  .minha-foto {
-    display: none;
-  }
 
-  li {
-    list-style: none;
-    display: inline-block;
-    font-size: 12px;
-    margin-right: 1px;
-    cursor: pointer;
-  }
-
-  .link-menu {
-    text-decoration: none;
-    color: #ffffff;
-    padding: 1px 1px;
-    border-radius: 4px;
-    display: inline-block;
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  li:hover .link-menu,
-  .link-menu:hover {
-    color: #00f929;
-    border-color: #f9004d;
-  }
-
-  /* Contêiner principal */
-  .meu-nome {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-  }
-
-  /* Contêiner do slider */
-  .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    transition: opacity 1s ease-in-out;
-  }
-
-  /* Slide individual */
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  /* Imagem dentro do slide */
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Slide ativo */
-  .slide.active {
-    opacity: 1;
-  }
-
-  /* Texto sobreposto */
-  .slider-text {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    z-index: 10;
-    text-align: center;
-  }
-
-  /* Setas de navegação */
-  .prev,
-  .next {
-    position: absolute;
-    bottom: 50%;
-    width: auto;
-    padding: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-    user-select: none;
-    text-align: center;
-    z-index: 3;
-  }
-
-  .prev {
-    left: 10px;
-  }
-
-  .next {
-    right: 10px;
-  }
-
-  /* Dots de navegação */
-  .nav-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-  }
-
-  .dot {
-    background-color: #ffffff;
-    border-radius: 50%;
-    height: 5px;
-    width: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .dot.active {
-    background-color: #f9004d;
-  }
-
-  .agendar {
-    text-align: center;
-    margin-top: 10vh;
-  }
-
-  .agendar h2 {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 700;
-    color: #000000;
-    font-size: 15px;
-    margin: 0;
-  }
-
-  .agendar h2 span {
-    display: inline;
-  }
-
-  .agendar h2 .fisiolife {
-    color: #008000;
-  }
-
-  .agendar h2 .fisiolife-live {
-    color: #00ff00;
-  }
-
-  .agendar h2 a {
-    color: #f9004d;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .agendar h2 a:hover {
-    text-decoration: underline;
-  }
-
-  section {
-    display: flex;
-    align-items: center;
-    padding: 50px 10%;
-    background-color: #ddd0d0;
-    flex-wrap: wrap;
-  }
-
-  section img {
-    height: 100px;
-    border-radius: 50%;
-    border: 2px solid #f9004d;
-    margin-right: 40px;
-    margin-bottom: 20px;
-    margin-top: 45px;
-  }
-  section#sobre p {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul li {
-    margin-bottom: 10px;
-  }
-  section#sobre ul li strong {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-
-  section div h2 {
-    color: #000000;
+  h1 {
     font-size: 20px;
   }
 
+  .meu-nome h3 {
+    font-size: 10px;
+  }
+
+  section div h2 {
+    font-size: 20px;
+  }
+
+  section img {
+    display: none;
+  }
+
   section div p {
-    color: #474041;
     font-size: 15px;
-    margin-top: 15px;
-    margin-bottom: 80px;
   }
 
   section div button {
     color: #ffffff;
     background-color: #f9004d;
-    height: 30px;
-    width: 100px;
-    font-size: 12px;
-    border: none;
-    border-radius: 5x;
-  }
-
-  section div button:hover {
-    color: #000;
-    border: 3px solid #f9004d;
-    transition: 0.5s;
-  }
-
-  /*********************************/
-  .projetos {
-    padding-top: 50px;
-    padding-bottom: 100px;
-    position: relative;
-    text-align: center;
-  }
-
-  .fundo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-  .fundo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .projetos h2 {
-    font-size: 20px;
-    color: #ffffff;
-    margin-bottom: 50px;
-    margin-top: 60px;
-  }
-
-  /* Estilo para o contêiner dos cartões */
-  .cards-projetos {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px 1px;
-    justify-items: center;
-    margin-top: 100px;
-  }
-
-  /* Estilo para cada cartão */
-  .cards {
-    width: 100%;
-    max-width: 130px;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
-      0 4px 8px rgba(34, 34, 180, 0.7);
-    background-color: #fff;
-  }
-
-  /* Contêiner da imagem dentro do cartão */
-  .cards .a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .cards .a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid #f9004d;
-    border-radius: 10px;
-  }
-
-  .cards .a:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-  }
-
-  .cards h4 {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 10px;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  .cards h5 {
-    font-family: "Montserrat", sans-serif;
-    color: #fff;
-    font-size: 16px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  .cards p {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 16px;
-  }
-  /************************************* */
-
-  .video-clinica {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-direction: column;
-  }
-  .video iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .map iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .video,
-  .map {
-    flex: 1;
-  }
-  .map h2 {
-    margin-top: 10px;
-    font-size: 12px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  .map a {
-    text-decoration: none;
-    color: #000;
-    display: block;
-    transition: color 0.3s;
-  }
-
-  .map a:hover {
-    color: #007bff;
-  }
-
-  /************************************* */
-  footer {
-    background-color: #ffffff;
-    padding-top: 70px;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  footer h5 {
-    color: #000;
-    font-size: 20px;
-  }
-
-  footer p {
-    color: #000;
+    height: 25px;
+    width: 160px;
     font-size: 13px;
-    margin-top: 14px;
-    margin-bottom: 20px;
-  }
-
-  .social {
-    display: flex;
-    gap: 20px;
-  }
-
-  .social img {
-    height: 50px;
-    border-radius: 50%;
-  }
-
-  .social a {
-    background-color: #f9004d;
-    padding: 20px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-  }
-
-  .social a:hover {
-    transform: scale(1.3);
-    transition: 0.5s;
-  }
-}
-
-@media (max-width: 480px) {
-  nav {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background: linear-gradient(to right, #116574, #c122f1);
-    padding: 2%;
-    z-index: 1000;
-  }
-
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Estilo do Menu Lateral */
-  .side-menu {
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: -250px;
-    background-color: #333;
-    width: 30%;
-    background: linear-gradient(to right, #116574, #c122f1);
-    overflow-x: hidden;
-    padding-top: 15vh;
-    z-index: 1000;
-    transition: right 0.8s;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-  .hidden {
-    display: none;
-  }
-
-  .side-menu a {
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #fff;
-    display: block;
-    transition: color 0.3s;
-  }
-  .openbtn:hover {
-    background: linear-gradient(to right, #ffffff, #ffffff);
-    color: #0e0d0d;
-  }
-  .side-menu a:hover {
-    color: #f1f1f1;
-  }
-
-  .side-menu .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-
-  .openbtn {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
-    display: none;
-    transition: color 0.3s;
-    border-radius: 5px;
-  }
-  .openbtn {
-    display: block;
-    background: linear-gradient(to right, #fff, #fff);
-    color: #000;
-  }
-
-  .side-menu {
-    left: 0;
-  }
-
-  .side-menu img {
-    width: 20vh;
-    height: 20vh;
-
-    left: 0;
-    top: 0;
-    right: 0;
-  }
-
-  .minha-foto {
-    display: none;
-  }
-
-  li {
-    list-style: none;
-    display: inline-block;
-    font-size: 12px;
-    margin-right: 1px;
-    cursor: pointer;
-  }
-
-  .link-menu {
-    text-decoration: none;
-    color: #ffffff;
-    border: 2px solid;
-    padding: 1px 1px;
-    border-radius: 4px;
-    display: none;
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  li:hover .link-menu,
-  .link-menu:hover {
-    color: #00f929;
-    border-color: #f9004d;
-  }
-
-  /* Contêiner principal */
-  .meu-nome {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-  }
-
-  /* Contêiner do slider */
-  .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    transition: opacity 1s ease-in-out;
-  }
-
-  /* Slide individual */
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  /* Imagem dentro do slide */
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Slide ativo */
-  .slide.active {
-    opacity: 1;
-  }
-
-  /* Texto sobreposto */
-  .slider-text {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    z-index: 10;
-    text-align: center;
-  }
-
-  /* Setas de navegação */
-  .prev,
-  .next {
-    position: absolute;
-    bottom: 50%;
-    width: auto;
-    padding: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-    user-select: none;
-    text-align: center;
-    z-index: 3;
-  }
-
-  .prev {
-    left: 10px;
-  }
-
-  .next {
-    right: 10px;
-  }
-
-  /* Dots de navegação */
-  .nav-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-  }
-
-  .dot {
-    background-color: #ffffff;
-    border-radius: 50%;
-    height: 5px;
-    width: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .dot.active {
-    background-color: #f9004d;
-  }
-
-  .agendar {
-    text-align: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-  }
-
-  .agendar h2 {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 700;
-    color: #000000;
-    font-size: 12px;
-    margin: 0;
-  }
-
-  .agendar h2 span {
-    display: inline;
-  }
-
-  .agendar h2 .fisiolife {
-    color: #008000;
-  }
-
-  .agendar h2 .fisiolife-live {
-    color: #00ff00;
-  }
-
-  .agendar h2 a {
-    color: #f9004d;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .agendar h2 a:hover {
-    text-decoration: underline;
-  }
-
-  section {
-    display: flex;
-    align-items: center;
-    padding: 50px 10%;
-    background-color: #ddd0d0;
-    flex-wrap: wrap;
-  }
-
-  section img {
-    height: 150px;
-    border-radius: 50%;
-    border: 2px solid #f9004d;
-    margin-right: 40px;
-    margin-bottom: 10px;
-    margin-top: 15px;
-  }
-  section#sobre p {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul li {
-    margin-bottom: 10px;
-  }
-  section#sobre ul li strong {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-
-  section div h2 {
-    color: #000000;
-    font-size: 20px;
-  }
-
-  section div p {
-    color: #474041;
-    font-size: 15px;
-    margin-top: 15px;
-    margin-bottom: 80px;
-  }
-
-  section div button {
-    color: #ffffff;
-    background-color: #f9004d;
-    height: 30px;
-    width: 100px;
-    font-size: 12px;
     border: none;
-    border-radius: 5x;
+    border-radius: 16px;
   }
 
   section div button:hover {
@@ -1295,1745 +386,191 @@ footer p {
     transition: 0.5s;
   }
 
-  /*********************************/
   .projetos {
     padding-top: 20px;
-    padding-bottom: 30px;
-    position: relative;
+  }
+  .projetos h2 {
+    font-size: 25px;
+    color: #ffffff;
     text-align: center;
   }
-
-  .fundo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-  .fundo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .projetos h2 {
-    font-size: 20px;
-    color: #ffffff;
-    margin-bottom: 30px;
+  .cards-projetos {
     margin-top: 30px;
   }
-
-  /* Estilo para o contêiner dos cartões */
-  .cards-projetos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px 1px;
-    justify-items: center;
-    margin-top: 80px;
-  }
-
-  /* Estilo para cada cartão */
   .cards {
-    width: 100%;
-    max-width: 150px;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
-      0 4px 8px rgba(34, 34, 180, 0.7);
-    background-color: #fff;
-  }
-
-  /* Contêiner da imagem dentro do cartão */
-  .cards .a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .cards .a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid #f9004d;
-    border-radius: 10px;
-  }
-
-  .cards .a:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-  }
-
-  .cards h4 {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 10px;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
+    width: 80%;
+    margin-bottom: 20px;
   }
   .cards h5 {
-    font-family: "Montserrat", sans-serif;
-    color: #fff;
-    font-size: 16px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 15px;
   }
+
   .cards p {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 16px;
-  }
-  /************************************* */
-
-  .video-clinica {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-direction: column;
-  }
-  .video iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .map iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .video,
-  .map {
-    flex: 1;
-  }
-  .map h2 {
-    margin-top: 10px;
-    font-size: 12px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  .map a {
-    text-decoration: none;
-    color: #000;
-    display: block;
-    transition: color 0.3s;
+    font-size: 14px;
   }
 
-  .map a:hover {
-    color: #007bff;
-  }
-
-  /************************************* */
-  footer {
-    background-color: #ffffff;
-    padding-top: 70px;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .cards a {
+    font-size: 14px;
   }
 
   footer h5 {
-    color: #000;
     font-size: 20px;
   }
 
   footer p {
-    color: #000;
-    font-size: 10px;
-    margin-top: 14px;
-    margin-bottom: 20px;
+    font-size: 16px;
   }
 
-  .social {
-    display: flex;
-    gap: 20px;
+  .caixa-principal {
+    background-size: 0%;
+    background-position: right 0px bottom 0px;
   }
-
-  .social img {
-    height: 50px;
-    border-radius: 50%;
-  }
-
-  .social a {
-    background-color: #f9004d;
-    padding: 20px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
+  .download-button {
+    background-color: #4caf50;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-  }
-
-  .social a:hover {
-    transform: scale(1.3);
-    transition: 0.5s;
+    font-size: 16px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
   }
 }
 
-@media (max-width: 390px) {
-  nav {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background: linear-gradient(to right, #116574, #c122f1);
-    padding: 2%;
-    z-index: 1000;
+/* Restante do CSS ... */
+
+@media (max-width: 576px) {
+  .portfolio {
+    font-size: 25px;
   }
 
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Estilo do Menu Lateral */
-  .side-menu {
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: -250px;
-    background-color: #333;
-    width: 30%;
-    background: linear-gradient(to right, #116574, #c122f1);
-    overflow-x: hidden;
-    padding-top: 15vh;
-    z-index: 1000;
-    transition: right 0.8s;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-  .hidden {
-    display: none;
-  }
-
-  .side-menu a {
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #fff;
+  .meu-nome img.minha-foto {
     display: block;
-    transition: color 0.3s;
-  }
-  .openbtn:hover {
-    background: linear-gradient(to right, #ffffff, #ffffff);
-    color: #0e0d0d;
-  }
-  .side-menu a:hover {
-    color: #f1f1f1;
-  }
-
-  .side-menu .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-
-  .openbtn {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
-    display: none;
-    transition: color 0.3s;
-    border-radius: 5px;
-  }
-  .openbtn {
-    display: block;
-    background: linear-gradient(to right, #fff, #fff);
-    color: #000;
-  }
-
-  .side-menu {
-    left: 0;
-  }
-
-  .side-menu img {
-    width: 20vh;
-    height: 20vh;
-
-    left: 0;
-    top: 0;
-    right: 0;
-  }
-
-  .minha-foto {
-    display: none;
+    height: 120px;
+    width: 90px;
+    border-radius: 50%;
+    border: 2px solid #f9004d;
+    margin: 0 auto;
+    margin-bottom: 50px;
   }
 
   li {
-    list-style: none;
+    font-size: 10px;
+    margin-top: 20px;
+    margin-right: 10px;
+  }
+  .download-button {
+    background-color: transparent;
+    color: green;
+    padding: 1px 5px;
+    cursor: pointer;
+    font-size: 10px;
+    text-align: center;
     display: inline-block;
-    font-size: 12px;
-    margin-right: 1px;
-    cursor: pointer;
-  }
-
-  .link-menu {
     text-decoration: none;
-    color: #ffffff;
-    border: 2px solid;
-    padding: 1px 1px;
-    border-radius: 4px;
-    display: none;
-    line-height: 1.5;
-    text-align: center;
   }
 
-  li:hover .link-menu,
-  .link-menu:hover {
-    color: #00f929;
-    border-color: #f9004d;
-  }
-
-  /* Contêiner principal */
-  .meu-nome {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-  }
-
-  /* Contêiner do slider */
-  .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    transition: opacity 1s ease-in-out;
-  }
-
-  /* Slide individual */
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  /* Imagem dentro do slide */
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Slide ativo */
-  .slide.active {
-    opacity: 1;
-  }
-
-  /* Texto sobreposto */
-  .slider-text {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    z-index: 10;
-    text-align: center;
-  }
-
-  /* Setas de navegação */
-  .prev,
-  .next {
-    position: absolute;
-    bottom: 50%;
-    width: auto;
-    padding: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-    user-select: none;
-    text-align: center;
-    z-index: 3;
-  }
-
-  .prev {
-    left: 10px;
-  }
-
-  .next {
-    right: 10px;
-  }
-
-  /* Dots de navegação */
-  .nav-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-  }
-
-  .dot {
-    background-color: #ffffff;
-    border-radius: 50%;
-    height: 5px;
-    width: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .dot.active {
-    background-color: #f9004d;
-  }
-
-  .agendar {
-    text-align: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-  }
-
-  .agendar h2 {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 700;
-    color: #000000;
-    font-size: 12px;
-    margin: 0;
-  }
-
-  .agendar h2 span {
-    display: inline;
-  }
-
-  .agendar h2 .fisiolife {
-    color: #008000;
-  }
-
-  .agendar h2 .fisiolife-live {
-    color: #00ff00;
-  }
-
-  .agendar h2 a {
-    color: #f9004d;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .agendar h2 a:hover {
-    text-decoration: underline;
-  }
-
-  section {
-    display: flex;
-    align-items: center;
-    padding: 50px 10%;
-    background-color: #ddd0d0;
-    flex-wrap: wrap;
-  }
-
-  section img {
-    height: 150px;
-    border-radius: 50%;
-    border: 2px solid #f9004d;
-    margin-right: 40px;
-    margin-bottom: 10px;
-    margin-top: 15px;
-  }
-  section#sobre p {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul li {
-    margin-bottom: 10px;
-  }
-  section#sobre ul li strong {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-
-  section div h2 {
-    color: #000000;
+  h1 {
     font-size: 20px;
   }
 
+  .meu-nome h3 {
+    font-size: 10px;
+  }
+
+  section div h2 {
+    font-size: 20px;
+  }
+
+  section img {
+    display: none;
+  }
+
   section div p {
-    color: #474041;
     font-size: 15px;
-    margin-top: 15px;
-    margin-bottom: 80px;
   }
 
   section div button {
     color: #ffffff;
     background-color: #f9004d;
-    height: 30px;
-    width: 100px;
-    font-size: 12px;
+    height: 25px;
+    width: 160px;
+    font-size: 13px;
     border: none;
-    border-radius: 5x;
+    border-radius: 16px;
   }
 
   section div button:hover {
-    color: #000;
+    color: #000000;
     border: 3px solid #f9004d;
     transition: 0.5s;
   }
 
-  /*********************************/
+  .projetos h2 {
+    font-size: 25px;
+    color: #ffffff;
+    text-align: center;
+  }
   .projetos {
     padding-top: 20px;
-    padding-bottom: 30px;
-    position: relative;
-    text-align: center;
+    flex-direction: row;
   }
-
-  .fundo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-  .fundo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .projetos h2 {
-    font-size: 20px;
-    color: #ffffff;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-
-  /* Estilo para o contêiner dos cartões */
   .cards-projetos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px 1px;
-    justify-items: center;
-    margin-top: 80px;
-  }
-
-  /* Estilo para cada cartão */
-  .cards {
-    width: 100%;
-    max-width: 150px;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
+    margin-top: 30px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
-      0 4px 8px rgba(34, 34, 180, 0.7);
-    background-color: #fff;
-  }
-
-  /* Contêiner da imagem dentro do cartão */
-  .cards .a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .cards .a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid #f9004d;
-    border-radius: 10px;
-  }
-
-  .cards .a:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-  }
-
-  .cards h4 {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 10px;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  .cards h5 {
-    font-family: "Montserrat", sans-serif;
-    color: #fff;
-    font-size: 16px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  .cards p {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 16px;
-  }
-  /************************************* */
-
-  .video-clinica {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-direction: column;
-  }
-  .video iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .map iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .video,
-  .map {
-    flex: 1;
-  }
-  .map h2 {
-    margin-top: 10px;
-    font-size: 12px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  .map a {
-    text-decoration: none;
-    color: #000;
-    display: block;
-    transition: color 0.3s;
-  }
-
-  .map a:hover {
-    color: #007bff;
-  }
-
-  /************************************* */
-  footer {
-    background-color: #ffffff;
-    padding-top: 70px;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  footer h5 {
-    color: #000;
-    font-size: 20px;
-  }
-
-  footer p {
-    color: #000;
-    font-size: 12px;
-    margin-top: 14px;
-    margin-bottom: 20px;
-    max-width: 80%;
-    text-align: center;
-  }
-
-  .social {
-    display: flex;
-    gap: 20px;
-  }
-
-  .social img {
-    height: 50px;
-    border-radius: 50%;
-  }
-
-  .social a {
-    background-color: #f9004d;
-    padding: 20px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-  }
-
-  .social a:hover {
-    transform: scale(1.3);
-    transition: 0.5s;
-  }
-}
-
-@media (max-width: 360px) {
-  nav {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    align-items: center;
     justify-content: space-between;
-    width: 100%;
-    background: linear-gradient(to right, #116574, #c122f1);
-    padding: 2%;
-    z-index: 1000;
   }
 
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Estilo do Menu Lateral */
-  .side-menu {
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: -250px;
-    background-color: #333;
-    width: 30%;
-    background: linear-gradient(to right, #116574, #c122f1);
-    overflow-x: hidden;
-    padding-top: 15vh;
-    z-index: 1000;
-    transition: right 0.8s;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-  .hidden {
-    display: none;
-  }
-
-  .side-menu a {
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
-    font-size: 20px;
-    color: #fff;
-    display: block;
-    transition: color 0.3s;
-  }
-  .openbtn:hover {
-    background: linear-gradient(to right, #ffffff, #ffffff);
-    color: #0e0d0d;
-  }
-  .side-menu a:hover {
-    color: #f1f1f1;
-  }
-
-  .side-menu .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-
-  .openbtn {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
-    display: none;
-    transition: color 0.3s;
-    border-radius: 5px;
-  }
-  .openbtn {
-    display: block;
-    background: linear-gradient(to right, #fff, #fff);
-    color: #000;
-  }
-
-  .side-menu {
-    left: 0;
-  }
-
-  .side-menu img {
-    width: 20vh;
-    height: 20vh;
-
-    left: 0;
-    top: 0;
-    right: 0;
-  }
-
-  .minha-foto {
-    display: none;
-  }
-
-  li {
-    list-style: none;
-    display: inline-block;
-    font-size: 12px;
-    margin-right: 1px;
-    cursor: pointer;
-  }
-
-  .link-menu {
-    text-decoration: none;
-    color: #ffffff;
-    border: 2px solid;
-    padding: 1px 1px;
-    border-radius: 4px;
-    display: none;
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  li:hover .link-menu,
-  .link-menu:hover {
-    color: #00f929;
-    border-color: #f9004d;
-  }
-
-  /* Contêiner principal */
-  .meu-nome {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-  }
-
-  /* Contêiner do slider */
-  .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    transition: opacity 1s ease-in-out;
-  }
-
-  /* Slide individual */
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  /* Imagem dentro do slide */
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Slide ativo */
-  .slide.active {
-    opacity: 1;
-  }
-
-  /* Texto sobreposto */
-  .slider-text {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    z-index: 10;
-    text-align: center;
-  }
-
-  /* Setas de navegação */
-  .prev,
-  .next {
-    position: absolute;
-    bottom: 50%;
-    width: auto;
-    padding: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-    user-select: none;
-    text-align: center;
-    z-index: 3;
-  }
-
-  .prev {
-    left: 10px;
-  }
-
-  .next {
-    right: 10px;
-  }
-
-  /* Dots de navegação */
-  .nav-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-  }
-
-  .dot {
-    background-color: #ffffff;
-    border-radius: 50%;
-    height: 5px;
-    width: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .dot.active {
-    background-color: #f9004d;
-  }
-
-  .agendar {
-    text-align: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-  }
-
-  .agendar h2 {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 700;
-    color: #000000;
-    font-size: 12px;
-    margin: 0;
-  }
-
-  .agendar h2 span {
-    display: inline;
-  }
-
-  .agendar h2 .fisiolife {
-    color: #008000;
-  }
-
-  .agendar h2 .fisiolife-live {
-    color: #00ff00;
-  }
-
-  .agendar h2 a {
-    color: #f9004d;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .agendar h2 a:hover {
-    text-decoration: underline;
-  }
-
-  section {
-    display: flex;
-    align-items: center;
-    padding: 50px 10%;
-    background-color: #ddd0d0;
-    flex-wrap: wrap;
-  }
-
-  section img {
-    height: 150px;
-    border-radius: 50%;
-    border: 2px solid #f9004d;
-    margin-right: 40px;
-    margin-bottom: 10px;
-    margin-top: 15px;
-  }
-  section#sobre p {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul li {
-    margin-bottom: 10px;
-  }
-  section#sobre ul li strong {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-
-  section div h2 {
-    color: #000000;
-    font-size: 20px;
-  }
-
-  section div p {
-    color: #474041;
-    font-size: 15px;
-    margin-top: 15px;
-    margin-bottom: 80px;
-  }
-
-  section div button {
-    color: #ffffff;
-    background-color: #f9004d;
-    height: 30px;
-    width: 100px;
-    font-size: 12px;
-    border: none;
-    border-radius: 5x;
-  }
-
-  section div button:hover {
-    color: #000;
-    border: 3px solid #f9004d;
-    transition: 0.5s;
-  }
-
-  /*********************************/
-  .projetos {
-    padding-top: 20px;
-    padding-bottom: 30px;
-    position: relative;
-    text-align: center;
-  }
-
-  .fundo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-  .fundo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .projetos h2 {
-    font-size: 20px;
-    color: #ffffff;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-
-  /* Estilo para o contêiner dos cartões */
-  .cards-projetos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px 1px;
-    justify-items: center;
-    margin-top: 80px;
-  }
-
-  /* Estilo para cada cartão */
   .cards {
-    width: 100%;
-    max-width: 150px;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
-      0 4px 8px rgba(34, 34, 180, 0.7);
-    background-color: #fff;
+    width: 90%;
+    margin-bottom: 20px;
   }
 
-  /* Contêiner da imagem dentro do cartão */
-  .cards .a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .cards .a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid #f9004d;
-    border-radius: 10px;
-  }
-
-  .cards .a:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-  }
-
-  .cards h4 {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 10px;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
   .cards h5 {
-    font-family: "Montserrat", sans-serif;
-    color: #fff;
-    font-size: 16px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 15px;
   }
+
   .cards p {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 16px;
-  }
-  /************************************* */
-
-  .video-clinica {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-direction: column;
-  }
-  .video iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .map iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .video,
-  .map {
-    flex: 1;
-  }
-  .map h2 {
-    margin-top: 10px;
-    font-size: 12px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  .map a {
-    text-decoration: none;
-    color: #000;
-    display: block;
-    transition: color 0.3s;
+    font-size: 14px;
   }
 
-  .map a:hover {
-    color: #007bff;
-  }
-
-  /************************************* */
-  footer {
-    background-color: #ffffff;
-    padding-top: 70px;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  .cards a {
+    font-size: 14px;
   }
 
   footer h5 {
-    color: #000;
     font-size: 20px;
   }
 
   footer p {
-    color: #000;
-    font-size: 12px;
-    margin-top: 14px;
-    margin-bottom: 20px;
-    max-width: 80%;
-    text-align: center;
+    font-size: 16px;
   }
 
-  .social {
+  .caixa-principal {
+    background-size: 0%;
+    background-position: right 0px bottom 0px;
+  }
+  .botoes {
     display: flex;
-    gap: 20px;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    margin-top: 20px; /* Espaço acima dos botões */
   }
 
-  .social img {
-    height: 50px;
-    border-radius: 50%;
-  }
-
-  .social a {
-    background-color: #f9004d;
-    padding: 20px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
-    cursor: pointer;
-  }
-
-  .social a:hover {
-    transform: scale(1.3);
-    transition: 0.5s;
-  }
-}
-
-@media (max-width: 330px) {
-  nav {
-    position: fixed;
-    display: none;
-    top: 0;
-    left: 0;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background: linear-gradient(to right, #116574, #c122f1);
-    padding: 2%;
-    z-index: 1000;
-  }
-
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Estilo do Menu Lateral */
-  .side-menu {
-    height: 100%;
-    position: fixed;
-    top: 0;
-    right: -250px;
-    background-color: #333;
-    width: 30%;
-    background: linear-gradient(to right, #116574, #c122f1);
-    overflow-x: hidden;
-    padding-top: 15vh;
-    z-index: 1000;
-    transition: right 0.8s;
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-  }
-  .hidden {
-    display: none;
-  }
-
-  .side-menu a {
-    padding: 8px 8px 8px 8px;
-    text-decoration: none;
+  .prev-btn,
+  .next-btn {
     font-size: 20px;
-    color: #fff;
-    display: block;
-    transition: color 0.3s;
-  }
-  .openbtn:hover {
-    background: linear-gradient(to right, #ffffff, #ffffff);
-    color: #0e0d0d;
-  }
-  .side-menu a:hover {
-    color: #f1f1f1;
-  }
-
-  .side-menu .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-  }
-
-  .openbtn {
-    font-size: 30px;
-    cursor: pointer;
-    position: fixed;
-    top: 10px;
-    left: 10px;
-    z-index: 1000;
-    display: none;
-    transition: color 0.3s;
-    border-radius: 5px;
-  }
-  .openbtn {
-    display: block;
-    background: linear-gradient(to right, #fff, #fff);
-    color: #000;
-  }
-
-  .side-menu {
-    left: 0;
-  }
-
-  .side-menu img {
-    width: 20vh;
-    height: 20vh;
-
-    left: 0;
-    top: 0;
-    right: 0;
-  }
-
-  .minha-foto {
-    display: none;
-  }
-
-  li {
-    list-style: none;
-    display: inline-block;
-    font-size: 12px;
-    margin-right: 1px;
-    cursor: pointer;
-  }
-
-  .link-menu {
-    text-decoration: none;
-    color: #ffffff;
-    border: 2px solid;
-    padding: 1px 1px;
-    border-radius: 4px;
-    display: none;
-    line-height: 1.5;
-    text-align: center;
-  }
-
-  li:hover .link-menu,
-  .link-menu:hover {
-    color: #00f929;
-    border-color: #f9004d;
-  }
-
-  /* Contêiner principal */
-  .meu-nome {
-    position: relative;
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 10%;
-  }
-
-  /* Contêiner do slider */
-  .slider {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    transition: opacity 1s ease-in-out;
-  }
-
-  /* Slide individual */
-  .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-  }
-
-  /* Imagem dentro do slide */
-  .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  /* Slide ativo */
-  .slide.active {
-    opacity: 1;
-  }
-
-  /* Texto sobreposto */
-  .slider-text {
-    position: absolute;
-    bottom: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    z-index: 10;
-    text-align: center;
-  }
-
-  /* Setas de navegação */
-  .prev,
-  .next {
-    position: absolute;
-    bottom: 50%;
-    width: auto;
-    padding: 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 15px;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-    user-select: none;
-    text-align: center;
-    z-index: 3;
-  }
-
-  .prev {
-    left: 10px;
-  }
-
-  .next {
-    right: 10px;
-  }
-
-  /* Dots de navegação */
-  .nav-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-  }
-
-  .dot {
-    background-color: #ffffff;
-    border-radius: 50%;
-    height: 5px;
-    width: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-
-  .dot.active {
     background-color: #f9004d;
-  }
-
-  .agendar {
-    text-align: center;
-    margin-top: 5vh;
-    margin-bottom: 5vh;
-  }
-
-  .agendar h2 {
-    font-family: "Josefin Sans", sans-serif;
-    font-weight: 700;
-    color: #000000;
-    font-size: 12px;
-    margin: 0;
-  }
-
-  .agendar h2 span {
-    display: inline;
-  }
-
-  .agendar h2 .fisiolife {
-    color: #008000;
-  }
-
-  .agendar h2 .fisiolife-live {
-    color: #00ff00;
-  }
-
-  .agendar h2 a {
-    color: #f9004d;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-  .agendar h2 a:hover {
-    text-decoration: underline;
-  }
-
-  section {
-    display: flex;
-    align-items: center;
-    padding: 50px 10%;
-    background-color: #ddd0d0;
-    flex-wrap: wrap;
-  }
-
-  section img {
-    height: 150px;
-    border-radius: 50%;
-    border: 2px solid #f9004d;
-    margin-right: 40px;
-    margin-bottom: 10px;
-    margin-top: 15px;
-  }
-  section#sobre p {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul {
-    margin-bottom: 5px;
-  }
-
-  section#sobre ul li {
-    margin-bottom: 10px;
-  }
-  section#sobre ul li strong {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-
-  section div h2 {
-    color: #000000;
-    font-size: 20px;
-  }
-
-  section div p {
-    color: #474041;
-    font-size: 15px;
-    margin-top: 15px;
-    margin-bottom: 80px;
-  }
-
-  section div button {
-    color: #ffffff;
-    background-color: #f9004d;
-    height: 30px;
-    width: 100px;
-    font-size: 12px;
+    color: white;
     border: none;
-    border-radius: 5x;
-  }
-
-  section div button:hover {
-    color: #000;
-    border: 3px solid #f9004d;
-    transition: 0.5s;
-  }
-
-  /*********************************/
-  .projetos {
-    padding-top: 20px;
-    padding-bottom: 30px;
-    position: relative;
-    text-align: center;
-  }
-
-  .fundo {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-  }
-
-  .fundo img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .projetos h2 {
-    font-size: 20px;
-    color: #ffffff;
-    margin-bottom: 30px;
-    margin-top: 30px;
-  }
-
-  /* Estilo para o contêiner dos cartões */
-  .cards-projetos {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px 1px;
-    justify-items: center;
-    margin-top: 80px;
-  }
-
-  /* Estilo para cada cartão */
-  .cards {
-    width: 100%;
-    max-width: 150px;
-    position: relative;
-    border-radius: 5px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 4px rgba(193, 34, 241, 0.7),
-      0 4px 8px rgba(34, 34, 180, 0.7);
-    background-color: #fff;
-  }
-
-  /* Contêiner da imagem dentro do cartão */
-  .cards .a img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
-
-  .cards .a {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.8);
-    border: 2px solid #f9004d;
-    border-radius: 10px;
-  }
-
-  .cards .a:hover {
-    transform: scale(1.05);
-    transition: transform 0.3s ease;
-  }
-
-  .cards h4 {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 10px;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  .cards h5 {
-    font-family: "Montserrat", sans-serif;
-    color: #fff;
-    font-size: 16px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  .cards p {
-    font-family: "Montserrat", sans-serif;
-    color: #474041;
-    font-size: 16px;
-  }
-  /************************************* */
-
-  .video-clinica {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-    flex-direction: column;
-  }
-  .video iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .map iframe {
-    width: 100%;
-    height: 200px;
-    border: 0;
-  }
-  .video,
-  .map {
-    flex: 1;
-  }
-  .map h2 {
-    margin-top: 10px;
-    font-size: 12px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-  }
-  .map a {
-    text-decoration: none;
-    color: #000;
-    display: block;
-    transition: color 0.3s;
-  }
-
-  .map a:hover {
-    color: #007bff;
-  }
-
-  /************************************* */
-  footer {
-    background-color: #ffffff;
-    padding-top: 70px;
-    padding-bottom: 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  footer h5 {
-    color: #000;
-    font-size: 20px;
-  }
-
-  footer p {
-    color: #000;
-    font-size: 12px;
-    margin-top: 14px;
-    margin-bottom: 20px;
-    max-width: 80%;
-    text-align: center;
-  }
-
-  .social {
-    display: flex;
-    gap: 20px;
-  }
-
-  .social img {
-    height: 50px;
-    border-radius: 50%;
-  }
-
-  .social a {
-    background-color: #f9004d;
-    padding: 20px;
-    border-radius: 50%;
-    align-items: center;
-    justify-content: center;
-    height: 30px;
-    width: 30px;
+    padding: 10px 20px;
     cursor: pointer;
+    border-radius: 5px;
   }
 
-  .social a:hover {
-    transform: scale(1.3);
-    transition: 0.5s;
+  .prev-btn:hover,
+  .next-btn:hover {
+    background-color: #d60041;
   }
 }

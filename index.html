@@ -1,234 +1,315 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Responsive Personal Portfolio Website Design | Codehal</title>
+
     <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,200;1,200&display=swap"
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,500;1,500&display=swap"
-      rel="stylesheet"
-    />
-    <title>Francilino Neto</title>
+
+    <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
-    <div class="caixa-principal" id="home">
-      <nav>
-        <h2 class="portfolio">Portfo<span>lio</span></h2>
-        <ul>
-          <li><a class="link-menu" href="#home">Home</a></li>
-          <li><a class="link-menu" href="#sobre">Sobre</a></li>
-          <li><a class="link-menu" href="#projetos">Projetos</a></li>
-          <li><a class="link-menu" href="#fale-comigo">Contato</a></li>
-          <li>
-            <a
-              href="./img/curriculo.pdf"
-              download="curriculo"
-              class="download-button"
-              >Baixar CV</a
-            >
-          </li>
-        </ul>
-      </nav>
-      <div class="meu-nome">
-        <img src="./img/eu.png" alt="Minha foto" class="minha-foto" />
-        <h1>Francilino <span>Neto</span></h1>
-        <h3>Programador Full Stack</h3>
-      </div>
-    </div>
+    
+    <header class="header">
+      <a href="#" class="logo">Portfolio</a>
 
-    <section id="sobre">
-      <img src="./img/eu.png" alt="Minha foto" />
-      <div>
-        <h2>Sobre mim</h2>
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">Sobre</a>
+        <a href="#services">Serviços</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contato</a>
+      </nav>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-contente">
+        <h3>Olá, eu sou</h3>
+        <h1>Francilino Neto</h1>
+        <h3>Sou um: <span class="multiple-text"></span></h3>
+        <p>
+          Programação é minha paixão, desde os meus 12 anos sempre fui
+          apaixonado por tecnologia e hoje estou atuando na área que amo!
+        </p>
+
+        <div class="social-media">
+          <a href="https://t.me/programador_python" target="_blank"><i class='bx bxl-telegram'></i></i></a>
+          <a href="https://www.instagram.com/programador_afobado/" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
+          <a href="https://www.linkedin.com/in/francilino-neto" target="_blank"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+          <a href="https://github.com/Francilino-Netoo" target="_blank"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a
+            href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text&type=phone_number&app_absent=0"
+            target="_blank"
+            ><i class="bx bxl-whatsapp"></i
+          ></a>
+        </div>
+        <a href="./images/curriculo.pdf"
+        download="curriculo" class="btn">Dowload CV</a>
+      </div>
+      <div class="home-img">
+        <img src="images/home.png" alt="" />
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="images/about.png" alt="" />
+      </div>
+      <div class="about-content">
+        <h2 class="heading">Sobre <span>mim</span></h2>
+        <h3>Desenvolvedor Full Stack</h3>
         <p>
           Atuo como freelancer, utilizando Python para criação de APIs e
           Node.js. Tenho experiência em técnicas de web scraping para análise de
           dados e automações baseadas nessas análises. Desenvolvo aplicativos
           móveis com React Native e sites com JavaScript e React.js,
           integrando-os a bancos de dados para oferecer soluções completas e
+          funcionais.Atuo como freelancer, utilizando Python para criação de
+          APIs e Node.js. Tenho experiência em técnicas de web scraping para
+          análise de dados e automações baseadas nessas análises. Desenvolvo
+          aplicativos móveis com React Native e sites com JavaScript e React.js,
+          integrando-os a bancos de dados para oferecer soluções completas e
           funcionais.
         </p>
-        <a href="https://www.linkedin.com/in/francilino-neto" target="_blank">
-          <button>Entre em contato</button>
-        </a>
+        <a href="#5" class="btn">Ler Mais</a>
       </div>
     </section>
 
-    <div class="projetos" id="projetos">
-      <h2>Principais Projetos</h2>
-
-      <div class="cards-projetos">
-        <div class="cards">
-          <img
-            class="tamanhoimg"
-            src="./img/Site_Fisio.jpg"
-            alt="Projeto Fisio"
-          />
-          <h5>Fiseoterapia</h5>
-          <p>
-            Este projeto tem o intuito de divulgar o trabalho da profissional em
-            Fisioterapia de forma mais organizada.
+    <section class="services" id="services">
+      <h2 class="heading">Meus <span>Serviços</span></h2>
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bx-code"></i>
+          <h3>Desenvoledor Back-And</h3>
+          <p class="text-content">
+            Especializado em desenvolvimento back-end, utilizo Python (Flask) ou Node.js para criar APIs robustas e aplicações eficientes. Foco em garantir a segurança, escalabilidade e performance dos sistemas, sempre buscando atender às necessidades dos meus clientes.
           </p>
-          <a
-            class="mudarbotao"
-            href="https://dratainasousa.com.br/"
-            target="_blank"
-            >Acessar Site</a
-          >
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
 
-        <div class="cards">
-          <img
-            class="tamanhoimg"
-            src="./img/Site_Apps.jpg"
-            alt="Projeto IA-Apps"
-          />
-          <h5>Apps e IAs</h5>
-          <p>
-            Utilizei aprendizado por reforço e uma ferramenta de catalogação
-            para armazenar os resultados em um banco de dados, enviando as
-            melhores entradas para os jogadores.
+        <div class="services-box">
+          <i class="bx bxs-paint"></i>
+          <h3>Desenvoledor Web</h3>
+          <p class="text-content">
+            Crio sites dinâmicos e criativos, com o intuito de atender às expectativas dos meus clientes. Utilizo ferramentas como GIMP 2.0 para criar imagens nítidas e impactantes, garantindo que o design visual seja atraente e funcional.
           </p>
-          <a
-            class="mudarbotao"
-            href="https://apiafobada.com.br/"
-            target="_blank"
-            >Acessar Site</a
-          >
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
-
-        <div class="cards">
-          <img src="./img/3d.png" alt="Portfólio 3D" />
-
-          <h5>Portfólio 3D</h5>
-          <p>
-            Este projeto foi desenvolvido com o objetivo de criar um portfólio
-            interativo e diferenciado. Utilizei o Blender para modelar em 3D do
-            meu quarto e a biblioteca Three.js para controlar as posições das
-            câmeras, as iluminações do cenário e interações com objetos
-            específicos da cena.
+        <div class="services-box">
+          <i class='bx bx-bot' ></i>
+          <h3>Chat Bots</h3>
+          <p class="text-content">
+            Desenvolvo chatbots inteligentes utilizando as APIs do Telegram e WhatsApp, automatizando interações e otimizando a comunicação para empresas e projetos, sempre com foco em eficiência e facilidade de uso.
           </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/Porfolio-3D"
-            >Repositório</a
-          >
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
-        <div class="cards">
-          <img class="tamanhoimg" src="./img/imgapp/1.jpg" alt="Portfólio 3D" />
-          <h5>Barbeiro Afobado</h5>
-          <p>
-            Este é um novo projeto React Native para Android, onde você pode
-            simular agendamentos de horário em barbeiros cadastrados no
-            aplicativo.
+        <div class="services-box">
+          <i class="bx bxl-android"></i>
+          <h3>Desenvoledor Mobile</h3>
+          <p class="text-content">
+            Especializado no desenvolvimento de aplicativos móveis utilizando React Native, criando soluções eficientes e de alta performance para plataformas iOS e Android. Trabalho para garantir uma experiência de usuário fluida e intuitiva, alinhada às necessidades e expectativas dos clientes.
           </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/barbeiro"
-            target="_blank"
-            >Repositório</a
-          >
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
-        <div class="cards">
-          <img src="./img/17.png" alt="APIs" />
-          <h5>APIs-Pragmatic-Evolution-Ezugi</h5>
-          <p>
-            Essa API pega os resultados des 3 provedoras de games Pragmatic
-            Play, Evolution e Ezugi. Com elas você vai ter acesso a resultados
-            de 217 games em tempo real, sendo 63 da Pragmatic, 99 da Evolution e
-            55 da Ezugi.
+        <div class="services-box">
+          <i class="bx bxs-cog"></i>
+          <h3>Automação Web</h3>
+          <p class="text-content">
+            Especializado em automação web, utilizando ferramentas e técnicas para automatizar processos repetitivos e integrações entre sistemas. Com foco em eficiência e precisão, desenvolvo soluções que economizam tempo e reduzem erros, melhorando a produtividade e a eficácia operacional.
           </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/APIs-Pragmatic-Evolution-Ezugi-Atualizadas"
-            target="_blank"
-            >Repositório</a
-          >
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
-        <div class="cards">
-          <img src="./img/15.png" alt="API Loja Virtual" />
-
-          <h5>API Loja Virtual</h5>
-          <p>
-            Esta é uma API basica de uma loja virtual onde podemos cadastrar
-            usuarios, adicionar produtos, editar produtos entre outras
-            funcionalidades, usei o Mongoose para armazenar os dados da API.
+        <div class="services-box">
+          <i class="bx bxs-search"></i> 
+          <h3>Web Scraping</h3>
+          <p class="text-content">
+            Especializado em web scraping para coleta e análise de dados usando bibliotecas como BeautifulSoup e Requests. Utilizo também ferramentas como Playwright para scraping dinâmico e automatizado, proporcionando soluções eficientes para extração e processamento de informações da web.
           </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/Back-And-API-Basica"
-            target="_blank"
-            >Repositório</a
-          >
-        </div>
-        <div class="cards">
-          <img src="./img/15.png" alt="Chat WebSocket" />
-
-          <h5>Chat WebSocket</h5>
-          <p>
-            Empreguei o protocolo WebSocket na criação de um chat simples, com a
-            finalidade de aplicar os conhecimentos adquirido em aulas.
-          </p>
-          <a
-            class="mudarbotao"
-            href="https://github.com/Francilino-Netoo/chat-simples-websoket"
-            target="_blank"
-            >Repositório</a
-          >
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
       </div>
-    </div>
-    <footer id="fale-comigo">
-      <h5>Francilino Neto</h5>
-      <p>Para mais informações</p>
+    </section>
+    
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Meus <span>Projetos</span></h2>
 
-      <div class="social">
-        <a href="https://www.linkedin.com/in/francilino-neto" target="_blank"
-          ><img src="./img/LinkedIn_icon.svg.png" alt="LinkedIn"
-        /></a>
-        <a href="https://t.me/programador_python" target="_blank"
-          ><img src="./img/tel.png" alt="Telegram"
-        /></a>
-        <a href="https://github.com/Francilino-Netoo" target="_blank"
-          ><img src="./img/git.png" alt="GitHub"
-        /></a>
-        <a
-          href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text&type=phone_number&app_absent=0"
-          target="_blank"
-          ><img src="./img/wha.png" alt="WhatsApp"
-        /></a>
+      <div class="porfolio-container">
+        <div class="portfolio-box">
+          <img src="images/portfolio1.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Back-And-API-Basica</h4>
+            <p>Esta é uma API basica de uma loja virtual onde podemos cadastrar usuarios, adicionar produtos, editar produtos entre outras funcionalidades, usei o Mongoose para armazenar os dados da API.</p>
+            <a href="https://github.com/Francilino-Netoo/Back-And-API-Basica" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/portfolio2.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Chat simples Websoket</h4>
+            <p>Empreguei o protocolo WebSocket na criação de um chat simples, com a finalidade de aplicar os conhecimentos adquirido em aulas.</p>
+            <a href="https://github.com/Francilino-Netoo/chat-simples-websoket" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio3.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>APIs-Pragmatic-Evolution-Ezugi</h4>
+            <p>Essa API pega os resultados des 3 provedoras de games Pragmatic Play, Evolution e Ezugi. Com elas você vai ter acesso a resultados de 217 games em tempo real, sendo 63 da Pragmatic, 99 da Evolution e 55 da Ezugi.</p>
+            <a href="https://github.com/Francilino-Netoo/APIs-Pragmatic-Evolution-Ezugi-Atualizadas" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/portfolio4.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Site de Fiseoterapia</h4>
+            <p>O projeto tem o intuito de divulgar o trabalho da profissional em Fisioterapia de forma mais organizada.</p>
+            <a href="https://dratainasousa.com.br/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio5.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Automação Web Cassino</h4>
+            <p>Este projeto automatiza entradas em diversos jogos de um cassino online, utilizando as estratégias do próprio usuário. Dessa forma, evita-se que o usuário passe muito tempo na tela do computador ou celular.</p>
+            <a  href="dese" class="link-external5"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio6.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Site Apps Android</h4>
+            <p>Estou disponibilizando 7 Apps Android que fazem automações usando as estratégias do proprio usuario.</p>
+            <a href="https://apiafobada.com.br/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio7.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>App Android no MemuPlay</h4>
+            <p>Meus APKs podem ser rodados no MemuPlay diretamente no seu computador.</p>
+            <a href="dese" class="link-external6"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio8.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Portfólio 3D</h4>
+            <p>Este projeto foi desenvolvido com o objetivo de criar um portfólio
+              interativo e diferenciado. Utilizei o Blender para modelar em 3D do
+              meu quarto e a biblioteca Three.js para controlar as posições das
+              câmeras, as iluminações do cenário e interações com objetos
+              específicos da cena.</p>
+            <a href="https://github.com/Francilino-Netoo/Portifolio/tree/main" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio9.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Modelo de Delivery</h4>
+            <p>Desenvolvi um modelo de delivery simples e eficiente utilizando React.js e Next.js.</p>
+            <a href="https://github.com/Francilino-Netoo/Loja-Virtual" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <h2 class="heading">Contate <span>Me!</span></h2>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" id="name" placeholder="Escreva seu nome" required />
+        </div>
+        
+        <textarea id="message" cols="30" rows="10" placeholder="Sua mensagem" required></textarea>
+        
+        <button type="button" class="btn" id="sendMessageBtn">Enviar Mensagem</button>
+      </form>
+    </section>
+   
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2024 por Francilino Neto | Todos os direitos reservados.</p>
+
+      </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
       </div>
     </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script src="js/script.js"></script>
     <script>
-      let slideIndex = 0;
-
-      function moveSlider(n) {
-        const slides = document.querySelectorAll(".cards");
-        slideIndex += n;
-
-        // Verifica se slideIndex está fora dos limites
-        if (slideIndex < 0) {
-          slideIndex = slides.length - 1;
-        } else if (slideIndex >= slides.length) {
-          slideIndex = 0;
+      document.getElementById('sendMessageBtn').addEventListener('click', function() {
+      
+        const name = document.getElementById('name').value;
+        
+        const message = document.getElementById('message').value;
+    
+        if (!name || !message) {
+          alert('Por favor, preencha todos os campos.');
+          return;
         }
-
-        // Rola suavemente para o slideIndex atual
-        slides[slideIndex].scrollIntoView({
-          behavior: "smooth",
-          inline: "start",
+    
+        const whatsappMessage = `Olá, meu nome é ${name}.\n Mensagem: ${message}`;
+    
+        const whatsappLink = `https://api.whatsapp.com/send?phone=SEU_NUMERO_DE_WHATSAPP&text=${encodeURIComponent(whatsappMessage)}`;
+    
+        window.open(whatsappLink, '_blank');
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.link-external5').forEach(link => {
+              
+              if (link.getAttribute('href') === 'dese' || !link.getAttribute('href')) {
+                  link.addEventListener('click', (event) => {
+                      event.preventDefault(); 
+                      alert('Este projeto está em desenvolvimento :)');
+                  });
+              }
+          });
+          document.querySelectorAll('.link-external6').forEach(link => {
+            
+            if (link.getAttribute('href') === 'dese' || !link.getAttribute('href')) {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); 
+                    alert('Só é uma demonstração, ele esta dispobivél no site de Apps Android :)');
+                });
+            }
         });
-      }
+      });
+      function toggleText(event) {
+        event.preventDefault(); 
+        const serviceBox = event.target.closest('.services-box'); 
+        const textContent = serviceBox.querySelector('.text-content'); 
+      
+        if (textContent.classList.contains('expanded')) {
+          textContent.classList.remove('expanded'); 
+          serviceBox.classList.remove('expanded'); 
+          event.target.textContent = 'Ler Mais'; 
+        } else {
+          textContent.classList.add('expanded'); 
+          serviceBox.classList.add('expanded'); 
+          event.target.textContent = 'Ler Menos'; 
+        }
+      } 
     </script>
   </body>
 </html>

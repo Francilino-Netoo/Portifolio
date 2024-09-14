@@ -233,7 +233,9 @@ span {
 .services-box h3 {
   font-size: 2.6rem;
 }
-
+.services-box .text-content {
+  margin-bottom: 6rem;
+}
 .services-box p {
   font-size: 1.6rem;
   margin: 1rem 0 3rem;

@@ -390,6 +390,12 @@ span {
   box-shadow: 0 0 1rem var(--nain-color);
 }
 
+@media (max-width: 2000px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 @media (max-width: 1500px) {
   html {
     font-size: 45%;
@@ -486,7 +492,7 @@ span {
 
 @media (max-width: 450px) {
   html {
-    font-size: 46%;
+    font-size: 43%;
   }
   .contact form .input-box input {
     width: 100%;

@@ -270,6 +270,11 @@ span {
   overflow: hidden;
   display: flex;
 }
+.portfolio-box {
+  width: 100%;
+  height: 250px; /* Defina um tamanho fixo adequado */
+  display: flex;
+}
 
 .portfolio-box img {
   width: 100%;

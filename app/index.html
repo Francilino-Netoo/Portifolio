@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Automa Web - A Ferramenta Definitiva</title>
+    <meta name="description" content="A ferramenta de automação mais avançada do mercado com IA integrada.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <!-- Animate On Scroll (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Swiper CSS (Para o Slider) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            overflow-x: hidden;
+            -webkit-tap-highlight-color: transparent; /* Remove highlight azul no mobile */
+        }
+
+        /* Hero Background Setup */
+        .hero-bg {
+            /* CAMINHO DA IMAGEM ATUALIZADO PARA PASTA IMAGES */
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(15, 23, 42, 1)), url('images/0.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll; /* Mobile friendly */
+            min-height: 100vh;
+            /* Suporte para telas muito altas */
+            display: flex;
+            align-items: center;
+            padding-top: 60px; /* Compensar menu fixo */
+        }
+
+        /* Ajuste parallax apenas para desktop para performance mobile */
+        @media (min-width: 768px) {
+            .hero-bg {
+                background-attachment: fixed;
+                background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(15, 23, 42, 1)), url('images/0.jpg');
+            }
+        }
+
+        /* Botão Pulsante */
+        .btn-pulse {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+
+        /* Glassmorphism Cards */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px); /* Safari support */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s;
+        }
+        
+        .glass-card:hover {
+            transform: translateY(-5px);
+            border-color: #22c55e;
+            background: rgba(30, 41, 59, 0.8);
+        }
+
+        /* Scrollbar Personalizada */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #22c55e;
+        }
+
+        /* Customização do Swiper */
+        .swiper {
+            width: 100%;
+            padding-bottom: 50px !important;
+            padding-left: 0;
+            padding-right: 0;
+        }
+        .swiper-slide {
+            background-position: center;
+            background-size: cover;
+            /* Altura responsiva */
+            /* Altura responsiva para prints de celular */
+            height: auto;
+            aspect-ratio: 9/16;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            border: 1px solid #334155;
+        }
+        .swiper-pagination-bullet {
+            background: #475569;
+            opacity: 1;
+            width: 10px;
+            height: 10px;
+        }
+        .swiper-pagination-bullet-active {
+            background: #22c55e;
+            width: 25px; /* Indicador ativo mais largo */
+            border-radius: 5px;
+            transition: width 0.3s;
+        }
+        /* Esconder setas no mobile para limpar a tela */
+        @media (max-width: 640px) {
+            .swiper-button-next, .swiper-button-prev {
+                display: none;
+            }
+        }
+        .swiper-button-next, .swiper-button-prev {
+            color: #22c55e;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .swiper-button-next:after, .swiper-button-prev:after {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-green-500 selection:text-white">
+
+    <!-- BARRA FIXA NO TOPO (NOVA) -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-white/10 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo / Nome -->
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
+                    <i class="fas fa-robot text-white text-sm"></i>
+                </div>
+                <span class="font-bold text-lg md:text-xl tracking-tight text-white">Automa<span class="text-green-500">Web</span></span>
+            </div>
+            
+            <!-- Botão Topo -->
+            <a href="https://t.me/Automa_Web_Automatico_bot" target="_blank" class="bg-green-600 hover:bg-green-500 text-white text-xs md:text-sm font-bold py-2 px-4 rounded-lg transition-all duration-300 shadow-lg shadow-green-500/20 hover:scale-105 flex items-center gap-2">
+                <i class="fab fa-telegram-plane"></i>
+                <span class="hidden xs:inline">CADASTRAR</span>
+                <span class="xs:hidden">ENTRAR</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero-bg flex flex-col items-center justify-center text-center px-4 relative w-full overflow-hidden">
+        <div class="container mx-auto z-10 py-16 md:py-24 px-4 sm:px-6 lg:px-8">
+            <div class="inline-block bg-green-500/20 text-green-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-6 border border-green-500/30 backdrop-blur-sm" data-aos="fade-down">
+                🚀 A Tecnologia do Futuro Chegou
+            </div>
+            
+            <h1 class="text-2xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight tracking-tight" data-aos="fade-up" data-aos-delay="100">
+                Você está perdendo tempo.
+                <br class="hidden md:block">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 block mt-2">
+                    A Automação Definitiva.
+                </span>
+            </h1>
+            
+            <p class="text-sm sm:text-lg md:text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="200">
+                Crie salas de sinais, use IA avançada e opere com estratégias que nenhum humano consegue enxergar. O mercado mudou.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center w-full" data-aos="zoom-in" data-aos-delay="300">
+                <a href="https://t.me/Automa_Web_Automatico_bot" target="_blank" class="btn-pulse bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-6 md:py-4 md:px-8 rounded-xl text-base md:text-lg transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-3 w-full sm:w-auto shadow-lg shadow-green-900/50">
+                    <i class="fab fa-telegram-plane text-2xl"></i>
+                    QUERO ME CADASTRAR
+                </a>
+            </div>
+            
+            <p class="mt-6 text-xs sm:text-sm text-gray-400 font-medium opacity-80">
+                <i class="fas fa-lock mr-1"></i> Acesso Seguro via Telegram
+            </p>
+        </div>
+
+        <!-- Overlay Gradient Bottom -->
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none"></div>
+    </header>
+
+    <!-- VIDEO SECTION (FIXO - NÃO ALTERAR) -->
+    <section class="py-12 md:py-20 bg-[#0f172a]">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10" data-aos="fade-up">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Veja a Ferramenta em Ação</h2>
+                <div class="h-1.5 w-24 bg-green-500 mx-auto rounded-full"></div>
+            </div>
+            
+            <div class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-gray-700 bg-slate-800" data-aos="zoom-in">
+                <div class="relative pb-[56.25%] h-0">
+                    <!-- VIDEO OFICIAL - ID PRESERVADO -->
+                    <iframe 
+                        class="absolute top-0 left-0 w-full h-full"
+                        src="https://www.youtube.com/embed/EzQmaTcVPDw" 
+                        title="Apresentação da Ferramenta" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES SECTION -->
+    <section class="py-12 md:py-20 bg-slate-900/50">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">O Que Você Está Deixando Passar?</h2>
+                <p class="text-gray-400 max-w-xl mx-auto">A ferramenta mais completa para Evolution e Pragmatic, desenhada para performance.</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Feature 1 -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bg-blue-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
+                        <i class="fas fa-signal text-blue-400 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Salas de Sinais</h3>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Crie suas próprias salas. Use sinais do catalogador interno ou configure suas estratégias personalizadas.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-purple-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
+                        <i class="fas fa-robot text-purple-400 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Robô Automático Pro</h3>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Configure para seguir salas de sinais automaticamente ou utilize suas próprias estratégias operando 100% no piloto automático.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-green-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
+                        <i class="fas fa-brain text-green-400 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">IA Integrada</h3>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Integração nativa com ChatGPT, Gemini Pro e Anthropic para análises preditivas precisas.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-red-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
+                        <i class="fas fa-search-dollar text-red-400 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Catalogador</h3>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Compatibilidade total com jogos da Evolution e Pragmatic. Validação em tempo real.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bg-yellow-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
+                        <i class="fas fa-trophy text-yellow-400 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Estratégias Exclusivas</h3>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Descubra padrões que nenhum ser humano consegue enxergar. A IA identifica oportunidades ocultas.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bg-cyan-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
+                        <i class="fas fa-globe text-cyan-400 text-xl md:text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg md:text-xl font-bold mb-3">Presença Global</h3>
+                    <div class="flex flex-wrap gap-3 mt-2">
+                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Brasil">🇧🇷</span>
+                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="EUA">🇺🇸</span>
+                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Portugal">🇵🇹</span>
+                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Espanha">🇪🇸</span>
+                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Alemanha">🇩🇪</span>
+                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Índia">🇮🇳</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION (SLIDER) -->
+    <section class="py-12 md:py-20 bg-[#0f172a] overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Galeria de Resultados</h2>
+                <p class="text-gray-400 flex items-center justify-center gap-2">
+                    <i class="fas fa-hand-pointer animate-bounce"></i> Arraste para ver (1-25)
+                </p>
+            </div>
+
+            <!-- Swiper Container -->
+            <div class="swiper mySwiper w-full" data-aos="fade-up" data-aos-delay="200">
+                <div class="swiper-wrapper" id="gallery-wrapper">
+                    <!-- JS vai preencher os slides aqui -->
+                </div>
+                <div class="swiper-pagination"></div>
+                <!-- Setas aparecem apenas em telas maiores -->
+                <div class="swiper-button-next hidden sm:flex"></div>
+                <div class="swiper-button-prev hidden sm:flex"></div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- CTA FOOTER (BOTÃO NO FINAL) -->
+    <section class="py-16 md:py-24 relative overflow-hidden">
+        <!-- Background decorative blob -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-slate-900 to-green-900/20 z-0"></div>
+        
+        <div class="container mx-auto px-4 relative z-10 text-center">
+            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 md:mb-8 leading-tight">Pronto para elevar o nível?</h2>
+            <p class="text-lg md:text-xl text-gray-300 mb-10 md:mb-12 max-w-2xl mx-auto">
+                Não dependa mais da sorte. Dependa da tecnologia. O acesso é imediato.
+            </p>
+            
+            <a href="https://t.me/Automa_Web_Automatico_bot" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-6 md:py-5 md:px-12 rounded-xl text-base md:text-xl transition-all duration-300 shadow-lg shadow-green-500/30 transform hover:-translate-y-1 w-full sm:w-auto justify-center">
+                <i class="fab fa-telegram text-2xl md:text-3xl mr-3"></i>
+                CADASTRAR E ACESSAR AGORA
+            </a>
+            
+            <div class="mt-12 md:mt-16 text-gray-500 text-xs md:text-sm border-t border-gray-800 pt-8 max-w-lg mx-auto">
+                <p>&copy; 2024 Automa Web. Todos os direitos reservados.</p>
+                <p class="mt-2">Jogue com responsabilidade. Proibido para menores de 18 anos.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal para Imagem Ampliada -->
+    <div id="imageModal" class="fixed inset-0 z-50 bg-black/95 hidden flex items-center justify-center p-4 cursor-pointer backdrop-blur-sm" onclick="closeModal()">
+        <img id="modalImage" src="" alt="Ampliada" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl transform transition-transform duration-300 scale-95 opacity-0">
+        <button class="absolute top-4 right-4 text-white/70 hover:text-white text-4xl w-10 h-10 flex items-center justify-center transition-colors">&times;</button>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script>
+        // Inicializar AOS
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50, // Começa a animar um pouco antes
+        });
+
+        // Popular o Slider
+        const galleryWrapper = document.getElementById('gallery-wrapper');
+        const totalImages = 25;
+
+        for (let i = 1; i <= totalImages; i++) {
+            const slideDiv = document.createElement('div');
+            // Classes atualizadas para o slider
+            slideDiv.className = 'swiper-slide relative group cursor-pointer bg-slate-800';
+            
+            const img = document.createElement('img');
+            // ATUALIZADO: Buscar imagens na pasta images/
+            img.src = `images/${i}.jpg`;
+            img.alt = `Screenshot ${i}`;
+            img.className = 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-105';
+            img.loading = 'lazy'; // Otimização de carregamento
+            
+            img.onerror = function() {
+                // Fallback também atualizado caso precise
+                this.src = 'https://placehold.co/600x400/1e293b/ffffff?text=Img+' + i;
+            };
+
+            slideDiv.onclick = function() {
+                openModal(img.src);
+            };
+
+            slideDiv.appendChild(img);
+            galleryWrapper.appendChild(slideDiv);
+        }
+
+        // Inicializar Swiper com breakpoints ajustados
+        var swiper = new Swiper(".mySwiper", {
+            // Mobile first approach
+            slidesPerView: 1.2, // Mostra um pedaço do próximo slide no mobile (UX hint)
+            spaceBetween: 16,
+            centeredSlides: true,
+            loop: true,
+            grabCursor: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                dynamicBullets: true, // Bolinhas dinâmicas para economizar espaço
+            },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+                pauseOnMouseEnter: true,
+            },
+            breakpoints: {
+                // Tablets (≥ 640px)
+                640: {
+                    slidesPerView: 3,
+                    spaceBetween: 20,
+                    centeredSlides: false,
+                },
+                // Desktop pequeno (≥ 1024px)
+                1024: {
+                    slidesPerView: 4,
+                    spaceBetween: 30,
+                    centeredSlides: false,
+                },
+                // Desktop grande (≥ 1280px)
+                1280: {
+                    slidesPerView: 5,
+                    spaceBetween: 30,
+                    centeredSlides: false,
+                }
+            },
+        });
+
+        // Modal Logic
+        const modal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('modalImage');
+
+        function openModal(src) {
+            modal.classList.remove('hidden');
+            // Pequeno delay para a animação de entrada funcionar
+            setTimeout(() => {
+                modalImg.classList.remove('scale-95', 'opacity-0');
+                modalImg.classList.add('scale-100', 'opacity-100');
+            }, 10);
+            
+            modalImg.src = src;
+            document.body.style.overflow = 'hidden';
+            
+            if(swiper.autoplay.running) {
+                swiper.autoplay.stop();
+            }
+        }
+
+        function closeModal() {
+            modalImg.classList.remove('scale-100', 'opacity-100');
+            modalImg.classList.add('scale-95', 'opacity-0');
+            
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }, 300); // Espera a animação acabar
+            
+            swiper.autoplay.start();
+        }
+    </script>
+</body>
+</html>

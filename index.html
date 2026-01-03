@@ -1,521 +1,341 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-    <title>Automa Web - A Ferramenta Definitiva</title>
-    <meta name="description" content="A ferramenta de automação mais avançada do mercado com IA integrada.">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Francilino Neto</title>
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
     
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <header class="header">
+      <a href="#" class="logo">Portfo<span>lio</span></a>
 
-    <!-- Animate On Scroll (AOS) -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+      <i class="bx bx-menu" id="menu-icon"></i>
 
-    <!-- Swiper CSS (Para o Slider) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #0f172a;
-            color: #ffffff;
-            overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent; /* Remove highlight azul no mobile */
-        }
-
-        /* Hero Background Setup */
-        .hero-bg {
-            /* CAMINHO DA IMAGEM ATUALIZADO PARA PASTA IMAGES */
-            background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(15, 23, 42, 1)), url('images/0.png');
-            background-size: cover;
-            background-position: center;
-            background-attachment: scroll; /* Mobile friendly */
-            min-height: 100vh;
-            /* Suporte para telas muito altas */
-            display: flex;
-            align-items: center;
-            padding-top: 60px; /* Compensar menu fixo */
-        }
-
-        /* Ajuste parallax apenas para desktop para performance mobile */
-        @media (min-width: 768px) {
-            .hero-bg {
-                background-attachment: fixed;
-                background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(15, 23, 42, 1)), url('images/0.png');
-            }
-        }
-
-        /* Botão Pulsante */
-        .btn-pulse {
-            animation: pulse-glow 2s infinite;
-        }
-        
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-        }
-
-        /* Glassmorphism Cards */
-        .glass-card {
-            background: rgba(30, 41, 59, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px); /* Safari support */
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s;
-        }
-        
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: #22c55e;
-            background: rgba(30, 41, 59, 0.8);
-        }
-
-        /* Scrollbar Personalizada */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #22c55e;
-        }
-
-        /* Customização do Swiper */
-        .swiper {
-            width: 100%;
-            padding-bottom: 50px !important;
-            padding-left: 0;
-            padding-right: 0;
-        }
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            /* Altura responsiva */
-            /* Altura responsiva para prints de celular */
-            height: auto;
-            aspect-ratio: 9/16;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-            border: 1px solid #334155;
-        }
-        .swiper-pagination-bullet {
-            background: #475569;
-            opacity: 1;
-            width: 10px;
-            height: 10px;
-        }
-        .swiper-pagination-bullet-active {
-            background: #22c55e;
-            width: 25px; /* Indicador ativo mais largo */
-            border-radius: 5px;
-            transition: width 0.3s;
-        }
-        /* Esconder setas no mobile para limpar a tela */
-        @media (max-width: 640px) {
-            .swiper-button-next, .swiper-button-prev {
-                display: none;
-            }
-        }
-        .swiper-button-next, .swiper-button-prev {
-            color: #22c55e;
-            background: rgba(0,0,0,0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-    </style>
-</head>
-<body class="antialiased selection:bg-green-500 selection:text-white">
-
-    <!-- BARRA FIXA NO TOPO (NOVA) -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-slate-900/90 backdrop-blur-md border-b border-white/10 shadow-lg">
-        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-            <!-- Logo / Nome -->
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-green-600 rounded-lg flex items-center justify-center">
-                    <i class="fas fa-robot text-white text-sm"></i>
-                </div>
-                <span class="font-bold text-lg md:text-xl tracking-tight text-white">Automa<span class="text-green-500">Web</span></span>
-            </div>
-            
-            <!-- Botão Topo -->
-            <a href="https://t.me/Automa_Web_Automatico_bot" target="_blank" class="bg-green-600 hover:bg-green-500 text-white text-xs md:text-sm font-bold py-2 px-4 rounded-lg transition-all duration-300 shadow-lg shadow-green-500/20 hover:scale-105 flex items-center gap-2">
-                <i class="fab fa-telegram-plane"></i>
-                <span class="hidden xs:inline">CADASTRAR</span>
-                <span class="xs:hidden">ENTRAR</span>
-            </a>
-        </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <!-- HERO SECTION -->
-    <header class="hero-bg px-4 relative w-full overflow-hidden">
-        <div class="container mx-auto z-10 py-16 md:py-24 px-4 sm:px-6 lg:px-8">
-            <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                
-                <!-- Conteúdo de Texto (Esquerda) -->
-                <div class="w-full lg:w-1/2 text-center lg:text-left">
-                    <div class="inline-block bg-green-500/20 text-green-400 px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold mb-6 border border-green-500/30 backdrop-blur-sm" data-aos="fade-down">
-                        🚀 A Tecnologia do Futuro Chegou
-                    </div>
-                    
-                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight" data-aos="fade-up" data-aos-delay="100">
-                        Você está perdendo tempo.
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 block mt-2">
-                            A Automação Definitiva.
-                        </span>
-                    </h1>
-                    
-                    <p class="text-sm sm:text-lg md:text-xl text-gray-300 mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed" data-aos="fade-up" data-aos-delay="200">
-                        Crie salas de sinais, use IA avançada e opere com estratégias que nenhum humano consegue enxergar. <br class="hidden lg:block"> O mercado mudou. <strong>O Robô PC decide por você.</strong>
-                    </p>
-        
-                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center w-full" data-aos="zoom-in" data-aos-delay="300">
-                        <!-- Botão Telegram -->
-                        <a href="https://t.me/Automa_Web_Automatico_bot" target="_blank" class="bg-green-600 hover:bg-green-500 text-white font-bold py-3.5 px-6 rounded-xl text-base transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 w-full sm:w-auto shadow-lg shadow-green-900/50">
-                            <i class="fab fa-telegram-plane text-xl"></i>
-                            TESTAR AGORA
-                        </a>
-
-                        <!-- Botão Robô PC -->
-                        <a href="bot_pc.html" class="bg-white/10 hover:bg-white/20 hover:text-green-400 text-white border border-white/20 font-bold py-3.5 px-6 rounded-xl text-base transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2 w-full sm:w-auto backdrop-blur-sm">
-                            <i class="fas fa-desktop text-xl"></i>
-                            ROBÔ PC
-                        </a>
-                    </div>
-                    
-                    <p class="mt-6 text-xs sm:text-sm text-gray-400 font-medium opacity-80" data-aos="fade-up" data-aos-delay="400">
-                        <i class="fas fa-lock mr-1"></i> Acesso Seguro via Telegram • IA v3.5 Ativa
-                    </p>
-                </div>
-
-                <!-- Imagem / Visual (Direita) - Integrado do Robô PC -->
-                <div class="w-full lg:w-1/2 relative" data-aos="fade-left" data-aos-delay="200">
-                    <div class="relative group cursor-pointer" onclick="window.location.href='bot_pc.html'">
-                        <!-- Glow effect -->
-                        <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
-                        
-                        <!-- Image Container -->
-                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900">
-                           <img src="images/bacbo.png" alt="Robô Bac Bo IA" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500">
-                           
-                           <!-- Overlay Gradient -->
-                           <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
-                           
-                           <!-- Floating UI Elements -->
-                           <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
-                                <div class="bg-slate-800/90 backdrop-blur-md p-3 sm:p-4 rounded-xl border-l-4 border-green-500 flex items-center justify-between">
-                                    <div>
-                                        <p class="text-gray-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">IA Decidiu:</p>
-                                        <p class="text-white font-bold text-sm sm:text-lg">ENTRADA CONFIRMADA</p>
-                                    </div>
-                                    <div class="text-green-400 font-bold text-lg sm:text-2xl">98%</div>
-                                </div>
-                           </div>
-                           
-                           <!-- Badge -->
-                           <div class="absolute top-4 right-4">
-                                <span class="bg-green-600/90 backdrop-blur text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-                                    <i class="fas fa-bolt"></i> AO VIVO
-                                </span>
-                           </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Overlay Gradient Bottom -->
-        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#0f172a] to-transparent pointer-events-none"></div>
+      <nav class="navbar">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">Sobre</a>
+        <a href="#services">Serviços</a>
+        <a href="#portfolio">Projetos</a>
+        <a href="#contact">Contato</a>
+      </nav>
     </header>
 
-    <!-- VIDEO SECTION (FIXO - NÃO ALTERAR) -->
-    <section class="py-12 md:py-20 bg-[#0f172a]">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-10" data-aos="fade-up">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Veja a Ferramenta em Ação</h2>
-                <div class="h-1.5 w-24 bg-green-500 mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="max-w-5xl mx-auto rounded-2xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-gray-700 bg-slate-800" data-aos="zoom-in">
-                <div class="relative pb-[56.25%] h-0">
-                    <iframe 
-                        class="absolute top-0 left-0 w-full h-full"
-                        src="https://www.youtube.com/embed/EzQmaTcVPDw" 
-                        title="Apresentação da Ferramenta" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                        allowfullscreen>
-                    </iframe>
-                </div>
-            </div>
+    <section class="home" id="home">
+      <div class="home-contente">
+        <h3>Olá, eu sou</h3>
+        <h1>Francilino Neto</h1>
+        <h3>Sou um: <span class="multiple-text"></span></h3>
+        <p>
+          Python, JavaScript | Reac Native, ReactJS, NodeJS, TypeScript | SQL Server, MySQL, Firebase | APIs | HTML, CSS | Web Scraping, Selenium, Playwright | Git, GitHub
+        </p>
+
+        <div class="social-media">
+          <a href="https://t.me/programador_python" target="_blank"><i class='bx bxl-telegram'></i></i></a>
+          <a href="https://www.instagram.com/programador_afobado/" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
+          <a href="https://www.linkedin.com/in/francilino-neto" target="_blank"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+          <a href="https://github.com/Francilino-Netoo" target="_blank"
+            ><i class="bx bxl-github"></i
+          ></a>
+          <a
+            href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text&type=phone_number&app_absent=0"
+            target="_blank"
+            ><i class="bx bxl-whatsapp"></i
+          ></a>
         </div>
+        <a href="./images/curriculo.pdf"
+        download="curriculo" class="btn">Dowload CV</a>
+      </div>
+      <div class="home-img">
+        <img src="images/home.png" alt="" />
+      </div>
     </section>
 
-    <!-- FEATURES SECTION -->
-    <section class="py-12 md:py-20 bg-slate-900/50">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-12 md:mb-16" data-aos="fade-up">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">O Que Você Está Deixando Passar?</h2>
-                <p class="text-gray-400 max-w-xl mx-auto">A ferramenta mais completa para Evolution e Pragmatic, desenhada para performance.</p>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                <!-- Feature 1 -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
-                    <div class="bg-blue-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <i class="fas fa-signal text-blue-400 text-xl md:text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3">Salas de Sinais</h3>
-                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Crie suas próprias salas. Use sinais do catalogador interno ou configure suas estratégias personalizadas.</p>
-                </div>
-
-                <!-- Feature 2 -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
-                    <div class="bg-purple-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <i class="fas fa-robot text-purple-400 text-xl md:text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3">Robô Automático Pro</h3>
-                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Configure para seguir salas de sinais automaticamente ou utilize suas próprias estratégias operando 100% no piloto automático.</p>
-                </div>
-
-                <!-- Feature 3 -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
-                    <div class="bg-green-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <i class="fas fa-brain text-green-400 text-xl md:text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3">IA Integrada</h3>
-                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Integração nativa com ChatGPT, Gemini Pro e Anthropic para análises preditivas precisas.</p>
-                </div>
-
-                <!-- Feature 4 -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="400">
-                    <div class="bg-red-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <i class="fas fa-search-dollar text-red-400 text-xl md:text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3">Catalogador</h3>
-                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Compatibilidade total com jogos da Evolution e Pragmatic. Validação em tempo real.</p>
-                </div>
-
-                <!-- Feature 5 -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="500">
-                    <div class="bg-yellow-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <i class="fas fa-trophy text-yellow-400 text-xl md:text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3">Estratégias Exclusivas</h3>
-                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">Descubra padrões que nenhum ser humano consegue enxergar. A IA identifica oportunidades ocultas.</p>
-                </div>
-
-                <!-- Feature 6 -->
-                <div class="glass-card p-6 md:p-8 rounded-2xl" data-aos="fade-up" data-aos-delay="600">
-                    <div class="bg-cyan-600/20 w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center mb-5 md:mb-6">
-                        <i class="fas fa-globe text-cyan-400 text-xl md:text-2xl"></i>
-                    </div>
-                    <h3 class="text-lg md:text-xl font-bold mb-3">Presença Global</h3>
-                    <div class="flex flex-wrap gap-3 mt-2">
-                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Brasil">🇧🇷</span>
-                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="EUA">🇺🇸</span>
-                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Portugal">🇵🇹</span>
-                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Espanha">🇪🇸</span>
-                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Alemanha">🇩🇪</span>
-                        <span class="text-2xl hover:scale-125 transition-transform cursor-help" title="Índia">🇮🇳</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="images/about.png" alt="" />
+      </div>
+      <div class="about-content">
+        <h2 class="heading">Sobre <span>mim</span></h2>
+        <h3>Desenvolvedor Full Stack</h3>
+        <p>
+          Atuo como freelancer, utilizando Python para criação de APIs e
+          Node.js. Tenho experiência em técnicas de web scraping para análise de
+          dados e automações baseadas nessas análises. Desenvolvo aplicativos
+          móveis com React Native e sites com JavaScript e React.js,
+          integrando-os a bancos de dados para oferecer soluções completas e
+          funcionais.
+        </p>
+        <a href="#5" class="btn">Ler Mais</a>
+      </div>
     </section>
 
-    <!-- GALLERY SECTION (SLIDER) -->
-    <section class="py-12 md:py-20 bg-[#0f172a] overflow-hidden">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="text-center mb-10 md:mb-14" data-aos="fade-up">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Veja a Ferramenta</h2>
-                <p class="text-gray-400 flex items-center justify-center gap-2">
-                    <i class="fas fa-hand-pointer animate-bounce"></i> Arraste para ver (1-25)
-                </p>
-            </div>
-
-            <!-- Swiper Container -->
-            <div class="swiper mySwiper w-full" data-aos="fade-up" data-aos-delay="200">
-                <div class="swiper-wrapper" id="gallery-wrapper">
-                    <!-- JS vai preencher os slides aqui -->
-                </div>
-                <div class="swiper-pagination"></div>
-                <!-- Setas aparecem apenas em telas maiores -->
-                <div class="swiper-button-next hidden sm:flex"></div>
-                <div class="swiper-button-prev hidden sm:flex"></div>
-            </div>
-            
+    <section class="services" id="services">
+      <h2 class="heading">Meus <span>Serviços</span></h2>
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bx-code"></i>
+          <h3>Desenvoledor Back-And</h3>
+          <p class="text-content">
+            Especializado em desenvolvimento back-end, utilizo Python (Flask) ou Node.js para criar APIs robustas e aplicações eficientes. Foco em garantir a segurança, escalabilidade e performance dos sistemas, sempre buscando atender às necessidades dos meus clientes.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
-    </section>
 
-    <!-- CTA FOOTER (BOTÃO NO FINAL) -->
-    <section class="py-16 md:py-24 relative overflow-hidden">
-        <!-- Background decorative blob -->
-        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-gradient-to-b from-slate-900 to-green-900/20 z-0"></div>
-        
-        <div class="container mx-auto px-4 relative z-10 text-center">
-            <h2 class="text-3xl md:text-5xl font-extrabold mb-6 md:mb-8 leading-tight">Pronto para elevar o nível?</h2>
-            <p class="text-lg md:text-xl text-gray-300 mb-10 md:mb-12 max-w-2xl mx-auto">
-                Não dependa mais da sorte. Dependa da tecnologia. O acesso é imediato.
-            </p>
-            
-            <a href="https://t.me/Automa_Web_Automatico_bot" target="_blank" class="inline-flex items-center bg-green-600 hover:bg-green-500 text-white font-bold py-3 px-6 md:py-5 md:px-12 rounded-xl text-base md:text-xl transition-all duration-300 shadow-lg shadow-green-500/30 transform hover:-translate-y-1 w-full sm:w-auto justify-center">
-                <i class="fab fa-telegram text-2xl md:text-3xl mr-3"></i>
-                QUERO TESTAR AGORA!
-            </a>
-            
-            <div class="mt-12 md:mt-16 text-gray-500 text-xs md:text-sm border-t border-gray-800 pt-8 max-w-lg mx-auto">
-                <p>&copy; 2024 Automa Web. Todos os direitos reservados.</p>
-                <p class="mt-2">Jogue com responsabilidade. Proibido para menores de 18 anos.</p>
-            </div>
+        <div class="services-box">
+          <i class="bx bxs-paint"></i>
+          <h3>Desenvoledor Web</h3>
+          <p class="text-content">
+            Crio sites dinâmicos e criativos, com o intuito de atender às expectativas dos meus clientes. Utilizo ferramentas como GIMP 2.0 para criar imagens nítidas e impactantes, garantindo que o design visual seja atraente e funcional.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
+        <div class="services-box">
+          <i class='bx bx-bot' ></i>
+          <h3>Chat Bots</h3>
+          <p class="text-content">
+            Desenvolvo chatbots inteligentes utilizando as APIs do Telegram e WhatsApp, automatizando interações e otimizando a comunicação para empresas e projetos, sempre com foco em eficiência e facilidade de uso.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+        <div class="services-box">
+          <i class="bx bxl-android"></i>
+          <h3>Desenvoledor Mobile</h3>
+          <p class="text-content">
+            Especializado no desenvolvimento de aplicativos móveis utilizando React Native, criando soluções eficientes e de alta performance para plataformas iOS e Android. Trabalho para garantir uma experiência de usuário fluida e intuitiva, alinhada às necessidades e expectativas dos clientes.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+        <div class="services-box">
+          <i class="bx bxs-cog"></i>
+          <h3>Automação Web</h3>
+          <p class="text-content">
+            Especializado em automação web, utilizando ferramentas e técnicas para automatizar processos repetitivos e integrações entre sistemas. Com foco em eficiência e precisão, desenvolvo soluções que economizam tempo e reduzem erros, melhorando a produtividade e a eficácia operacional.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+        <div class="services-box">
+          <i class="bx bxs-search"></i> 
+          <h3>Web Scraping</h3>
+          <p class="text-content">
+            Especializado em web scraping para coleta e análise de dados usando bibliotecas como BeautifulSoup e Requests. Utilizo também ferramentas como Playwright para scraping dinâmico e automatizado, proporcionando soluções eficientes para extração e processamento de informações da web.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+      </div>
     </section>
-
-    <!-- Modal para Imagem Ampliada -->
-    <div id="imageModal" class="fixed inset-0 z-50 bg-black/95 hidden flex items-center justify-center p-4 cursor-pointer backdrop-blur-sm" onclick="closeModal()">
-        <img id="modalImage" src="" alt="Ampliada" class="max-w-full max-h-[85vh] rounded-lg shadow-2xl transform transition-transform duration-300 scale-95 opacity-0">
-        <button class="absolute top-4 right-4 text-white/70 hover:text-white text-4xl w-10 h-10 flex items-center justify-center transition-colors">&times;</button>
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Meus <span>Projetos</span></h2>
+      
+      <div class="porfolio-container">
+
+        <div class="portfolio-box">
+          <img src="images/portfolio13.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Inspirado na OLX</h4>
+            <p>Este projeto foi desenvolvido com o objetivo de mostrar minhas hablidades Full Stack. Usei Reac.js, Node.js para criar API e MongoDB para banco de dados.</p>
+            <a href="https://automa-web-olx.vercel.app/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/portfolio11.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Jogo da Memória</h4>
+            <p>Desenvolvi este jogo para demonstrar um pouco das minhas habilidades em React.js.</p>
+            <a  href="https://francilino-netoo.github.io/jogo-da-memoria/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio10.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Calculadora IMC</h4>
+            <p>About
+              Esta é uma Calculadora de IMC (Índice de Massa Corpórea) desenvolvida em React + TypeScript.</p>
+            <a href="https://francilino-netoo.github.io/calculador-imc/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio8.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Portfólio 3D</h4>
+            <p>Este projeto foi desenvolvido com o objetivo de criar um portfólio
+              interativo e diferenciado. Utilizei o Blender para modelar em 3D do
+              meu quarto e a biblioteca Three.js para controlar as posições das
+              câmeras, as iluminações do cenário e interações com objetos
+              específicos da cena.</p>
+            <a href="https://francilino-netoo.github.io/portfolio-3d/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio12.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Automação Web Cassino Telegram</h4>
+            <p>Este projeto automatiza entradas em diversos jogos de um cassino online, utilizando as estratégias do próprio usuário. Dessa forma, evita-se que o usuário passe muito tempo na tela do computador ou celular.</p>
+            <a  href="https://t.me/Automa_Web_bot" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio5.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Automação Web Cassino</h4>
+            <p>Este projeto automatiza entradas em diversos jogos de um cassino online, utilizando as estratégias do próprio usuário. Dessa forma, evita-se que o usuário passe muito tempo na tela do computador ou celular.</p>
+            <a  href="https://automa-cassinos.dev.br/app/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio1.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Back-And-API-Basica</h4>
+            <p>Esta é uma API basica de uma loja virtual onde podemos cadastrar usuarios, adicionar produtos, editar produtos entre outras funcionalidades, usei o Mongoose para armazenar os dados da API.</p>
+            <a href="https://github.com/Francilino-Netoo/Back-And-API-Basica" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+
+        <div class="portfolio-box">
+          <img src="images/portfolio2.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Chat simples Websoket</h4>
+            <p>Empreguei o protocolo WebSocket na criação de um chat simples, com a finalidade de aplicar os conhecimentos adquirido em aulas.</p>
+            <a href="https://github.com/Francilino-Netoo/chat-simples-websoket" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio3.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>APIs-Pragmatic-Evolution-Ezugi</h4>
+            <p>Essa API pega os resultados des 3 provedoras de games Pragmatic Play, Evolution e Ezugi. Com elas você vai ter acesso a resultados de 217 games em tempo real, sendo 63 da Pragmatic, 99 da Evolution e 55 da Ezugi.</p>
+            <a href="https://github.com/Francilino-Netoo/APIs-Pragmatic-Evolution-Ezugi-Atualizadas" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/portfolio4.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Site de Fiseoterapia</h4>
+            <p>O projeto tem o intuito de divulgar o trabalho da profissional em Fisioterapia de forma mais organizada.</p>
+            <a href="https://francilino-netoo.github.io/Site-Fisio/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="portfolio-box">
+          <img src="images/portfolio7.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>App Android no MemuPlay</h4>
+            <p>Meus APKs podem ser rodados no MemuPlay diretamente no seu computador.</p>
+            <a href="dese" class="link-external6"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="portfolio-box">
+          <img src="images/portfolio9.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Modelo de Delivery</h4>
+            <p>Desenvolvi um modelo de delivery simples e eficiente utilizando React.js e Next.js.</p>
+            <a href="https://github.com/Francilino-Netoo/loja-virtual" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+       
+        
+      </div>
+    </section>
+     <!--Aqui-->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contate <span>Me!</span></h2>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" id="name" placeholder="Escreva seu nome" required />
+        </div>
+        
+        <textarea id="message" cols="30" rows="10" placeholder="Sua mensagem" required></textarea>
+        
+        <button type="button" class="btn" id="sendMessageBtn">Enviar Mensagem</button>
+      </form>
+    </section>
+   
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2024 por Francilino Neto | Todos os direitos reservados.</p>
+
+      </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+   
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script src="js/script.js"></script>
     <script>
-        // Inicializar AOS
-        AOS.init({
-            duration: 800,
-            once: true,
-            offset: 50, // Começa a animar um pouco antes
-        });
-
-        // Popular o Slider
-        const galleryWrapper = document.getElementById('gallery-wrapper');
-        const totalImages = 25;
-
-        for (let i = 1; i <= totalImages; i++) {
-            const slideDiv = document.createElement('div');
-            // Classes atualizadas para o slider
-            slideDiv.className = 'swiper-slide relative group cursor-pointer bg-slate-800';
-            
-            const img = document.createElement('img');
-            // ATUALIZADO: Buscar imagens na pasta images/
-            img.src = `images/${i}.jpg`;
-            img.alt = `Screenshot ${i}`;
-            img.className = 'w-full h-full object-cover transition-transform duration-700 group-hover:scale-105';
-            img.loading = 'lazy'; // Otimização de carregamento
-            
-            img.onerror = function() {
-                // Fallback também atualizado caso precise
-                this.src = 'https://placehold.co/600x400/1e293b/ffffff?text=Img+' + i;
-            };
-
-            slideDiv.onclick = function() {
-                openModal(img.src);
-            };
-
-            slideDiv.appendChild(img);
-            galleryWrapper.appendChild(slideDiv);
+      document.getElementById('sendMessageBtn').addEventListener('click', function() {
+      
+        const name = document.getElementById('name').value;
+        
+        const message = document.getElementById('message').value;
+    
+        if (!name || !message) {
+          alert('Por favor, preencha todos os campos.');
+          return;
         }
-
-        // Inicializar Swiper com breakpoints ajustados
-        var swiper = new Swiper(".mySwiper", {
-            // Mobile first approach
-            slidesPerView: 1.2, // Mostra um pedaço do próximo slide no mobile (UX hint)
-            spaceBetween: 16,
-            centeredSlides: true,
-            loop: true,
-            grabCursor: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                dynamicBullets: true, // Bolinhas dinâmicas para economizar espaço
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-                pauseOnMouseEnter: true,
-            },
-            breakpoints: {
-                // Tablets (≥ 640px)
-                640: {
-                    slidesPerView: 3,
-                    spaceBetween: 20,
-                    centeredSlides: false,
-                },
-                // Desktop pequeno (≥ 1024px)
-                1024: {
-                    slidesPerView: 4,
-                    spaceBetween: 30,
-                    centeredSlides: false,
-                },
-                // Desktop grande (≥ 1280px)
-                1280: {
-                    slidesPerView: 5,
-                    spaceBetween: 30,
-                    centeredSlides: false,
-                }
-            },
-        });
-
-        // Modal Logic
-        const modal = document.getElementById('imageModal');
-        const modalImg = document.getElementById('modalImage');
-
-        function openModal(src) {
-            modal.classList.remove('hidden');
-            // Pequeno delay para a animação de entrada funcionar
-            setTimeout(() => {
-                modalImg.classList.remove('scale-95', 'opacity-0');
-                modalImg.classList.add('scale-100', 'opacity-100');
-            }, 10);
+    
+        const whatsappMessage = `Olá, meu nome é ${name}.\n Mensagem: ${message}`;
+    
+        const whatsappLink = `https://api.whatsapp.com/send?phone=SEU_NUMERO_DE_WHATSAPP&text=${encodeURIComponent(whatsappMessage)}`;
+    
+        window.open(whatsappLink, '_blank');
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.link-external5').forEach(link => {
+              
+              if (link.getAttribute('href') === 'dese' || !link.getAttribute('href')) {
+                  link.addEventListener('click', (event) => {
+                      event.preventDefault(); 
+                      alert('Este projeto está em desenvolvimento :)');
+                  });
+              }
+          });
+          document.querySelectorAll('.link-external6').forEach(link => {
             
-            modalImg.src = src;
-            document.body.style.overflow = 'hidden';
-            
-            if(swiper.autoplay.running) {
-                swiper.autoplay.stop();
+            if (link.getAttribute('href') === 'dese' || !link.getAttribute('href')) {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); 
+                    alert('Só é uma demonstração, ele esta dispobivél no site de Apps Android :)');
+                });
             }
+        });
+      });
+      function toggleText(event) {
+        event.preventDefault(); 
+        const serviceBox = event.target.closest('.services-box'); 
+        const textContent = serviceBox.querySelector('.text-content'); 
+      
+        if (textContent.classList.contains('expanded')) {
+          textContent.classList.remove('expanded'); 
+          serviceBox.classList.remove('expanded'); 
+          event.target.textContent = 'Ler Mais'; 
+        } else {
+          textContent.classList.add('expanded'); 
+          serviceBox.classList.add('expanded'); 
+          event.target.textContent = 'Ler Menos'; 
         }
-
-        function closeModal() {
-            modalImg.classList.remove('scale-100', 'opacity-100');
-            modalImg.classList.add('scale-95', 'opacity-0');
-            
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }, 300); // Espera a animação acabar
-            
-            swiper.autoplay.start();
-        }
+      } 
     </script>
-</body>
+  </body>
 </html>
+

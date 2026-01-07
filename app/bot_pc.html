@@ -46,6 +46,17 @@
         .image-glow {
             box-shadow: 0 0 40px -10px rgba(34, 197, 94, 0.3);
         }
+
+        /* Botão Pulsante */
+        .btn-pulse {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-green-500 selection:text-white">
@@ -87,9 +98,16 @@
                         IA Avançada
                     </span>
                 </h1>
-                <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed">
+                <p class="text-lg text-gray-300 max-w-3xl mx-auto leading-relaxed mb-6">
                     Selecione o robô ideal para sua estratégia. Todos utilizam nossa tecnologia exclusiva de análise preditiva com IA.
                 </p>
+                
+                <div class="inline-block bg-red-500/10 border border-red-500/50 rounded-lg px-6 py-3">
+                    <p class="text-red-200 font-bold flex items-center justify-center gap-2">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        ATENÇÃO: Ferramenta exclusiva para uso na plataforma Casa de Apostas
+                    </p>
+                </div>
             </div>
 
             <!-- Games Grid -->
@@ -140,6 +158,11 @@
                                 <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded font-bold">CRIAR CONTA</span>
                             </div>
                             <p class="text-xs text-gray-400 mb-4">Mesma assertividade do pago. Grátis para quem criar conta pelo nosso link.</p>
+                            
+                            <a href="https://go.aff.casadeapostas.bet.br/eg1op2qg" target="_blank" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all mb-3 btn-pulse shadow-lg shadow-green-500/20">
+                                <i class="fas fa-user-plus"></i> CRIAR CONTA
+                            </a>
+
                             <a href="bot/Automa Bac Bo Free.zip" download class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all">
                                 <i class="fab fa-windows"></i> BAIXAR GRÁTIS
                             </a>
@@ -193,6 +216,11 @@
                                 <span class="bg-green-500/20 text-green-300 text-xs px-2 py-1 rounded font-bold">CRIAR CONTA</span>
                             </div>
                             <p class="text-xs text-gray-400 mb-4">Mesma assertividade do pago. Grátis para quem criar conta pelo nosso link.</p>
+                            
+                            <a href="https://go.aff.casadeapostas.bet.br/eg1op2qg" target="_blank" class="w-full bg-green-600 hover:bg-green-500 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all mb-3 btn-pulse shadow-lg shadow-green-500/20">
+                                <i class="fas fa-user-plus"></i> CRIAR CONTA
+                            </a>
+
                             <a href="#" class="w-full bg-slate-700 hover:bg-slate-600 text-white font-bold py-2.5 rounded-lg flex items-center justify-center gap-2 transition-all cursor-not-allowed opacity-80" onclick="alert('Em breve!')">
                                 <i class="fab fa-windows"></i> EM BREVE
                             </a>

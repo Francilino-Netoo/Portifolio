@@ -261,9 +261,9 @@
                         🚀 Desenvolvimento de Software Sob Medida
                     </div>
                     
-                    <h1 class="text-3xl sm:text-5xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight" data-aos="fade-up" data-aos-delay="100">
+                    <h1 class="text-2xl sm:text-4xl md:text-5xl font-extrabold mb-6 leading-tight tracking-tight" data-aos="fade-up" data-aos-delay="100">
                         Sua ideia transformada em
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 block mt-2">
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 block mt-2 pb-2">
                             Tecnologia de Ponta.
                         </span>
                     </h1>
@@ -280,19 +280,33 @@
                         </a>
 
                         <!-- Botão Robô PC -->
-                        <!-- Botão Robô PC -->
-                        <a href="bot_pc.html" class="group relative bg-slate-800/80 hover:bg-slate-700/80 text-white border border-white/10 py-2 px-5 rounded-xl transition-all duration-300 transform active:scale-95 flex items-center gap-3 w-full sm:w-auto shadow-lg hover:shadow-green-500/10 backdrop-blur-sm overflow-hidden text-left">
-                            <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center group-hover:bg-green-500/20 transition-colors shrink-0">
-                                <i class="fas fa-desktop text-green-400 text-lg"></i>
-                            </div>
-                            <div class="flex flex-col">
-                                <span class="text-[10px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-green-400/80 transition-colors">Versão Desktop</span>
-                                <span class="text-sm font-bold leading-tight">BAIXAR NO PC</span>
-                            </div>
-                            
-                            <!-- Shine Effect -->
-                            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-                        </a>
+                        <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                            <!-- Desktop Button -->
+                            <a href="bot_pc.html" class="group relative bg-slate-800/80 hover:bg-slate-700/80 text-white border border-white/10 py-2 px-4 rounded-xl transition-all duration-300 transform active:scale-95 flex items-center gap-3 shadow-lg hover:shadow-green-500/10 backdrop-blur-sm overflow-hidden text-left flex-1 sm:flex-initial min-w-[160px]">
+                                <div class="w-10 h-10 bg-green-500/10 rounded-lg flex items-center justify-center group-hover:bg-green-500/20 transition-colors shrink-0">
+                                    <i class="fas fa-desktop text-green-400 text-lg"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-green-400/80 transition-colors">Versão Desktop</span>
+                                    <span class="text-xs md:text-sm font-bold leading-tight">BAIXAR NO PC</span>
+                                </div>
+                                
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                            </a>
+
+                            <!-- Mobile Button -->
+                            <a href="bot_mobile.html" class="group relative bg-slate-800/80 hover:bg-slate-700/80 text-white border border-white/10 py-2 px-4 rounded-xl transition-all duration-300 transform active:scale-95 flex items-center gap-3 shadow-lg hover:shadow-blue-500/10 backdrop-blur-sm overflow-hidden text-left flex-1 sm:flex-initial min-w-[160px]">
+                                <div class="w-10 h-10 bg-blue-500/10 rounded-lg flex items-center justify-center group-hover:bg-blue-500/20 transition-colors shrink-0">
+                                    <i class="fas fa-mobile-alt text-blue-400 text-lg"></i>
+                                </div>
+                                <div class="flex flex-col">
+                                    <span class="text-[10px] uppercase tracking-wider text-gray-400 font-semibold group-hover:text-blue-400/80 transition-colors">Versão Celular</span>
+                                    <span class="text-xs md:text-sm font-bold leading-tight">BAIXAR NO APP</span>
+                                </div>
+                                
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
+                            </a>
+                        </div>
                     </div>
                     
                     <p class="mt-6 text-xs sm:text-sm text-gray-400 font-medium opacity-80" data-aos="fade-up" data-aos-delay="400">
@@ -300,37 +314,41 @@
                     </p>
                 </div>
 
-                <!-- Imagem / Visual (Direita) - Integrado do Robô PC -->
-                <div class="w-full lg:w-1/2 relative" data-aos="fade-left" data-aos-delay="200">
-                    <div class="relative group cursor-pointer" onclick="window.location.href='bot_pc.html'">
-                        <!-- Glow effect -->
-                        <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-blue-600 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000 group-hover:duration-200"></div>
+                <!-- Imagem / Visual (Direita) - Integrado do Robô PC + Mobile -->
+                <div class="w-full lg:w-1/2 relative flex items-center justify-center lg:justify-end mt-12 lg:mt-0" data-aos="fade-left" data-aos-delay="200">
+                    <!-- Container Relative -->
+                    <div class="relative w-full max-w-[550px] lg:max-w-[650px] mx-auto lg:mr-0">
                         
-                        <!-- Image Container -->
-                        <div class="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-slate-900">
-                           <img src="images/bacbo.png" alt="Robô Bac Bo IA" class="w-full h-auto object-cover transform group-hover:scale-105 transition duration-500">
-                           
-                           <!-- Overlay Gradient -->
-                           <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-transparent opacity-80"></div>
-                           
-                           <!-- Floating UI Elements -->
-                           <div class="absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-6">
-                                <div class="bg-slate-800/90 backdrop-blur-md p-3 sm:p-4 rounded-xl border-l-4 border-green-500 flex items-center justify-between">
-                                    <div>
-                                        <p class="text-gray-400 text-[10px] sm:text-xs font-bold uppercase tracking-wider">IA Decidiu:</p>
-                                        <p class="text-white font-bold text-sm sm:text-lg">ENTRADA CONFIRMADA</p>
-                                    </div>
-                                    <div class="text-green-400 font-bold text-lg sm:text-2xl">98%</div>
+                        <!-- Desktop Image (Back) -->
+                        <div class="relative z-10 w-[95%] lg:w-[85%] rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 mx-auto lg:mx-0 transform lg:-translate-x-12 transition-transform hover:scale-[1.02] duration-500 cursor-pointer" onclick="window.location.href='bot_pc.html'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent z-10"></div>
+                            <img src="images/bacbo.png" alt="Desktop Interface" class="w-full h-auto object-cover">
+                            
+                            <!-- Desktop Badge -->
+                            <div class="absolute bottom-4 left-4 z-20">
+                                <div class="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-white/10 flex items-center gap-2">
+                                    <i class="fas fa-desktop text-green-400 text-xs"></i>
+                                    <span class="text-white text-xs font-bold">PC / Windows</span>
                                 </div>
-                           </div>
-                           
-                           <!-- Badge -->
-                           <div class="absolute top-4 right-4">
-                                <span class="bg-green-600/90 backdrop-blur text-white text-[10px] sm:text-xs font-bold px-3 py-1.5 rounded-full shadow-lg flex items-center gap-1">
-                                    <i class="fas fa-bolt"></i> AO VIVO
-                                </span>
-                           </div>
+                            </div>
                         </div>
+
+                        <!-- Mobile Image (Front Right) -->
+                        <div class="absolute -bottom-6 -right-2 sm:-right-4 lg:-right-12 z-20 w-[35%] sm:w-[30%] lg:w-[28%] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-[4px] border-slate-800 bg-slate-900 transform translate-y-4 hover:-translate-y-2 transition-transform duration-500 cursor-pointer" onclick="window.location.href='bot_mobile.html'">
+                             <!-- Notch -->
+                             <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-3 bg-slate-800 rounded-b-lg z-20"></div>
+                             
+                             <img src="images/1.jpg" alt="Mobile Interface" class="w-full h-full object-cover aspect-[9/19]">
+                             
+                             <!-- Mobile Badge -->
+                             <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-max z-20">
+                                <div class="bg-black/60 backdrop-blur-md px-2 py-1 rounded-full border border-white/10 flex items-center gap-1.5">
+                                    <i class="fas fa-mobile-alt text-blue-400 text-[10px]"></i>
+                                    <span class="text-white text-[10px] font-bold">App</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
@@ -436,6 +454,15 @@
                 <!-- Setas aparecem apenas em telas maiores -->
                 <div class="swiper-button-next hidden sm:flex"></div>
                 <div class="swiper-button-prev hidden sm:flex"></div>
+            </div>
+
+            <!-- CTA Button for Details Page -->
+            <div class="text-center mt-10 md:mt-14" data-aos="fade-up" data-aos-delay="300">
+                <a href="ferramenta_detalhes.html" class="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-blue-500/30">
+                    <i class="fas fa-play-circle text-xl"></i>
+                    <span>VER VÍDEO E ACESSAR FERRAMENTA</span>
+                </a>
+                <p class="mt-3 text-sm text-gray-500">Clique para ver a apresentação completa em vídeo</p>
             </div>
             
         </div>

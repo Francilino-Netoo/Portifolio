@@ -14,15 +14,13 @@
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #0f172a;
             color: #ffffff;
             overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent; /* Remove highlight azul no mobile */
+            -webkit-tap-highlight-color: transparent;
         }
 
         /* Hero Background Setup */
@@ -30,38 +28,24 @@
             background-image: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(15, 23, 42, 1)), url('images/0.png');
             background-size: cover;
             background-position: center;
-            background-attachment: scroll; /* Mobile friendly */
+            background-attachment: scroll;
             min-height: 100vh;
-            /* Suporte para telas muito altas */
             display: flex;
             align-items: center;
-            padding-top: 60px; /* Compensar menu fixo */
+            padding-top: 60px;
         }
 
-        /* Ajuste parallax apenas para desktop para performance mobile */
         @media (min-width: 768px) {
             .hero-bg {
                 background-attachment: fixed;
-                background-image: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(15, 23, 42, 1)), url('images/0.png');
             }
-        }
-
-        /* Botão Pulsante */
-        .btn-pulse {
-            animation: pulse-glow 2s infinite;
-        }
-        
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
-            70% { box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
         }
 
         /* Glassmorphism Cards */
         .glass-card {
             background: rgba(30, 41, 59, 0.6);
             backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px); /* Safari support */
+            -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: transform 0.3s ease, border-color 0.3s ease, background-color 0.3s;
         }
@@ -73,144 +57,29 @@
         }
 
         /* Scrollbar Personalizada */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0f172a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #334155;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #22c55e;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #22c55e; }
 
-        /* Customização do Swiper */
-        .swiper {
-            width: 100%;
-            padding-bottom: 50px !important;
-            padding-left: 0;
-            padding-right: 0;
+        /* Animação do novo Scroll Indicator */
+        @keyframes bounce-subtle {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
         }
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            height: auto;
-            aspect-ratio: 9/16;
-            border-radius: 1rem;
-            overflow: hidden;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-            border: 1px solid #334155;
-        }
-        .swiper-pagination-bullet {
-            background: #475569;
-            opacity: 1;
-            width: 10px;
-            height: 10px;
-        }
-        .swiper-pagination-bullet-active {
-            background: #22c55e;
-            width: 25px; /* Indicador ativo mais largo */
-            border-radius: 5px;
-            transition: width 0.3s;
-        }
-        /* Esconder setas no mobile para limpar a tela */
-        @media (max-width: 640px) {
-            .swiper-button-next, .swiper-button-prev {
-                display: none;
-            }
-        }
-        .swiper-button-next, .swiper-button-prev {
-            color: #22c55e;
-            background: rgba(0,0,0,0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .swiper-button-next:after, .swiper-button-prev:after {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        /* Mouse Scroll Indicator */
-        .mouse-scroll-container {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 40;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            opacity: 0.8;
-            transition: opacity 0.3s, transform 0.3s;
+        .animate-bounce-subtle {
+            animation: bounce-subtle 2s infinite ease-in-out;
         }
         
-        .mouse-scroll-container:hover {
-            opacity: 1;
-            transform: translateX(-50%) translateY(-5px);
-        }
-
-        .mouse-icon {
-            width: 26px;
-            height: 42px;
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            border-radius: 20px;
-            position: relative;
-            background: rgba(15, 23, 42, 0.4);
-            backdrop-filter: blur(4px);
-            box-shadow: 0 0 15px rgba(34, 197, 94, 0.1);
-        }
-
-        .mouse-wheel {
-            width: 4px;
-            height: 8px;
-            background-color: #4ade80; /* green-400 */
-            border-radius: 2px;
-            position: absolute;
-            top: 8px;
-            left: 50%;
-            transform: translateX(-50%);
-            animation: scroll-wheel 2s cubic-bezier(0.15, 0.41, 0.69, 0.94) infinite;
-        }
-
-        .scroll-arrows {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin-top: -5px;
-        }
-
-        .scroll-arrow {
-            width: 10px;
-            height: 10px;
-            border-right: 2px solid #4ade80; /* green-400 */
-            border-bottom: 2px solid #4ade80;
-            transform: rotate(45deg);
-            margin: -3px;
-            animation: arrow-wave 2s infinite;
+        /* Classe para esconder o scroll indicator suavemente */
+        .fade-out {
             opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease;
         }
-
-        .scroll-arrow:nth-child(1) { animation-delay: 0s; }
-        .scroll-arrow:nth-child(2) { animation-delay: 0.2s; }
-        .scroll-arrow:nth-child(3) { animation-delay: 0.4s; }
-
-        @keyframes scroll-wheel {
-            0% { opacity: 1; transform: translateX(-50%) translateY(0); }
-            100% { opacity: 0; transform: translateX(-50%) translateY(15px); }
-        }
-
-        @keyframes arrow-wave {
-            0% { opacity: 0; transform: rotate(45deg) translate(-5px, -5px); }
-            50% { opacity: 1; }
-            100% { opacity: 0; transform: rotate(45deg) translate(5px, 5px); }
+        .fade-in {
+            opacity: 1;
+            transition: opacity 0.5s ease;
         }
     </style>
 </head>
@@ -285,11 +154,9 @@
 
                 <div class="w-full lg:w-1/2 relative flex items-center justify-center lg:justify-end mt-12 lg:mt-0" data-aos="fade-left" data-aos-delay="200">
                     <div class="relative w-full max-w-[550px] lg:max-w-[650px] mx-auto lg:mr-0">
-                        
                         <div class="relative z-10 w-[95%] lg:w-[85%] rounded-xl overflow-hidden shadow-2xl border border-white/10 bg-slate-900 mx-auto lg:mx-0 cursor-pointer hover:border-green-500/50 transition-colors" onclick="window.location.href='bot_pc.html'">
                             <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-transparent to-transparent z-10"></div>
-                            <img src="images/bacbo.png" alt="Desktop Interface" class="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity">
-                            
+                            <img src="images/bacbo.png" alt="Interface PC" class="w-full h-auto object-cover opacity-80 hover:opacity-100 transition-opacity">
                             <div class="absolute bottom-4 left-4 z-20 pointer-events-none">
                                 <div class="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-lg border border-green-500/30 flex items-center gap-2">
                                     <i class="fas fa-desktop text-green-400 text-xs"></i>
@@ -300,9 +167,7 @@
 
                         <div class="absolute -bottom-6 -right-2 sm:-right-4 lg:-right-12 z-20 w-[35%] sm:w-[30%] lg:w-[28%] rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] border-[4px] border-slate-700 bg-slate-900 cursor-pointer hover:border-blue-500/50 transition-colors" onclick="window.location.href='bot_mobile.html'">
                              <div class="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-3 bg-slate-800 rounded-b-lg z-20"></div>
-                             
-                             <img src="images/1.jpg" alt="Mobile Interface" class="w-full h-full object-cover aspect-[9/19] opacity-90 hover:opacity-100 transition-opacity">
-                             
+                             <img src="images/1.jpg" alt="Interface Mobile" class="w-full h-full object-cover aspect-[9/19] opacity-90 hover:opacity-100 transition-opacity">
                              <div class="absolute bottom-3 left-1/2 -translate-x-1/2 w-max z-20 pointer-events-none">
                                 <div class="bg-black/60 backdrop-blur-md px-2 py-1 rounded-full border border-blue-500/30 flex items-center gap-1.5">
                                     <i class="fas fa-mobile-alt text-blue-400 text-[10px]"></i>
@@ -310,21 +175,15 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
             </div>
         </div>
 
-        <div class="mouse-scroll-container" onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
-            <div class="mouse-icon">
-                <div class="mouse-wheel"></div>
-            </div>
-            <div class="scroll-arrows">
-                <div class="scroll-arrow"></div>
-                <div class="scroll-arrow"></div>
-                <div class="scroll-arrow"></div>
+        <div id="scroll-indicator" class="absolute bottom-6 left-1/2 -translate-x-1/2 z-40 flex flex-col items-center gap-2 cursor-pointer fade-in" onclick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+            <span class="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-medium">Saiba Mais</span>
+            <div class="w-6 h-10 border border-gray-500/50 rounded-full flex justify-center pt-2 backdrop-blur-sm bg-slate-900/30">
+                <div class="w-1 h-2 bg-green-400 rounded-full animate-bounce-subtle"></div>
             </div>
         </div>
 
@@ -363,9 +222,22 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Inicializa animações AOS
         AOS.init({
             once: true,
             duration: 800,
+        });
+
+        // Script para esconder o Scroll Indicator ao rolar
+        window.addEventListener('scroll', function() {
+            const indicator = document.getElementById('scroll-indicator');
+            if (window.scrollY > 50) { // Se rolar mais de 50px
+                indicator.classList.remove('fade-in');
+                indicator.classList.add('fade-out');
+            } else {
+                indicator.classList.remove('fade-out');
+                indicator.classList.add('fade-in');
+            }
         });
     </script>
 </body>

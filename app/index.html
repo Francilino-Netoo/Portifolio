@@ -299,7 +299,7 @@
         }
 
         .hero-desc {
-            font-size: 1.08rem;
+            font-size: clamp(0.9rem, 3.5vw, 1.08rem);
             color: #94a3b8;
             line-height: 1.75;
             max-width: 600px;
@@ -506,12 +506,12 @@
             font-family: var(--mono);
         }
         .section-title {
-            font-size: clamp(1.9rem, 3.5vw, 3.2rem);
+            font-size: clamp(1.5rem, 4vw, 3.2rem);
             font-weight: 800;
             line-height: 1.15;
             margin-bottom: 0.85rem;
         }
-        .section-sub { font-size: 1rem; color: #64748b; max-width: 680px; line-height: 1.65; }
+        .section-sub { font-size: clamp(0.85rem, 3.5vw, 1rem); color: #64748b; max-width: 680px; line-height: 1.65; }
 
         .neon-line {
             height: 1px;
@@ -563,8 +563,8 @@
             font-size: 1.3rem;
             margin-bottom: 1.1rem;
         }
-        .feat-card h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.75rem; color: #f1f5f9; }
-        .feat-card p  { font-size: 0.95rem; color: #64748b; line-height: 1.7; }
+        .feat-card h3 { font-size: clamp(1.05rem, 3.5vw, 1.2rem); font-weight: 700; margin-bottom: 0.75rem; color: #f1f5f9; }
+        .feat-card p  { font-size: clamp(0.85rem, 3vw, 0.95rem); color: #64748b; line-height: 1.7; }
 
         .flags-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 10px; }
         .flag-item {
@@ -638,7 +638,7 @@
         @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
 
         .wl-title {
-            font-size: clamp(1.8rem, 3.5vw, 3rem);
+            font-size: clamp(1.4rem, 4vw, 3rem);
             font-weight: 900;
             line-height: 1.12;
             margin-bottom: 0.9rem;
@@ -649,7 +649,7 @@
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .wl-desc { font-size: 1rem; color: #94a3b8; line-height: 1.7; margin-bottom: 1.75rem; max-width: 540px; }
+        .wl-desc { font-size: clamp(0.85rem, 3vw, 1rem); color: #94a3b8; line-height: 1.7; margin-bottom: 1.75rem; max-width: 540px; }
 
         .btn-wl {
             display: inline-flex;
@@ -787,11 +787,11 @@
             padding: 7rem 2rem;
         }
         .cta-final-inner h2 {
-            font-size: clamp(2rem, 4.5vw, 3.5rem);
+            font-size: clamp(1.6rem, 5vw, 3.5rem);
             font-weight: 900;
             margin-bottom: 1.25rem;
         }
-        .cta-final-inner p { color: #64748b; font-size: 1rem; margin-bottom: 2.5rem; line-height: 1.6; }
+        .cta-final-inner p { color: #64748b; font-size: clamp(0.9rem, 3.5vw, 1rem); margin-bottom: 2.5rem; line-height: 1.6; }
 
         .btn-final {
             display: inline-flex;

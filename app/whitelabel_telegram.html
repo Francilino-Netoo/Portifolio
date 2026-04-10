@@ -184,7 +184,7 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-size: clamp(1.5rem, 6vw, 5rem);
             font-weight: 900;
             line-height: 1.1;
             margin-bottom: 1.5rem;
@@ -209,7 +209,7 @@
         .hero p {
             max-width: 640px;
             margin: 0 auto 2.5rem;
-            font-size: 1.1rem;
+            font-size: clamp(0.8rem, 3.5vw, 1.1rem);
             color: #94a3b8;
             line-height: 1.7;
         }
@@ -282,7 +282,7 @@
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 2rem;
+            gap: clamp(1rem, 4vw, 2rem);
             padding: 3rem 1.5rem;
             border-top: 1px solid rgba(255,255,255,0.04);
             border-bottom: 1px solid rgba(255,255,255,0.04);
@@ -292,7 +292,7 @@
         .stat-item { text-align: center; }
 
         .stat-num {
-            font-size: 2.5rem;
+            font-size: clamp(1.3rem, 5vw, 2.5rem);
             font-weight: 900;
             background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
             -webkit-background-clip: text;
@@ -301,7 +301,7 @@
         }
 
         .stat-label {
-            font-size: 0.8rem;
+            font-size: clamp(0.55rem, 2.5vw, 0.8rem);
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #64748b;
@@ -335,20 +335,18 @@
         }
 
         .section-title {
-            font-size: clamp(1.8rem, 4vw, 3rem);
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
+            font-size: clamp(1.35rem, 4vw, 3.2rem);
+            font-weight: 900;
+            line-height: 1.15;
+            margin-bottom: 0.85rem;
         }
-
         .section-sub {
-            font-size: 1rem;
-            color: #64748b;
-            max-width: 600px;
-        }
-
-        /* ── FEATURE CARDS ── */
-        .features-grid {
+            font-size: clamp(0.78rem, 3.5vw, 1.05rem);
+            color: #8b99ae;
+            max-width: 680px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }.features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
@@ -472,8 +470,11 @@
 
         .highlight-icon { font-size: 2rem; flex-shrink: 0; }
 
-        .highlight-card h4 { font-size: 0.95rem; font-weight: 700; color: #f1f5f9; margin-bottom: 3px; }
-        .highlight-card p { font-size: 0.8rem; color: #64748b; }
+        .highlight-card h4 { font-size: clamp(0.8rem, 3vw, 0.95rem); font-weight: 700; color: #f1f5f9; margin-bottom: 3px; }
+        .highlight-card p { font-size: clamp(0.7rem, 2.5vw, 0.8rem); color: #64748b; }
+
+        .feature-card h3 { font-size: clamp(0.95rem, 3.5vw, 1.25rem); font-weight: 700; margin-bottom: 0.6rem; color: #fff; }
+        .feature-card p { font-size: clamp(0.78rem, 3vw, 0.95rem); color: #8b99ae; line-height: 1.6; }
 
         /* ── PRICING ── */
         .pricing-grid {
@@ -597,12 +598,12 @@
         }
 
         .cta-final h2 {
-            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-size: clamp(1.4rem, 4vw, 3rem);
             font-weight: 900;
             margin-bottom: 1rem;
         }
 
-        .cta-final p { color: #64748b; margin-bottom: 2.5rem; font-size: 1rem; }
+        .cta-final p { color: #64748b; font-size: clamp(0.75rem, 3vw, 1rem); margin-bottom: 2.5rem; }
 
         .cta-btn-main {
             display: inline-flex;

@@ -7,7 +7,7 @@ menuIcon.onclick = () => {
   navbar.classList.toggle("active");
 };
 
-/*==================== scroll sections active link ====================.*/
+/*==================== scroll sections active link ====================*/
 let sections = document.querySelectorAll("section");
 let navLinks = document.querySelectorAll("header nav a");
 
@@ -39,29 +39,31 @@ window.onscroll = () => {
 ScrollReveal({
   //reset: true,
   distance: "80px",
-  duratio: 2000,
+  duration: 2000,
   delay: 200,
 });
 
 ScrollReveal().reveal(".home-contente, .heading", { origin: "top" });
 ScrollReveal().reveal(
   ".home-img, .services-container, .portfolio-box, .contact form",
-  { origin: "bottom" }
+  { origin: "bottom", interval: 150 }
 );
 ScrollReveal().reveal(".home-contente h1, .about-img", { origin: "left" });
 ScrollReveal().reveal(".home-contente p, .about-content", { origin: "right" });
-/*==================== typed js ====================*/
 
-const typed = new Typed(".multiple-text", {
-  strings: [
-    "Desenvolvedor Full Stack",
-    "Especialista em Scraping",
-    "Desenvolvedor Mobile",
-    "Desenvolvedor Mobile",
-    "Especialista em Automação Web",
-  ],
-  typeSpeed: 100,
-  backSpeed: 100,
-  backDalay: 1000,
-  loop: true,
-});
+/*==================== typed js ====================*/
+if (document.querySelector(".multiple-text")) {
+  const typed = new Typed(".multiple-text", {
+    strings: [
+      "Engenheiro de Software Sênior",
+      "Fundador de Plataformas SaaS",
+      "Especialista em Automação Web",
+      "Engenheiro Full Stack",
+      "Expert em Arquiteturas Escaláveis",
+    ],
+    typeSpeed: 90,
+    backSpeed: 100,
+    backDelay: 1000,
+    loop: true,
+  });
+}

@@ -79,8 +79,8 @@ if (document.querySelector(".multiple-text")) {
     strings: [
       "Fundador de Plataformas SaaS",
       "Especialista em Automação Web",
-      "Engenheiro Full Stack",
-      "Expert em Arquiteturas Escaláveis",
+      "Desenvolvedor de Sistemas",
+      "Criador de Automações Escaláveis",
     ],
     typeSpeed: 90,
     backSpeed: 100,

@@ -1499,9 +1499,9 @@ span.multiple-text {
   .navbar a {
     display: flex;
     align-items: center;
-    font-size: 1.5rem;
-    margin: 0.2rem 1.5rem;
-    padding: 0.8rem 1.5rem;
+    font-size: 1.8rem;
+    margin: 0.5rem 1.5rem;
+    padding: 1.2rem 1.5rem;
     color: #e2e8f0;
     text-decoration: none;
     border-radius: 1.2rem;
@@ -1509,13 +1509,13 @@ span.multiple-text {
     font-weight: 500;
     position: relative;
     overflow: hidden;
-    gap: 1.2rem;
+    gap: 1.5rem;
   }
   
   .navbar a i {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     color: #64748b;
-    min-width: 2.4rem;
+    min-width: 2.8rem;
     text-align: center;
     transition: all 0.2s ease;
   }
@@ -1590,6 +1590,13 @@ span.multiple-text {
   .blog-content p { font-size: 1.4rem; margin-bottom: 1.5rem; }
   .blog-tags { gap: 0.8rem; }
   .tag { padding: 0.4rem 1rem; font-size: 1rem; }
+  .porfolio-container { grid-template-columns: 1fr; gap: 1.5rem; }
+  .porfolio-container .portfolio-box { height: 220px; }
+  .portfolio-layer { padding: 0 1.5rem; }
+  .portfolio-layer h4 { font-size: 1.8rem; }
+  .portfolio-layer p { font-size: 1.2rem; }
+  .portfolio-layer a { width: 4rem; height: 4rem; }
+  .portfolio-layer a i { font-size: 2rem; }
   .contact form .input-box input { width: 100%; }
 }
 

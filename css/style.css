@@ -1499,9 +1499,9 @@ span.multiple-text {
   .navbar a {
     display: flex;
     align-items: center;
-    font-size: 1.8rem;
-    margin: 0.5rem 1.5rem;
-    padding: 1.2rem 1.5rem;
+    font-size: 2rem;
+    margin: 0.8rem 1.5rem;
+    padding: 1.5rem 1.8rem;
     color: #e2e8f0;
     text-decoration: none;
     border-radius: 1.2rem;
@@ -1509,13 +1509,13 @@ span.multiple-text {
     font-weight: 500;
     position: relative;
     overflow: hidden;
-    gap: 1.5rem;
+    gap: 1.8rem;
   }
   
   .navbar a i {
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     color: #64748b;
-    min-width: 2.8rem;
+    min-width: 3rem;
     text-align: center;
     transition: all 0.2s ease;
   }
@@ -1583,15 +1583,16 @@ span.multiple-text {
   .about-content p { font-size: 1.4rem; }
   .about-content .btn { display: none; }
   .heading { font-size: 3rem; margin-bottom: 3rem; }
-  .services-container .services-box { width: 100%; font-size: 1.4rem; }
+  .services-container .services-box { width: 100%; font-size: 1.4rem; max-height: none; overflow: visible; }
   .services-container .services-box h3 { font-size: 1.8rem; }
+  .text-content { max-height: none; overflow: visible; }
   .services-box .btn { display: none; }
-  .blog-container { grid-template-columns: 1fr; gap: 1.5rem; }
-  .blog-box { padding: 1.5rem; height: auto; }
-  .blog-content h3 { font-size: 1.8rem; margin-bottom: 1rem; }
-  .blog-content p { font-size: 1.4rem; margin-bottom: 1.5rem; }
-  .blog-tags { gap: 0.8rem; }
-  .tag { padding: 0.4rem 1rem; font-size: 1rem; }
+  .blog-container { grid-template-columns: 1fr; gap: 2rem; padding: 0 1rem; }
+  .blog-box { padding: 2rem; height: auto; }
+  .blog-content h3 { font-size: 2.1rem; margin-bottom: 1.2rem; }
+  .blog-content p { font-size: 1.6rem; margin-bottom: 2rem; }
+  .blog-tags { gap: 1rem; margin-bottom: 1.5rem; }
+  .tag { padding: 0.6rem 1.3rem; font-size: 1.2rem; }
   .porfolio-container { grid-template-columns: 1fr; gap: 1.5rem; }
   .porfolio-container .portfolio-box { height: 220px; }
   .portfolio-layer { padding: 0 1.5rem; }
@@ -1619,9 +1620,10 @@ span.multiple-text {
   .about-content h2 { font-size: 2.2rem; }
   .about-content h3 { font-size: 1.4rem; }
   .about-content p { font-size: 1.2rem; }
-  .services-container .services-box { width: 100%; padding: 1.5rem 1rem; font-size: 1.2rem; }
+  .services-container .services-box { width: 100%; padding: 1.5rem 1rem; font-size: 1.2rem; max-height: none; overflow: visible; }
   .services-container .services-box h3 { font-size: 1.5rem; }
   .services-container .services-box i { font-size: 3rem; }
+  .text-content { max-height: none; overflow: visible; }
   .blog-container { 
     grid-template-columns: 1fr; 
     gap: 1rem; 
@@ -1634,10 +1636,10 @@ span.multiple-text {
     margin: 0;
     height: auto;
   }
-  .blog-content h3 { font-size: 1.5rem; margin-bottom: 0.8rem; }
-  .blog-content p { font-size: 1rem; margin-bottom: 1rem; line-height: 1.5; }
-  .blog-tags { gap: 0.5rem; margin-bottom: 1rem; }
-  .tag { padding: 0.3rem 0.8rem; font-size: 0.9rem; }
+  .blog-content h3 { font-size: 1.8rem; margin-bottom: 1rem; }
+  .blog-content p { font-size: 1.3rem; margin-bottom: 1.5rem; line-height: 1.6; }
+  .blog-tags { gap: 0.8rem; margin-bottom: 1.3rem; }
+  .tag { padding: 0.5rem 1rem; font-size: 1.1rem; }
   .blog-content .btn { font-size: 1.1rem; padding: 0.7rem 1.5rem; }
   .contact form { padding: 2rem 1rem; }
 

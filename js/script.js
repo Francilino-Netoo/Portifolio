@@ -1,15 +1,29 @@
 /*==================== toggle icon navbar ====================*/
 let menuIcon = document.querySelector("#menu-icon");
 let navbar = document.querySelector(".navbar");
+let menuBackdrop = document.querySelector("#menu-backdrop");
+let navLinks = document.querySelectorAll(".navbar a");
 
 menuIcon.onclick = () => {
   menuIcon.classList.toggle("bx-x");
   navbar.classList.toggle("active");
+  menuBackdrop.classList.toggle("active");
+};
+
+// Menu links não fecham mais automaticamente
+navLinks.forEach(link => {
+  link.onclick = () => {
+    // Não fecha mais o menu - só navega
+  };
+});
+
+// Backdrop não fecha mais o menu
+menuBackdrop.onclick = () => {
+  // Não fecha mais o menu
 };
 
 /*==================== scroll sections active link ====================*/
 let sections = document.querySelectorAll("section");
-let navLinks = document.querySelectorAll("header nav a");
 
 window.onscroll = () => {
   sections.forEach((sec) => {
@@ -31,8 +45,7 @@ window.onscroll = () => {
   let header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 100);
 
-  menuIcon.classList.remove("bx-x");
-  navbar.classList.remove("active");
+  // Não fecha mais o menu no scroll
 };
 
 /*==================== scroll reveal ====================*/

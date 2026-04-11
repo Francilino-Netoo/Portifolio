@@ -75,16 +75,17 @@ ScrollReveal().reveal(".home-contente p, .about-content", { origin: "right" });
 
 /*==================== typed js ====================*/
 if (document.querySelector(".multiple-text")) {
-  const typed = new Typed(".multiple-text", {
+  new Typed(".multiple-text", {
     strings: [
-      "Fundador de Plataformas SaaS",
-      "Especialista em Automação Web",
-      "Desenvolvedor de Sistemas",
-      "Criador de Automações Escaláveis",
+      "Criador de plataformas SaaS",
+      "Especialista em automação web",
+      "Desenvolvedor de sistemas",
+      "Automações escaláveis de alta performance"
     ],
-    typeSpeed: 90,
-    backSpeed: 100,
-    backDelay: 1000,
+    typeSpeed: 70,
+    backSpeed: 50,
+    backDelay: 1200,
     loop: true,
   });
 }
+

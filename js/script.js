@@ -10,16 +10,20 @@ menuIcon.onclick = () => {
   menuBackdrop.classList.toggle("active");
 };
 
-// Menu links não fecham mais automaticamente
+// Fechar menu ao clicar em um link
 navLinks.forEach(link => {
   link.onclick = () => {
-    // Não fecha mais o menu - só navega
+    menuIcon.classList.remove("bx-x");
+    navbar.classList.remove("active");
+    menuBackdrop.classList.remove("active");
   };
 });
 
-// Backdrop não fecha mais o menu
+// Fechar menu ao clicar no backdrop
 menuBackdrop.onclick = () => {
-  // Não fecha mais o menu
+  menuIcon.classList.remove("bx-x");
+  navbar.classList.remove("active");
+  menuBackdrop.classList.remove("active");
 };
 
 /*==================== scroll sections active link ====================*/
@@ -45,7 +49,12 @@ window.onscroll = () => {
   let header = document.querySelector("header");
   header.classList.toggle("sticky", window.scrollY > 100);
 
-  // Não fecha mais o menu no scroll
+  // Fechar menu ao fazer scroll
+  if (navbar.classList.contains("active")) {
+    menuIcon.classList.remove("bx-x");
+    navbar.classList.remove("active");
+    menuBackdrop.classList.remove("active");
+  }
 };
 
 /*==================== scroll reveal ====================*/

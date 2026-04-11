@@ -26,6 +26,19 @@ menuBackdrop.onclick = () => {
   menuBackdrop.classList.remove("active");
 };
 
+// Fechar menu ao clicar fora dele
+document.addEventListener('click', (event) => {
+  const isClickInsideMenu = navbar.contains(event.target);
+  const isClickOnMenuIcon = menuIcon.contains(event.target);
+  const isMenuOpen = navbar.classList.contains("active");
+  
+  if (isMenuOpen && !isClickInsideMenu && !isClickOnMenuIcon) {
+    menuIcon.classList.remove("bx-x");
+    navbar.classList.remove("active");
+    menuBackdrop.classList.remove("active");
+  }
+});
+
 /*==================== scroll sections active link ====================*/
 let sections = document.querySelectorAll("section");
 

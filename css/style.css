@@ -138,19 +138,7 @@ html {
     left: 100%;
   }
   
-  /* Indicador de página ativa */
-  .navbar a.active::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 70%;
-    background: linear-gradient(180deg, var(--nain-color), var(--accent-color));
-    border-radius: 2px;
-    animation: pulse 2s infinite;
-  }
+  /* Indicador de página ativa removido para evitar conflito visual */
   
   /* Scrollbar personalizada para menu */
   .navbar::-webkit-scrollbar {
@@ -1428,6 +1416,11 @@ span.multiple-text {
   z-index: 99;
 }
 
+.menu-backdrop:not(.active) {
+  pointer-events: none;
+  opacity: 0;
+}
+
 .menu-backdrop.active {
   pointer-events: auto;
   opacity: 1;
@@ -1455,15 +1448,23 @@ span.multiple-text {
   }
   
   #menu-icon:hover {
-    background: rgba(30, 41, 59, 1);
-    border-color: rgba(0, 229, 255, 0.3);
+    background: linear-gradient(45deg, var(--nain-color), #0099ff);
+    border-color: var(--nain-color);
+    color: white;
     transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.4);
   }
   
   #menu-icon.bx-x {
-    background: rgba(239, 68, 68, 0.1);
-    border-color: rgba(239, 68, 68, 0.3);
-    color: #ef4444;
+    background: linear-gradient(45deg, #ef4444, #dc2626);
+    border-color: #ef4444;
+    color: white;
+    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+  }
+  
+  #menu-icon.bx-x:hover {
+    background: linear-gradient(45deg, #dc2626, #b91c1c);
+    transform: scale(1.05);
   }
   
   .navbar {
@@ -1479,11 +1480,16 @@ span.multiple-text {
     box-shadow: 4px 0 40px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
-    transform: translateX(-100%);
+    transform: translateX(-105%);
     transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 100;
     padding: 0;
     padding-top: 70px;
+    overflow: hidden;
+  }
+  
+  .navbar:not(.active) { 
+    transform: translateX(-105%);
   }
   
   .navbar.active { 
@@ -1546,7 +1552,8 @@ span.multiple-text {
     z-index: -1;
   }
   
-  .navbar a:hover::before {
+  .navbar a:hover::before,
+  .navbar a.active::before {
     width: 100%;
   }
   

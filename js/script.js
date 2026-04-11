@@ -77,7 +77,6 @@ ScrollReveal().reveal(".home-contente p, .about-content", { origin: "right" });
 if (document.querySelector(".multiple-text")) {
   const typed = new Typed(".multiple-text", {
     strings: [
-      "Engenheiro de Software Sênior",
       "Fundador de Plataformas SaaS",
       "Especialista em Automação Web",
       "Engenheiro Full Stack",

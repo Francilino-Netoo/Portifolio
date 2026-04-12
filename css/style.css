@@ -1388,6 +1388,106 @@ span.multiple-text {
   background: rgba(0, 229, 255, 0.1);
 }
 
+/* ===== PERÍCIA CIBERNÉTICA ===== */
+.forensics {
+  background: var(--second-bg-color);
+  padding: 8rem 9% 5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.forensics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 4rem;
+}
+
+.forensics-card {
+  background: var(--bg-color);
+  border-radius: 2rem;
+  padding: 2rem;
+  text-align: center;
+  border: 0.2rem solid var(--main-color);
+  transition: 0.5s ease;
+  border-color: rgba(0, 229, 255, 0.3);
+}
+
+.forensics-card:hover {
+  transform: translateY(-1rem);
+  box-shadow: 0 0 20px rgba(0, 238, 255, 0.2);
+  border-color: var(--nain-color);
+}
+
+.forensics-icon {
+  font-size: 5rem;
+  color: var(--nain-color);
+  margin-bottom: 1rem;
+}
+
+.forensics-card h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.forensics-card p {
+  font-size: 1.4rem;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.forensics-list {
+  list-style: none;
+  text-align: left;
+  margin-top: 1.5rem;
+}
+
+.forensics-list li {
+  font-size: 1.3rem;
+  color: #ddd;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.forensics-list li i {
+  color: var(--nain-color);
+  font-size: 1.8rem;
+}
+
+.forensics-cta {
+  text-align: center;
+  margin-top: 4rem;
+}
+
+.forensics-cta .btn {
+  background: var(--nain-color);
+  color: var(--second-bg-color);
+  font-weight: 600;
+  padding: 1.2rem 2.5rem;
+  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.forensics-cta .btn:hover {
+  background: #00ccff;
+  box-shadow: 0 0 15px var(--nain-color);
+}
+
+.forensics-note {
+  margin-top: 1.5rem;
+  font-size: 1.4rem;
+  color: var(--nain-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
   html { font-size: 55%; }
@@ -1615,6 +1715,12 @@ span.multiple-text {
   .portfolio-layer a { width: 4rem; height: 4rem; }
   .portfolio-layer a i { font-size: 2rem; }
   .contact form .input-box input { width: 100%; }
+  .forensics {
+    padding: 5rem 4%;
+  }
+  .forensics-card {
+    padding: 1.5rem;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1657,6 +1763,29 @@ span.multiple-text {
   .tag { padding: 0.5rem 1rem; font-size: 1.1rem; }
   .blog-content .btn { font-size: 1.1rem; padding: 0.7rem 1.5rem; }
   .contact form { padding: 2rem 1rem; }
+  .footer { padding: 1.2rem 3%; }
+  .footer-text p { font-size: 1.2rem; }
+  
+  /* Melhorias de performance para mobile */
+  .navbar {
+    will-change: transform, opacity;
+  }
+  
+  .navbar a {
+    will-change: transform, background;
+  }
+  
+  /* Reduzir motion para usuários que preferem */
+  @media (prefers-reduced-motion: reduce) {
+    .navbar,
+    .navbar a,
+    #menu-icon,
+    html::before {
+      animation: none;
+      transition: none;
+    }
+  }
+}
 
 /* Mobile Modal Adjustments */
 @media (max-width: 768px) {
@@ -1722,34 +1851,12 @@ span.multiple-text {
   .navbar.active a:nth-child(5) { animation-delay: 0.3s; }
   .navbar.active a:nth-child(6) { animation-delay: 0.35s; }
   .navbar.active a:nth-child(7) { animation-delay: 0.4s; }
+  .navbar.active a:nth-child(8) { animation-delay: 0.45s; }
 }
 
 @keyframes linkSlideIn {
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-  .footer { padding: 1.2rem 3%; }
-  .footer-text p { font-size: 1.2rem; }
-  
-  /* Melhorias de performance para mobile */
-  .navbar {
-    will-change: transform, opacity;
-  }
-  
-  .navbar a {
-    will-change: transform, background;
-  }
-  
-  /* Reduzir motion para usuários que preferem */
-  @media (prefers-reduced-motion: reduce) {
-    .navbar,
-    .navbar a,
-    #menu-icon,
-    html::before {
-      animation: none;
-      transition: none;
-    }
   }
 }

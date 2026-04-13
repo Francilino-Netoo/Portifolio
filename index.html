@@ -25,6 +25,7 @@
         <a href="#about"><i class="bx bx-user"></i>Sobre</a>
         <a href="#services"><i class="bx bx-briefcase-alt"></i>Serviços</a>
         <a href="#proof"><i class="bx bx-award"></i>Provas</a>
+        <a href="#featured-projects"><i class="bx bx-star"></i>Destaque</a>
         <a href="#forensics"><i class="bx bx-shield-alt-2"></i>Perícia</a>
         <a href="#blog"><i class="bx bx-file"></i>Artigos</a>
         <a href="#portfolio"><i class="bx bx-folder-open"></i>Projetos</a>
@@ -228,6 +229,98 @@
         <p class="forensics-note">
           <i class='bx bx-award'></i> Pós-graduado em Cybersecurity & Perícia Cibernética
         </p>
+      </div>
+    </section>
+
+    <!-- Projetos em Destaque -->
+    <section class="featured-projects" id="featured-projects">
+      <h2 class="heading">Projetos <span>Destaque</span></h2>
+      <div class="featured-projects-container">
+        <!-- Automa SaaS White-Label -->
+        <div class="featured-project-card">
+          <div class="featured-project-header">
+            <div class="featured-badge">
+              <i class="bx bx-star"></i>
+              <span>Principal Produto</span>
+            </div>
+            <h3>Automa SaaS White-Label</h3>
+          </div>
+          <div class="featured-project-content">
+            <div class="featured-project-video">
+              <img src="images/portfolio14.png" alt="Automa SaaS White-Label" />
+              <div class="video-overlay">
+                <button class="video-play-btn" onclick="openFeaturedVideo('automa-saas')">
+                  <i class="bx bx-play-circle"></i>
+                </button>
+              </div>
+            </div>
+            <div class="featured-project-info">
+              <p>
+                Plataforma SaaS no-code self-service, multi-tenant, com receita recorrente. Sistema completo de automação que permite empresas criarem suas próprias soluções white-label com gestão total de usuários e monetização.
+              </p>
+              <div class="featured-tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">AsyncIO</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">Multi-tenant</span>
+                <span class="tech-tag">SaaS</span>
+              </div>
+              <div class="featured-project-actions">
+                <a href="https://www.automa-web.dev.br/app/?utm_source=portfolio&utm_medium=featured" target="_blank" class="btn btn-primary">
+                  <i class="bx bx-external-link"></i>
+                  Acessar Plataforma
+                </a>
+                <button class="btn btn-secondary" onclick="openFeaturedVideo('automa-saas')">
+                  <i class="bx bx-play"></i>
+                  Ver Demonstração
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Automação Web Cassino -->
+        <div class="featured-project-card">
+          <div class="featured-project-header">
+            <div class="featured-badge automation">
+              <i class="bx bx-bot"></i>
+              <span>Automação Avançada</span>
+            </div>
+            <h3>Automação Web Cassino</h3>
+          </div>
+          <div class="featured-project-content">
+            <div class="featured-project-video">
+              <img src="images/portfolio12.png" alt="Automação Web Cassino" />
+              <div class="video-overlay">
+                <button class="video-play-btn" onclick="openFeaturedVideo('cassino')">
+                  <i class="bx bx-play-circle"></i>
+                </button>
+              </div>
+            </div>
+            <div class="featured-project-info">
+              <p>
+                Este projeto automatiza entradas em diversos jogos de um cassino online, utilizando as estratégias do próprio usuário. Dessa forma, evita-se que o usuário passe muito tempo na tela do computador ou celular.
+              </p>
+              <div class="featured-tech-stack">
+                <span class="tech-tag">Playwright</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Web Scraping</span>
+                <span class="tech-tag">Automação</span>
+                <span class="tech-tag">Telegram Bot</span>
+              </div>
+              <div class="featured-project-actions">
+                <a href="https://automa-cassinos.dev.br/app/" target="_blank" class="btn btn-primary">
+                  <i class="bx bx-external-link"></i>
+                  Acessar Sistema
+                </a>
+                <button class="btn btn-secondary" onclick="openFeaturedVideo('cassino')">
+                  <i class="bx bx-play"></i>
+                  Ver Tutoriais
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -717,6 +810,210 @@
         // Scroll suave até o contato
         document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
       }
+
+      // Modal de Vídeos dos Projetos Destaque
+      function openFeaturedVideo(projectType) {
+        const modal = document.getElementById('featuredVideoModal');
+        const modalTitle = document.getElementById('featuredVideoModalTitle');
+        const modalSubtitle = document.getElementById('featuredVideoModalSubtitle');
+        const modalDescription = document.getElementById('featuredVideoModalDescription');
+        const modalFeatures = document.getElementById('featuredVideoModalFeatures');
+        const videoContainer = document.getElementById('featuredVideoContainer');
+        
+        if (!modal || !modalTitle || !videoContainer) {
+          console.error('Modal elements not found');
+          return;
+        }
+        
+        // Configurar conteúdo baseado no tipo de projeto
+        if (projectType === 'automa-saas') {
+          modalTitle.textContent = 'Automa SaaS White-Label - Demonstração Completa';
+          modalSubtitle.innerHTML = `
+            <span class="tech-badge">Python + AsyncIO</span>
+            <span class="project-type">Plataforma SaaS</span>
+          `;
+          modalDescription.textContent = 'Plataforma SaaS no-code self-service, multi-tenant, com receita recorrente. Sistema completo de automação que permite empresas criarem suas próprias soluções white-label com gestão total de usuários e monetização.';
+          modalFeatures.innerHTML = `
+            <div class="feature-item">
+              <i class="bx bx-check-circle"></i>
+              <span>Multi-tenant Architecture</span>
+            </div>
+            <div class="feature-item">
+              <i class="bx bx-check-circle"></i>
+              <span>Self-service Dashboard</span>
+            </div>
+            <div class="feature-item">
+              <i class="bx bx-check-circle"></i>
+              <span>Recurring Revenue Model</span>
+            </div>
+          `;
+          videoContainer.innerHTML = `
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/rsUMSEgP_Ys?rel=0&modestbranding=1&autoplay=1" 
+              title="Automa SaaS White-Label Demonstração"
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          `;
+        } else if (projectType === 'cassino') {
+          modalTitle.textContent = 'Automação Web Cassino - Tutoriais Completo';
+          modalSubtitle.innerHTML = `
+            <span class="tech-badge">Playwright + Python</span>
+            <span class="project-type">Automação Web</span>
+          `;
+          modalDescription.textContent = 'Este projeto automatiza entradas em diversos jogos de um cassino online, utilizando as estratégias do próprio usuário. Dessa forma, evita-se que o usuário passe muito tempo na tela do computador ou celular.';
+          modalFeatures.innerHTML = `
+            <div class="feature-item">
+              <i class="bx bx-check-circle"></i>
+              <span>Web Scraping Avançado</span>
+            </div>
+            <div class="feature-item">
+              <i class="bx bx-check-circle"></i>
+              <span>Estratégias Personalizáveis</span>
+            </div>
+            <div class="feature-item">
+              <i class="bx bx-check-circle"></i>
+              <span>Integração com Telegram</span>
+            </div>
+          `;
+          videoContainer.innerHTML = `
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/videoseries?list=PLH9QfB3kqSxr6kYx0aYQ0nQkZfQZ9kQf9&rel=0&modestbranding=1&autoplay=1" 
+              title="Automação Web Cassino Playlist"
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowfullscreen>
+            </iframe>
+          `;
+        }
+        
+        // Abrir modal
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+      }
+      
+      function closeFeaturedVideoModal() {
+        const modal = document.getElementById('featuredVideoModal');
+        const videoContainer = document.getElementById('featuredVideoContainer');
+        
+        if (modal) {
+          modal.style.display = 'none';
+          document.body.style.overflow = 'auto';
+          document.body.style.position = 'relative';
+          document.body.style.top = 'auto';
+          document.body.style.left = 'auto';
+          document.body.style.right = 'auto';
+          document.body.style.bottom = 'auto';
+          document.body.style.width = 'auto';
+          document.body.style.height = 'auto';
+        }
+        
+        // Limpar vídeo para parar reprodução
+        if (videoContainer) {
+          videoContainer.innerHTML = '';
+        }
+      }
+      
+      // Fechar modal ao clicar fora
+      window.onclick = function(event) {
+        const featuredModal = document.getElementById('featuredVideoModal');
+        if (event.target == featuredModal) {
+          closeFeaturedVideoModal();
+        }
+      }
+      
+      // Fechar modal com ESC key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeFeaturedVideoModal();
+        }
+      });
     </script>
+    
+    <!-- Modal de Vídeos dos Projetos Destaque -->
+    <div id="featuredVideoModal" class="featured-video-modal">
+      <div class="featured-video-modal-content">
+        <div class="featured-video-modal-header">
+          <div class="modal-header-content">
+            <div class="modal-title-section">
+              <h2 id="featuredVideoModalTitle">Título do Vídeo</h2>
+              <div class="modal-subtitle" id="featuredVideoModalSubtitle">
+                <span class="tech-badge">Tecnologia Avançada</span>
+                <span class="project-type">Sistema Completo</span>
+              </div>
+            </div>
+            <div class="modal-header-actions">
+              <button class="modal-close-btn" onclick="closeFeaturedVideoModal()">
+                <i class="bx bx-x"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="featured-video-modal-body">
+          <div class="video-section">
+            <div id="featuredVideoContainer" class="featured-video-container">
+              <!-- Vídeo será inserido aqui dinamicamente -->
+            </div>
+            <div class="video-overlay-info">
+              <div class="video-stats">
+                <div class="stat-item">
+                  <i class="bx bx-play-circle"></i>
+                  <span>HD Quality</span>
+                </div>
+                <div class="stat-item">
+                  <i class="bx bx-time"></i>
+                  <span>Demonstração Completa</span>
+                </div>
+                <div class="stat-item">
+                  <i class="bx bx-shield-alt"></i>
+                  <span>Sistema Seguro</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="featured-video-description">
+            <div class="description-content">
+              <h3 class="description-title">
+                <i class="bx bx-info-circle"></i>
+                Sobre este Projeto
+              </h3>
+              <p class="description-text" id="featuredVideoModalDescription">
+                Assista à demonstração completa do sistema e veja todas as funcionalidades em ação.
+              </p>
+              <div class="project-features" id="featuredVideoModalFeatures">
+                <div class="feature-item">
+                  <i class="bx bx-check-circle"></i>
+                  <span>Automação Inteligente</span>
+                </div>
+                <div class="feature-item">
+                  <i class="bx bx-check-circle"></i>
+                  <span>Interface Intuitiva</span>
+                </div>
+                <div class="feature-item">
+                  <i class="bx bx-check-circle"></i>
+                  <span>Resultados em Tempo Real</span>
+                </div>
+              </div>
+            </div>
+            <div class="featured-video-actions">
+              <button class="btn btn-primary" onclick="closeFeaturedVideoModal()">
+                <i class="bx bx-arrow-back"></i>
+                Voltar aos Projetos
+              </button>
+              <button class="btn btn-secondary modal-close-btn-alt" onclick="closeFeaturedVideoModal()">
+                <i class="bx bx-x"></i>
+                Fechar Vídeo
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

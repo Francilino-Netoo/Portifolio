@@ -2025,7 +2025,7 @@ span.multiple-text {
 
 /* Projetos em Destaque */
 .featured-projects {
-  background: linear-gradient(to bottom, var(--second-bg-color), var(--bg-color));
+  background: linear-gradient(to bottom, #1e293b, #0f172a);
   padding: 12rem 9% 4rem;
 }
 
@@ -2038,8 +2038,8 @@ span.multiple-text {
 }
 
 .featured-project-card {
-  background: var(--glass-bg);
-  border: 1px solid var(--glass-border);
+  background: rgba(17, 24, 39, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 2rem;
   overflow: hidden;
   backdrop-filter: blur(20px);
@@ -2056,7 +2056,7 @@ span.multiple-text {
 
 .featured-project-header {
   padding: 2rem 2rem 1rem;
-  border-bottom: 1px solid var(--glass-border);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .featured-badge {
@@ -2070,7 +2070,7 @@ span.multiple-text {
   margin-bottom: 1rem;
   font-size: 1.2rem;
   font-weight: 600;
-  color: var(--nain-color);
+  color: #00e5ff;
 }
 
 .featured-badge.automation {
@@ -2081,7 +2081,7 @@ span.multiple-text {
 
 .featured-project-header h3 {
   font-size: 2.2rem;
-  color: var(--text-color);
+  color: #f3f4f6;
   margin: 0;
   font-weight: 700;
 }
@@ -2145,7 +2145,7 @@ span.multiple-text {
 }
 
 .video-play-btn:hover {
-  background: var(--nain-color);
+  background: #00e5ff;
   transform: scale(1.1);
 }
 
@@ -2157,7 +2157,7 @@ span.multiple-text {
 .featured-project-info p {
   font-size: 1.6rem;
   line-height: 1.7;
-  color: var(--text-color);
+  color: #f3f4f6;
   opacity: 0.9;
   margin-bottom: 1.5rem;
 }
@@ -2171,7 +2171,7 @@ span.multiple-text {
 
 .tech-tag {
   background: rgba(139, 92, 246, 0.1);
-  color: var(--accent-color);
+  color: #8b5cf6;
   padding: 0.4rem 1rem;
   border-radius: 1.5rem;
   font-size: 1.2rem;
@@ -2181,7 +2181,7 @@ span.multiple-text {
 }
 
 .tech-tag:hover {
-  background: var(--accent-color);
+  background: #8b5cf6;
   color: white;
   transform: translateY(-2px);
 }
@@ -2247,7 +2247,7 @@ span.multiple-text {
 }
 
 .featured-video-modal-content {
-  background: linear-gradient(135deg, var(--second-bg-color), rgba(30, 41, 59, 0.98));
+  background: linear-gradient(135deg, #1e293b, rgba(30, 41, 59, 0.98));
   margin: 0;
   padding: 0;
   border: 1px solid rgba(0, 229, 255, 0.2);
@@ -2311,7 +2311,7 @@ span.multiple-text {
 .modal-title-section h2 {
   font-size: 2.2rem;
   font-weight: 700;
-  color: var(--text-color);
+  color: #f3f4f6;
   margin: 0 0 0.8rem 0;
   line-height: 1.2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
@@ -2324,7 +2324,7 @@ span.multiple-text {
 }
 
 .tech-badge {
-  background: linear-gradient(135deg, var(--nain-color), #0099ff);
+  background: linear-gradient(135deg, #00e5ff, #0099ff);
   color: white;
   padding: 0.4rem 1.2rem;
   border-radius: 2rem;
@@ -2336,7 +2336,7 @@ span.multiple-text {
 
 .project-type {
   background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(139, 92, 246, 0.1));
-  color: var(--accent-color);
+  color: #8b5cf6;
   padding: 0.4rem 1.2rem;
   border-radius: 2rem;
   font-size: 1.2rem;
@@ -2441,7 +2441,7 @@ span.multiple-text {
   padding: 0.6rem 1.2rem;
   border-radius: 2rem;
   border: 1px solid rgba(0, 229, 255, 0.3);
-  color: var(--nain-color);
+  color: #00e5ff;
   font-weight: 600;
   font-size: 1.3rem;
   transition: all 0.3s ease;
@@ -2473,19 +2473,19 @@ span.multiple-text {
   gap: 1rem;
   font-size: 1.8rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: #f3f4f6;
   margin: 0 0 1.5rem 0;
 }
 
 .description-title i {
-  color: var(--nain-color);
+  color: #00e5ff;
   font-size: 2rem;
 }
 
 .description-text {
   font-size: 1.5rem;
   line-height: 1.7;
-  color: var(--text-color);
+  color: #f3f4f6;
   opacity: 0.9;
   margin-bottom: 2rem;
   text-align: justify;
@@ -2522,7 +2522,7 @@ span.multiple-text {
 }
 
 .feature-item span {
-  color: var(--text-color);
+  color: #f3f4f6;
   font-weight: 500;
   font-size: 1.4rem;
 }
@@ -2550,14 +2550,14 @@ span.multiple-text {
 }
 
 .featured-video-actions .btn-primary {
-  background: linear-gradient(135deg, var(--nain-color), #0099ff);
+  background: linear-gradient(135deg, #00e5ff, #0099ff);
   color: white;
   border: none;
   box-shadow: 0 4px 15px rgba(0, 229, 255, 0.3);
 }
 
 .featured-video-actions .btn-primary:hover {
-  background: linear-gradient(135deg, #0099ff, var(--nain-color));
+  background: linear-gradient(135deg, #0099ff, #00e5ff);
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 229, 255, 0.4);
 }

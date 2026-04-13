@@ -101,4 +101,3 @@ if (document.querySelector(".multiple-text")) {
     loop: true,
   });
 }
-

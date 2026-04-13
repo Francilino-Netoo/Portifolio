@@ -1388,6 +1388,162 @@ span.multiple-text {
   background: rgba(0, 229, 255, 0.1);
 }
 
+/* ===== PERÍCIA CIBERNÉTICA ===== */
+.forensics {
+  background: var(--bg-color);
+  padding: 8rem 9% 5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.forensics-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+
+.forensics-card {
+  background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(11, 17, 32, 0.9));
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border: 1px solid rgba(0, 229, 255, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.forensics-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--nain-color), var(--accent-color), var(--nain-color));
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.forensics-card:hover::before {
+  transform: translateX(0);
+}
+
+.forensics-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(0, 229, 255, 0.4);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 229, 255, 0.1);
+}
+
+.forensics-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.15), rgba(139, 92, 246, 0.1));
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+  transition: all 0.3s ease;
+}
+
+.forensics-card:hover .forensics-icon {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.25), rgba(139, 92, 246, 0.2));
+}
+
+.forensics-icon i {
+  font-size: 3rem;
+  color: var(--nain-color);
+}
+
+.forensics-card h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(135deg, #fff, var(--nain-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.forensics-card p {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #cbd5e1;
+  margin-bottom: 1.8rem;
+}
+
+.forensics-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.forensics-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.6rem 0;
+  font-size: 1.3rem;
+  color: #94a3b8;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.05);
+}
+
+.forensics-list li:last-child {
+  border-bottom: none;
+}
+
+.forensics-list li i {
+  font-size: 1.6rem;
+  color: var(--nain-color);
+  flex-shrink: 0;
+}
+
+.forensics-cta {
+  text-align: center;
+  margin-top: 5rem;
+  padding: 3rem;
+  background: linear-gradient(135deg, rgba(0, 229, 255, 0.05), rgba(139, 92, 246, 0.02));
+  border-radius: 2rem;
+  border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.forensics-cta .btn {
+  background: linear-gradient(45deg, var(--nain-color), #0099ff);
+  color: var(--bg-color);
+  font-weight: 700;
+  padding: 1.4rem 3rem;
+  font-size: 1.6rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: 3rem;
+  transition: all 0.3s ease;
+}
+
+.forensics-cta .btn i {
+  font-size: 2rem;
+}
+
+.forensics-cta .btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 30px rgba(0, 229, 255, 0.5);
+  background: linear-gradient(45deg, #00ccff, #0077ff);
+}
+
+.forensics-note {
+  margin-top: 1.5rem;
+  font-size: 1.3rem;
+  color: var(--nain-color);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: rgba(0, 229, 255, 0.1);
+  padding: 0.6rem 1.5rem;
+  border-radius: 2rem;
+}
+
 /* RESPONSIVE DESIGN */
 @media (max-width: 1200px) {
   html { font-size: 55%; }
@@ -1615,6 +1771,36 @@ span.multiple-text {
   .portfolio-layer a { width: 4rem; height: 4rem; }
   .portfolio-layer a i { font-size: 2rem; }
   .contact form .input-box input { width: 100%; }
+  
+  /* Forensics responsive */
+  .forensics {
+    padding: 5rem 5%;
+  }
+  .forensics-container {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  .forensics-card {
+    padding: 2rem;
+  }
+  .forensics-card h3 {
+    font-size: 1.8rem;
+  }
+  .forensics-card p {
+    font-size: 1.3rem;
+  }
+  .forensics-list li {
+    font-size: 1.2rem;
+    padding: 0.5rem 0;
+  }
+  .forensics-cta {
+    padding: 2rem;
+    margin-top: 3rem;
+  }
+  .forensics-cta .btn {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+  }
 }
 
 @media (max-width: 450px) {
@@ -1657,6 +1843,48 @@ span.multiple-text {
   .tag { padding: 0.5rem 1rem; font-size: 1.1rem; }
   .blog-content .btn { font-size: 1.1rem; padding: 0.7rem 1.5rem; }
   .contact form { padding: 2rem 1rem; }
+  .footer { padding: 1.2rem 3%; }
+  .footer-text p { font-size: 1.2rem; }
+  
+  /* Forensics responsive small */
+  .forensics {
+    padding: 4rem 4%;
+  }
+  .forensics-icon {
+    width: 50px;
+    height: 50px;
+  }
+  .forensics-icon i {
+    font-size: 2.5rem;
+  }
+  .forensics-card h3 {
+    font-size: 1.6rem;
+  }
+  .forensics-note {
+    font-size: 1.1rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  /* Melhorias de performance para mobile */
+  .navbar {
+    will-change: transform, opacity;
+  }
+  
+  .navbar a {
+    will-change: transform, background;
+  }
+  
+  /* Reduzir motion para usuários que preferem */
+  @media (prefers-reduced-motion: reduce) {
+    .navbar,
+    .navbar a,
+    #menu-icon,
+    html::before {
+      animation: none;
+      transition: none;
+    }
+  }
+}
 
 /* Mobile Modal Adjustments */
 @media (max-width: 768px) {
@@ -1722,34 +1950,12 @@ span.multiple-text {
   .navbar.active a:nth-child(5) { animation-delay: 0.3s; }
   .navbar.active a:nth-child(6) { animation-delay: 0.35s; }
   .navbar.active a:nth-child(7) { animation-delay: 0.4s; }
+  .navbar.active a:nth-child(8) { animation-delay: 0.45s; }
 }
 
 @keyframes linkSlideIn {
   to {
     opacity: 1;
     transform: translateX(0);
-  }
-}
-  .footer { padding: 1.2rem 3%; }
-  .footer-text p { font-size: 1.2rem; }
-  
-  /* Melhorias de performance para mobile */
-  .navbar {
-    will-change: transform, opacity;
-  }
-  
-  .navbar a {
-    will-change: transform, background;
-  }
-  
-  /* Reduzir motion para usuários que preferem */
-  @media (prefers-reduced-motion: reduce) {
-    .navbar,
-    .navbar a,
-    #menu-icon,
-    html::before {
-      animation: none;
-      transition: none;
-    }
   }
 }

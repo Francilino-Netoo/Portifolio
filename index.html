@@ -25,6 +25,7 @@
         <a href="#about"><i class="bx bx-user"></i>Sobre</a>
         <a href="#services"><i class="bx bx-briefcase-alt"></i>Serviços</a>
         <a href="#proof"><i class="bx bx-award"></i>Provas</a>
+        <a href="#forensics"><i class="bx bx-shield-alt-2"></i>Perícia</a>
         <a href="#blog"><i class="bx bx-file"></i>Artigos</a>
         <a href="#portfolio"><i class="bx bx-folder-open"></i>Projetos</a>
         <a href="#contact"><i class="bx bx-envelope"></i>Contato</a>
@@ -51,6 +52,7 @@
           <a href="https://github.com/Francilino-Netoo" target="_blank" title="GitHub com repositórios documentados"
             ><i class="bx bxl-github"></i
           ></a>
+          <a href="https://www.youtube.com/@AutomaWeb" target="_blank"><i class="bx bxl-youtube"></i></a>
           <a
             href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text&type=phone_number&app_absent=0"
             target="_blank"
@@ -106,14 +108,6 @@
           <h3>Chatbots & Automação</h3>
           <p class="text-content">
             Desenvolvimento de chatbots para Telegram e WhatsApp com arquitetura multi-tenant. Sistemas automatizados para entrega de conteúdo e monetização em escala.
-          </p>
-          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
-        </div>
-        <div class="services-box">
-          <i class="bx bxl-android"></i>
-          <h3>Desenvolvimento Mobile</h3>
-          <p class="text-content">
-            Aplicações móveis com React Native para iOS e Android. Soluções para gestão remota de automações e dashboards administrativos via smartphone.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -178,6 +172,62 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Seção: Perícia Cibernética -->
+    <section class="forensics" id="forensics">
+      <h2 class="heading">Perícia <span>Cibernética</span></h2>
+      <div class="forensics-container">
+        
+        <div class="forensics-card">
+          <div class="forensics-icon">
+            <i class='bx bxs-shield-alt-2'></i>
+          </div>
+          <h3>Laudo Técnico Pericial</h3>
+          <p>Elaboração de laudos com validade técnica para processos judiciais, arbitragens e investigações internas. Análise de logs, metadados e cadeia de custódia digital.</p>
+          <ul class="forensics-list">
+            <li><i class='bx bx-check-circle'></i> Conformidade com ISO 27001</li>
+            <li><i class='bx bx-check-circle'></i> Cadeia de custódia rastreável</li>
+            <li><i class='bx bx-check-circle'></i> Pós-graduado em Perícia</li>
+          </ul>
+        </div>
+
+        <div class="forensics-card">
+          <div class="forensics-icon">
+            <i class='bx bx-search-alt-2'></i>
+          </div>
+          <h3>Análise de Casos</h3>
+          <p>Investigação de incidentes cibernéticos: invasões, vazamento de dados, fraudes eletrônicas, engenharia social e recuperação de evidências digitais.</p>
+          <ul class="forensics-list">
+            <li><i class='bx bx-check-circle'></i> Análise de invasões</li>
+            <li><i class='bx bx-check-circle'></i> Rastreamento de origem</li>
+            <li><i class='bx bx-check-circle'></i> Relatório executivo detalhado</li>
+          </ul>
+        </div>
+
+        <div class="forensics-card">
+          <div class="forensics-icon">
+            <i class='bx bx-fingerprint'></i>
+          </div>
+          <h3>Coleta de Vestígios</h3>
+          <p>Extração forense de discos, memória RAM, dispositivos móveis, e-mails, mensagens (WhatsApp/Telegram) e nuvem com preservação da cadeia de custódia.</p>
+          <ul class="forensics-list">
+            <li><i class='bx bx-check-circle'></i> WhatsApp/Telegram</li>
+            <li><i class='bx bx-check-circle'></i> E-mails e logs</li>
+            <li><i class='bx bx-check-circle'></i> Dispositivos móveis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="forensics-cta">
+        <a href="#contact" class="btn" onclick="setForensicsMessage()">
+          <i class='bx bx-gavel'></i>
+          Solicitar Análise Pericial
+        </a>
+        <p class="forensics-note">
+          <i class='bx bx-award'></i> Pós-graduado em Cybersecurity & Perícia Cibernética
+        </p>
       </div>
     </section>
 
@@ -336,12 +386,11 @@
           </div>
         </div>
        
-        
       </div>
     </section>
-     <!--Aqui-->
+     
     <section class="contact" id="contact">
-      <h2 class="heading">Contate <span>Me!</span></h2>
+      <h2 class="heading">Entre em <span>Contato!</span></h2>
       <form action="#">
         <div class="input-box">
           <input type="text" id="name" placeholder="Escreva seu nome" required />
@@ -525,7 +574,6 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
 
-   
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
     <script src="js/script.js"></script>
@@ -544,7 +592,7 @@
     
         const whatsappMessage = `Olá, meu nome é ${name}.\n Mensagem: ${message}`;
     
-        const whatsappLink = `https://api.whatsapp.com/send?phone=SEU_NUMERO_DE_WHATSAPP&text=${encodeURIComponent(whatsappMessage)}`;
+        const whatsappLink = `https://api.whatsapp.com/send?phone=5588996015972&text=${encodeURIComponent(whatsappMessage)}`;
     
         window.open(whatsappLink, '_blank');
       });
@@ -618,6 +666,10 @@
         if (event.target == modal) {
           closeArticleModal();
         }
+        const securityModal = document.getElementById('securityModal');
+        if (event.target == securityModal) {
+          closeSecurityModal();
+        }
       }
 
       // Close modal with ESC key
@@ -655,7 +707,16 @@
         document.body.style.width = 'auto';
         document.body.style.height = 'auto';
       }
+
+      // Função para pré-preencher o formulário com assunto de perícia
+      function setForensicsMessage() {
+        const messageField = document.getElementById('message');
+        if (messageField) {
+          messageField.value = 'Olá Francilino, gostaria de solicitar uma análise de perícia cibernética. Podemos conversar?';
+        }
+        // Scroll suave até o contato
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      }
     </script>
-  </footer>
   </body>
 </html>

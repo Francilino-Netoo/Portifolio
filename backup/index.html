@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Desenvolvedor Full Stack especializado em sites, sistemas personalizados, automações web e perícia cibernética. Soluções digitais que geram resultados reais." />
+    <meta name="keywords" content="desenvolvedor, sites, sistemas, automação, python, react, saas, perícia cibernética" />
+    <meta name="author" content="Francilino Neto" />
+    <title>Francilino Neto | Soluções Digitais que Geram Resultados</title>
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    
+    <style>
+      /* Estilos adicionais para as novas seções - mantenha a consistência com seu CSS original */
+      .btn-secondary {
+        background: transparent;
+        border: 2px solid var(--main-color);
+        color: var(--main-color);
+        margin-left: 1rem;
+      }
+      .btn-secondary:hover {
+        background: var(--main-color);
+        color: var(--second-bg-color);
+        box-shadow: 0 0 1rem var(--main-color);
+        transform: scale(1.05);
+      }
+      
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        margin-top: 2rem;
+        flex-wrap: wrap;
+      }
+      
+      /* Seção Diferenciais */
+      .differentials {
+        background: var(--second-bg-color);
+        padding: 8rem 9% 4rem;
+      }
+      
+      .differentials-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+      
+      .differential-card {
+        background: var(--bg-color);
+        padding: 2rem;
+        border-radius: 2rem;
+        text-align: center;
+        transition: 0.3s ease;
+        border: 1px solid var(--main-color);
+      }
+      
+      .differential-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 0 1.5rem rgba(0, 255, 255, 0.2);
+      }
+      
+      .differential-card i {
+        font-size: 4.5rem;
+        color: var(--main-color);
+        margin-bottom: 1.5rem;
+      }
+      
+      .differential-card h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .differential-card p {
+        font-size: 1.4rem;
+        color: var(--text-color);
+        line-height: 1.6;
+      }
+      
+      /* Seção Processo */
+      .process {
+        padding: 8rem 9% 4rem;
+      }
+      
+      .process-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+      
+      .process-step {
+        flex: 1;
+        min-width: 200px;
+        text-align: center;
+        background: var(--second-bg-color);
+        padding: 2rem;
+        border-radius: 2rem;
+        transition: 0.3s ease;
+        border-bottom: 3px solid var(--main-color);
+      }
+      
+      .process-step:hover {
+        transform: translateY(-5px);
+      }
+      
+      .step-number {
+        width: 50px;
+        height: 50px;
+        background: var(--main-color);
+        color: var(--second-bg-color);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        font-weight: bold;
+        margin: 0 auto 1.5rem;
+      }
+      
+      .process-step h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      
+      .process-step p {
+        font-size: 1.4rem;
+        color: var(--text-color);
+      }
+      
+      /* Ajustes responsivos */
+      @media (max-width: 768px) {
+        .cta-buttons {
+          flex-direction: column;
+        }
+        .btn-secondary {
+          margin-left: 0;
+        }
+        .process-container {
+          flex-direction: column;
+        }
+        .differentials-container {
+          grid-template-columns: 1fr;
+        }
+      }
+      
+      /* Responsive para telas muito pequenas (< 361px) */
+      @media (max-width: 361px) {
+        .social-media a {
+          font-size: 1.8rem !important;
+          width: 3rem !important;
+          height: 3rem !important;
+          line-height: 3rem !important;
+        }
+      }
+      
+      /* Melhorias nos modais */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.8);
+        backdrop-filter: blur(5px);
+      }
+      
+      .modal-content {
+        background-color: var(--second-bg-color);
+        margin: 5% auto;
+        padding: 0;
+        border: 1px solid var(--main-color);
+        border-radius: 2rem;
+        width: 90%;
+        max-width: 800px;
+        max-height: 85vh;
+        overflow-y: auto;
+        position: relative;
+      }
+      
+      .modal-header {
+        padding: 2rem;
+        border-bottom: 1px solid var(--main-color);
+        position: sticky;
+        top: 0;
+        background: var(--second-bg-color);
+        border-radius: 2rem 2rem 0 0;
+      }
+      
+      .modal-header h2 {
+        font-size: 2rem;
+        color: var(--main-color);
+        padding-right: 3rem;
+      }
+      
+      .close {
+        position: absolute;
+        right: 2rem;
+        top: 1.5rem;
+        font-size: 3rem;
+        cursor: pointer;
+        color: var(--text-color);
+        transition: 0.3s;
+      }
+      
+      .close:hover {
+        color: var(--main-color);
+      }
+      
+      .modal-body {
+        padding: 2rem;
+      }
+      
+      .article-content h3 {
+        font-size: 1.8rem;
+        color: var(--main-color);
+        margin: 2rem 0 1rem;
+      }
+      
+      .article-content h4 {
+        font-size: 1.6rem;
+        margin: 1.5rem 0 1rem;
+      }
+      
+      .article-content p {
+        margin-bottom: 1.5rem;
+        line-height: 1.8;
+      }
+      
+      .article-content ul {
+        margin: 1rem 0 1.5rem 2rem;
+      }
+      
+      .article-content li {
+        margin-bottom: 0.5rem;
+      }
+      
+      /* WhatsApp Float */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        background: #25d366;
+        color: white;
+        width: 5.5rem;
+        height: 5.5rem;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 3rem;
+        box-shadow: 0 0 1rem rgba(37, 211, 102, 0.5);
+        transition: 0.3s;
+        z-index: 100;
+      }
+      
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        color: white;
+        box-shadow: 0 0 2rem rgba(37, 211, 102, 0.8);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="header">
+      <a href="#" class="logo">Portfo<span>lio</span></a>
+
+      <i class="bx bx-menu" id="menu-icon"></i>
+
+      <nav class="navbar">
+        <a href="#home" class="active"><i class="bx bx-home-alt"></i>Home</a>
+        <a href="#about"><i class="bx bx-user"></i>Sobre</a>
+        <a href="#services"><i class="bx bx-briefcase-alt"></i>Serviços</a>
+        <a href="#differentials"><i class="bx bx-star"></i>Diferenciais</a>
+        <a href="#process"><i class="bx bx-cog"></i>Processo</a>
+        <a href="#proof"><i class="bx bx-award"></i>Provas</a>
+        <a href="#forensics"><i class="bx bx-shield-alt-2"></i>Perícia</a>
+        <a href="#featured-projects"><i class="bx bx-star"></i>Destaque</a>
+        <a href="#blog"><i class="bx bx-file"></i>Artigos</a>
+        <a href="#portfolio"><i class="bx bx-folder-open"></i>Projetos</a>
+        <a href="#contact"><i class="bx bx-envelope"></i>Contato</a>
+      </nav>
+      
+      <div class="menu-backdrop" id="menu-backdrop"></div>
+    </header>
+
+    <section class="home" id="home">
+      <div class="home-contente">
+        <h3>SOLICITAR ORÇAMENTO MENSAGEM BONITO Transformo ideias em</h3>
+        <h1>Sites, Sistemas e Automações</h1>
+        <h3>que geram <span class="multiple-text">sistemas eficien|</span></h3>
+        <p>
+          Desenvolvo soluções digitais modernas para empresas, negócios locais e empreendedores que desejam vender mais, organizar processos e crescer no digital.
+        </p>
+
+        <div class="social-media">
+          <a href="https://t.me/programador_python" target="_blank"><i class='bx bxl-telegram'></i></a>
+          <a href="https://www.instagram.com/programador_afobado/" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
+          <a href="https://www.linkedin.com/in/francilino-neto" target="_blank"><i class="bx bxl-linkedin"></i></a>
+          <a href="https://github.com/Francilino-Netoo" target="_blank"><i class="bx bxl-github"></i></a>
+          <a href="https://www.youtube.com/@AutomaWeb" target="_blank"><i class="bx bxl-youtube"></i></a>
+          <a href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text&type=phone_number&app_absent=0" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+        </div>
+        
+        <div class="cta-buttons">
+          <a href="#portfolio" class="btn">Ver Projetos</a>
+          <a href="#contact" class="btn btn-secondary">Solicitar Orçamento</a>
+        </div>
+      </div>
+      <div class="home-img">
+        <img src="images/home.png" alt="Francilino Neto - Desenvolvedor Full Stack" />
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="about-img">
+        <img src="images/about.png" alt="" />
+      </div>
+      <div class="about-content">
+        <h2 class="heading">Sobre <span>mim</span></h2>
+        <h3>Tech Lead & Desenvolvedor Full Stack</h3>
+        <p>
+          Desenvolvedor Full Stack com pós-graduação em Cybersecurity e criador de plataformas SaaS B2B2C. Atuo no desenvolvimento de soluções de automação, análise de dados e sistemas digitais voltados para parceiros estratégicos com grande audiência no Telegram.
+
+Minha expertise envolve desenvolvimento Full Stack, automação, segurança e arquitetura de sistemas escaláveis, com experiência em backends de alta performance utilizando Python e AsyncIO, inteligência artificial, DevOps e interfaces modernas com React.js.
+
+Tenho foco na criação de plataformas self-service, produtos digitais robustos e soluções seguras, sempre priorizando performance, usabilidade e crescimento sustentável.
+        </p>
+      </div>
+    </section>
+
+
+    <section class="services" id="services">
+      <h2 class="heading">Meus <span>Serviços</span></h2>
+      <div class="services-container">
+        <div class="services-box">
+          <i class="bx bx-code"></i>
+          <h3>Back-End & APIs</h3>
+          <p class="text-content">
+            Desenvolvimento de APIs robustas e escaláveis com Python (AsyncIO), Node.js, Flask e FastAPI. Implementação de sistemas de filas com Redis para alta concorrência e baixa latência.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bxs-paint"></i>
+          <h3>Front-End & Dashboards</h3>
+          <p class="text-content">
+            Criação de interfaces modernas com React.js, TypeScript e Redux. Desenvolvimento de dashboards administrativos e plataformas SaaS com UX otimizada e integração total com APIs REST.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+        <div class="services-box">
+          <i class='bx bx-bot' ></i>
+          <h3>Chatbots & Automação</h3>
+          <p class="text-content">
+            Desenvolvimento de chatbots para Telegram e WhatsApp com arquitetura multi-tenant. Sistemas automatizados para entrega de conteúdo e monetização em escala.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+        <div class="services-box">
+          <i class="bx bxs-cog"></i>
+          <h3>DevOps & Automação</h3>
+          <p class="text-content">
+            Orquestração de contêineres com Docker, CI/CD e automação de processos. Scripts inteligentes para otimização de fluxos e aumento de eficiência operacional. Implementação de pipelines automatizados para deploy contínuo, monitoramento de infraestrutura e escalonamento horizontal de aplicações.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+        <div class="services-box">
+          <i class="bx bxs-search"></i> 
+          <h3>Data Scraping & IA</h3>
+          <p class="text-content">
+            Extração de dados em escala com Playwright, Puppeteer e Scrapy. Integração com modelos de IA para análise preditiva, geração de leads e detecção de padrões. Desenvolvimento de robôs resistentes a antibots, sistemas de cache inteligente e processamento paralelo para máxima eficiência na coleta de dados.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+        
+        <div class="services-box">
+          <i class="bx bx-code-alt"></i>
+          <h3>Sites Profissionais</h3>
+          <p class="text-content">
+            Criação de sites modernos, rápidos e responsivos para empresas, marcas e profissionais que desejam presença online forte. Design focado em conversão e SEO otimizado.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bx-cog"></i>
+          <h3>Sistemas Personalizados</h3>
+          <p class="text-content">
+            Desenvolvimento de sistemas sob medida para controle de vendas, clientes, estoque, relatórios e processos internos. Soluções escaláveis com Python, Node.js e React.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+        
+        <div class="services-box">
+          <i class='bx bx-bot'></i>
+          <h3>Automações</h3>
+          <p class="text-content">
+            Automatização de tarefas repetitivas para economizar tempo, reduzir erros e aumentar produtividade. Robôs para coleta de dados, envio de mensagens e integrações.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+        
+        <div class="services-box">
+          <i class="bx bx-landscape"></i>
+          <h3>Landing Pages</h3>
+          <p class="text-content">
+            Páginas estratégicas criadas para vender produtos, captar clientes e gerar oportunidades. Alta conversão, carregamento rápido e design persuasivo.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bx-link-alt"></i>
+          <h3>Integrações</h3>
+          <p class="text-content">
+            Conexão entre APIs, plataformas, bancos de dados e ferramentas para centralizar processos. Integração com WhatsApp, Telegram, sistemas de pagamento e ERPs.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+
+        <div class="services-box">
+          <i class="bx bx-support"></i>
+          <h3>Suporte e Melhorias</h3>
+          <p class="text-content">
+            Manutenção, ajustes e evolução de projetos já existentes. Garantia de segurança, atualizações e novas funcionalidades sob demanda.
+          </p>
+          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Diferenciais -->
+    <section class="differentials" id="differentials">
+      <h2 class="heading">Por que trabalhar <span>comigo?</span></h2>
+      <div class="differentials-container">
+        <div class="differential-card">
+          <i class='bx bx-message-rounded-dots'></i>
+          <h3>Atendimento direto e rápido</h3>
+          <p>Comunicação clara e sem burocracia. Você fala diretamente com o desenvolvedor.</p>
+        </div>
+        <div class="differential-card">
+          <i class='bx bx-customize'></i>
+          <h3>Soluções personalizadas</h3>
+          <p>Cada projeto é único e desenvolvido sob medida para sua necessidade específica.</p>
+        </div>
+        <div class="differential-card">
+          <i class='bx bx-paint'></i>
+          <h3>Design moderno e funcional</h3>
+          <p>Interface bonita e intuitiva que seus usuários vão adorar usar.</p>
+        </div>
+        <div class="differential-card">
+          <i class='bx bx-code-block'></i>
+          <h3>Código limpo e organizado</h3>
+          <p>Manutenção facilitada e segurança desde a primeira linha de código.</p>
+        </div>
+        <div class="differential-card">
+          <i class='bx bx-trending-up'></i>
+          <h3>Foco em resultado real</h3>
+          <p>Não apenas código bonito, mas soluções que trazem ROI para seu negócio.</p>
+        </div>
+        <div class="differential-card">
+          <i class='bx bx-headphone'></i>
+          <h3>Suporte e acompanhamento</h3>
+          <p>Acompanhamento contínuo mesmo após a entrega do projeto.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção Processo de Trabalho -->
+    <section class="process" id="process">
+      <h2 class="heading">Como <span>funciona</span></h2>
+      <div class="process-container">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>Entendimento</h3>
+          <p>Conversamos sobre sua necessidade, objetivo e ideias. Entendo seu negócio e seus desafios.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>Planejamento</h3>
+          <p>Definimos a melhor solução para seu projeto, tecnologias e prazos realistas.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>Desenvolvimento</h3>
+          <p>Criação do sistema, site ou automação com foco em qualidade, segurança e performance.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>Entrega</h3>
+          <p>Projeto pronto para uso, com suporte inicial, treinamento e ajustes finos.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" id="proof">
+      <h2 class="heading">Provas de <span>Conceito</span></h2>
+      <div class="proof-container">
+        <div class="proof-box featured">
+          <div class="proof-content">
+            <div class="featured-badge">
+              <i class="bx bx-star"></i>
+              <span>Ferramenta Principal</span>
+            </div>
+            <h3>Automa Data Engine</h3>
+            <p>Plataforma robusta de automação e extração de dados com <strong>600+ usuários ativos</strong>. Minha principal fonte de renda passiva e ferramenta preferida dos clientes e afiliados.</p>
+            
+            <div class="proof-stats">
+              <div class="stat">
+                <i class="bx bx-users"></i>
+                <span>600+ Usuários</span>
+              </div>
+              <div class="stat">
+                <i class="bx bx-data"></i>
+                <span>Sistema escalável</span>
+              </div>
+              <div class="stat">
+                <i class="bx bx-time"></i>
+                <span>Automação avançada</span>
+              </div>
+            </div>
+            
+            <div class="proof-demo">
+              <h4>Demonstração ao Vivo</h4>
+              <div class="demo-image">
+                <img src="images/portfolio15.png" alt="Automa Data Engine Interface" />
+              </div>
+              <p class="demo-caption">Interface completa em funcionamento</p>
+              <a href="https://www.automa-web.dev.br/app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" 
+                 target="_blank" 
+                 class="btn btn-primary">
+                <i class="bx bx-external-link"></i>
+                Acessar Plataforma
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seção: Perícia Cibernética -->
+    <section class="forensics" id="forensics">
+      <h2 class="heading">Perícia <span>Cibernética</span></h2>
+      <div class="forensics-container">
+        
+        <div class="forensics-card">
+          <div class="forensics-icon">
+            <i class='bx bxs-shield-alt-2'></i>
+          </div>
+          <h3>Laudo Técnico Pericial</h3>
+          <p>Elaboração de laudos com validade técnica para processos judiciais, arbitragens e investigações internas. Análise de logs, metadados e cadeia de custódia digital.</p>
+          <ul class="forensics-list">
+            <li><i class='bx bx-check-circle'></i> Conformidade com ISO 27001</li>
+            <li><i class='bx bx-check-circle'></i> Cadeia de custódia rastreável</li>
+            <li><i class='bx bx-check-circle'></i> Pós-graduado em Perícia</li>
+          </ul>
+        </div>
+
+        <div class="forensics-card">
+          <div class="forensics-icon">
+            <i class='bx bx-search-alt-2'></i>
+          </div>
+          <h3>Análise de Casos</h3>
+          <p>Investigação de incidentes cibernéticos: invasões, vazamento de dados, fraudes eletrônicas, engenharia social e recuperação de evidências digitais.</p>
+          <ul class="forensics-list">
+            <li><i class='bx bx-check-circle'></i> Análise de invasões</li>
+            <li><i class='bx bx-check-circle'></i> Rastreamento de origem</li>
+            <li><i class='bx bx-check-circle'></i> Relatório executivo detalhado</li>
+          </ul>
+        </div>
+
+        <div class="forensics-card">
+          <div class="forensics-icon">
+            <i class='bx bx-fingerprint'></i>
+          </div>
+          <h3>Coleta de Vestígios</h3>
+          <p>Extração forense de discos, memória RAM, dispositivos móveis, e-mails, mensagens (WhatsApp/Telegram) e nuvem com preservação da cadeia de custódia.</p>
+          <ul class="forensics-list">
+            <li><i class='bx bx-check-circle'></i> WhatsApp/Telegram</li>
+            <li><i class='bx bx-check-circle'></i> E-mails e logs</li>
+            <li><i class='bx bx-check-circle'></i> Dispositivos móveis</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="forensics-cta">
+        <a href="#contact" class="btn" onclick="setForensicsMessage()">
+          <i class='bx bx-gavel'></i>
+          Solicitar Análise Pericial
+        </a>
+        <p class="forensics-note">
+          <i class='bx bx-award'></i> Pós-graduado em Cybersecurity & Perícia Cibernética
+        </p>
+      </div>
+    </section>
+
+    <!-- Projetos em Destaque -->
+    <section class="featured-projects" id="featured-projects">
+      <h2 class="heading">Projetos <span>Destaque</span></h2>
+      <div class="featured-projects-container">
+        <!-- Automa SaaS White-Label -->
+        <div class="featured-project-card">
+          <div class="featured-project-header">
+            <div class="featured-badge">
+              <i class="bx bx-star"></i>
+              <span>Principal Produto</span>
+            </div>
+            <h3>Automa SaaS White-Label</h3>
+          </div>
+          <div class="featured-project-content">
+            <div class="featured-project-video">
+              <img src="images/portfolio14.png" alt="Automa SaaS White-Label" />
+              <div class="video-overlay">
+                <button class="video-play-btn" onclick="openFeaturedVideo('automa-saas')">
+                  <i class="bx bx-play-circle"></i>
+                </button>
+              </div>
+            </div>
+            <div class="featured-project-info">
+              <p>
+                Plataforma SaaS no-code self-service, multi-tenant, com receita recorrente. Sistema completo de automação que permite empresas criarem suas próprias soluções white-label com gestão total de usuários e monetização.
+              </p>
+              <div class="featured-tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">AsyncIO</span>
+                <span class="tech-tag">Redis</span>
+                <span class="tech-tag">Multi-tenant</span>
+                <span class="tech-tag">SaaS</span>
+              </div>
+              <div class="featured-project-actions">
+                <a href="https://www.automa-web.dev.br/app/?utm_source=portfolio&utm_medium=featured" target="_blank" class="btn btn-primary">
+                  <i class="bx bx-external-link"></i>
+                  Acessar Plataforma
+                </a>
+                <button class="btn btn-secondary" onclick="openFeaturedVideo('automa-saas')">
+                  <i class="bx bx-play"></i>
+                  Ver Demonstração
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Automação Web Cassino -->
+        <div class="featured-project-card">
+          <div class="featured-project-header">
+            <div class="featured-badge automation">
+              <i class="bx bx-bot"></i>
+              <span>Automação Avançada</span>
+            </div>
+            <h3>Plataforma de Automação Web</h3>
+          </div>
+          <div class="featured-project-content">
+            <div class="featured-project-video">
+              <img src="images/portfolio12.png" alt="Automação Web Cassino" />
+              <div class="video-overlay">
+                <button class="video-play-btn" onclick="openFeaturedVideo('cassino')">
+                  <i class="bx bx-play-circle"></i>
+                </button>
+              </div>
+            </div>
+            <div class="featured-project-info">
+              <p>
+                Este projeto automatiza entradas em diversos jogos de um cassino online, utilizando as estratégias do próprio usuário. Dessa forma, evita-se que o usuário passe muito tempo na tela do computador ou celular.
+              </p>
+              <div class="featured-tech-stack">
+                <span class="tech-tag">Playwright</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Web Scraping</span>
+                <span class="tech-tag">Automação</span>
+                <span class="tech-tag">Telegram Bot</span>
+              </div>
+              <div class="featured-project-actions">
+                <a href="https://automa-cassinos.dev.br/app/" target="_blank" class="btn btn-primary">
+                  <i class="bx bx-external-link"></i>
+                  Acessar Sistema
+                </a>
+                <button class="btn btn-secondary" onclick="openFeaturedVideo('cassino')">
+                  <i class="bx bx-play"></i>
+                  Ver Tutoriais
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="blog" id="blog">
+      <h2 class="heading">Artigos <span>Técnicos</span></h2>
+      <div class="blog-container">
+        <div class="blog-box">
+          <div class="blog-content">
+            <h3>Como usamos automação no dia a dia para escalar vendas e atender milhares de usuários</h3>
+            <p>Hoje em dia, automação não é mais algo "avançado" - virou necessidade. Quem trabalha com sistemas, vendas online ou serviços digitais já percebeu que fazer tudo manualmente simplesmente não escala.</p>
+            <div class="blog-tags">
+              <span class="tag">Automação</span>
+              <span class="tag">Vendas</span>
+              <span class="tag">Python</span>
+              <span class="tag">AsyncIO</span>
+            </div>
+            <a href="javascript:void(0)" class="btn" onclick="showFullArticle(event)">Ler Artigo Completo</a>
+          </div>
+        </div>
+        
+        <div class="blog-box">
+          <div class="blog-content">
+            <h3>Segurança nativa em plataformas SaaS multi-tenant</h3>
+            <p>Quando se fala em SaaS hoje, muita gente pensa só em funcionalidade e escala. Mas existe um ponto que não pode ficar em segundo plano: segurança.</p>
+            <div class="blog-tags">
+              <span class="tag">Segurança</span>
+              <span class="tag">SaaS</span>
+              <span class="tag">Multi-tenant</span>
+              <span class="tag">Cybersecurity</span>
+            </div>
+            <a href="javascript:void(0)" class="btn" onclick="showSecurityArticle(event)">Ler Artigo Completo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="portfolio" id="portfolio">
+      <h2 class="heading">Meus <span>Projetos</span></h2>
+      
+      <div class="porfolio-container">
+
+        <div class="portfolio-box">
+          <img src="images/portfolio14.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Automa SaaS White-Label</h4>
+            <p>Plataforma SaaS no-code self-service, multi-tenant, com receita recorrente. Sistema completo de automação que permite empresas criarem suas próprias soluções white-label com gestão total de usuários e monetização.</p>
+            <a href="https://www.automa-web.dev.br/app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio5.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Plataforma de Automação Web</h4>
+            <p>Este projeto foi desenvolvido para automatizar execuções baseadas em regras e estratégias definidas pelo próprio usuário, reduzindo tarefas repetitivas e otimizando o tempo de operação. A solução permite maior praticidade, acompanhamento em tempo real e melhor experiência de uso em ambientes web.</p>
+            <a  href="https://automa-cassinos.dev.br/app/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+
+        <div class="portfolio-box">
+          <img src="images/portfolio16.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Mercadinho Macaxeira</h4>
+            <p>Desenvolvi uma plataforma web para supermercado local, com catálogo digital, carrinho de compras e experiência mobile-first, focada em facilitar pedidos online e ampliar as vendas do negócio.</p>
+            <a href="https://mercadinho-macaxeira.vercel.app/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/portfolio11.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Jogo da Memória</h4>
+            <p>Desenvolvi este jogo para demonstrar um pouco das minhas habilidades em React.js.</p>
+            <a  href="https://francilino-netoo.github.io/jogo-da-memoria/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio10.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Calculadora IMC</h4>
+            <p>About
+              Esta é uma Calculadora de IMC (Índice de Massa Corpórea) desenvolvida em React + TypeScript.</p>
+            <a href="https://francilino-netoo.github.io/calculador-imc/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio13.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Inspirado na OLX</h4>
+            <p>Este projeto foi desenvolvido com o objetivo de mostrar minhas hablidades Full Stack. Usei Reac.js, Node.js para criar API e MongoDB para banco de dados.</p>
+            <a href="https://automa-web-olx.vercel.app/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio8.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Portfólio 3D</h4>
+            <p>Este projeto foi desenvolvido com o objetivo de criar um portfólio
+              interativo e diferenciado. Utilizei o Blender para modelar em 3D do
+              meu quarto e a biblioteca Three.js para controlar as posições das
+              câmeras, as iluminações do cenário e interações com objetos
+              específicos da cena.</p>
+            <a href="https://francilino-netoo.github.io/portfolio-3d/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio12.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Automação Web Cassino Telegram</h4>
+            <p>Este projeto automatiza entradas em diversos jogos de um cassino online, utilizando as estratégias do próprio usuário. Dessa forma, evita-se que o usuário passe muito tempo na tela do computador ou celular.</p>
+            <a  href="https://t.me/Automa_Web_bot" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="portfolio-box">
+          <img src="images/portfolio1.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Back-And-API-Basica</h4>
+            <p>Esta é uma API basica de uma loja virtual onde podemos cadastrar usuarios, adicionar produtos, editar produtos entre outras funcionalidades, usei o Mongoose para armazenar os dados da API.</p>
+            <a href="https://github.com/Francilino-Netoo/Back-And-API-Basica" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+
+        <div class="portfolio-box">
+          <img src="images/portfolio2.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Chat simples Websoket</h4>
+            <p>Empreguei o protocolo WebSocket na criação de um chat simples, com a finalidade de aplicar os conhecimentos adquirido em aulas.</p>
+            <a href="https://github.com/Francilino-Netoo/chat-simples-websoket" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        <div class="portfolio-box">
+          <img src="images/portfolio3.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>APIs-Pragmatic-Evolution-Ezugi</h4>
+            <p>Essa API pega os resultados des 3 provedoras de games Pragmatic Play, Evolution e Ezugi. Com elas você vai ter acesso a resultados de 217 games em tempo real, sendo 63 da Pragmatic, 99 da Evolution e 55 da Ezugi.</p>
+            <a href="https://github.com/Francilino-Netoo/APIs-Pragmatic-Evolution-Ezugi-Atualizadas" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/portfolio4.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Site de Fiseoterapia</h4>
+            <p>O projeto tem o intuito de divulgar o trabalho da profissional em Fisioterapia de forma mais organizada.</p>
+            <a href="https://francilino-netoo.github.io/Site-Fisio/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="portfolio-box">
+          <img src="images/portfolio7.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>App Android no MemuPlay</h4>
+            <p>Meus APKs podem ser rodados no MemuPlay diretamente no seu computador.</p>
+            <a href="dese" class="link-external6"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+        
+        <div class="portfolio-box">
+          <img src="images/portfolio9.jpg" alt="" />
+          <div class="portfolio-layer">
+            <h4>Modelo de Delivery</h4>
+            <p>Desenvolvi um modelo de delivery simples e eficiente utilizando React.js e Next.js.</p>
+            <a href="https://github.com/Francilino-Netoo/loja-virtual" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+       
+      </div>
+    </section>
+     
+    <section class="contact" id="contact">
+      <h2 class="heading">Entre em <span>Contato!</span></h2>
+      <form action="#">
+        <div class="input-box">
+          <input type="text" id="name" placeholder="Escreva seu nome" required />
+        </div>
+        
+        <textarea id="message" cols="30" rows="10" placeholder="Sua mensagem" required></textarea>
+        
+        <button type="button" class="btn" id="sendMessageBtn">Enviar Mensagem</button>
+      </form>
+    </section>
+   
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2024 por Francilino Neto | Todos os direitos reservados.</p>
+
+      </div>
+      <div class="footer-iconTop">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <!-- Modal do Artigo -->
+    <div id="articleModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Como usamos automação no dia a dia para escalar vendas e atender milhares de usuários</h2>
+          <span class="close" onclick="closeArticleModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="article-content">
+            <h3>Hoje em dia, automação não é mais algo "avançado" - virou necessidade.</h3>
+            <p>Quem trabalha com sistemas, vendas online ou até serviços digitais já percebeu que fazer tudo manualmente simplesmente não escala.</p>
+            
+            <p>No meu caso, comecei usando automação para resolver problemas simples do dia a dia. Coleta de dados, envio de mensagens, organização de informações... coisas que, quando feitas manualmente, tomavam tempo demais. Com o tempo, isso evoluiu para sistemas mais completos, principalmente voltados para vendas automáticas e processamento de dados em tempo real.</p>
+            
+            <h4>Automação aplicada a vendas</h4>
+            <p>Um dos usos mais fortes hoje é na parte de vendas. Com automação, é possível criar fluxos onde:</p>
+            <ul>
+              <li>o usuário entra no sistema</li>
+              <li>recebe conteúdo automaticamente</li>
+              <li>interage com bots</li>
+              <li>e já passa por um processo de conversão</li>
+            </ul>
+            <p>Tudo isso sem precisar de alguém operando manualmente.</p>
+            
+            <p>Quando você adiciona IA nisso, o nível sobe ainda mais. Dá pra personalizar mensagens, responder usuários automaticamente e até adaptar ofertas com base no comportamento. Isso reduz custo e aumenta muito a escala.</p>
+            
+            <h4>O desafio de escalar</h4>
+            <p>Mas automatizar é só o começo. O verdadeiro desafio vem depois: aguentar volume.</p>
+            
+            <p>Quando você começa a ter milhares de usuários ao mesmo tempo, sistemas simples quebram. Foi aí que precisei mudar a forma de construir as aplicações.</p>
+            
+            <p>Hoje, para lidar com isso, usamos uma abordagem baseada em processamento assíncrono.</p>
+            
+            <h4>Como lidamos com 50k usuários com Python</h4>
+            <p>A base da arquitetura usa Python assíncrono (AsyncIO). Em vez de processar uma coisa por vez, o sistema consegue lidar com várias requisições ao mesmo tempo, sem travar.</p>
+            
+            <p>Isso é essencial principalmente quando você trabalha com:</p>
+            <ul>
+              <li>múltiplas requisições simultâneas</li>
+              <li>integrações com APIs externas</li>
+              <li>envio de dados em tempo real</li>
+            </ul>
+            
+            <p>Além disso, usamos o Redis para ajudar na performance. Ele funciona como uma camada rápida para:</p>
+            <ul>
+              <li>cache</li>
+              <li>filas</li>
+              <li>controle de sessões</li>
+              <li>distribuição de tarefas</li>
+            </ul>
+            
+            <p>Na prática, isso evita sobrecarregar o servidor principal e mantém o sistema rápido mesmo com muita gente usando ao mesmo tempo.</p>
+            
+            <h4>O que realmente faz diferença</h4>
+            <p>Não é só a tecnologia em si, mas como você usa.</p>
+            
+            <p>Alguns pontos que fizeram diferença no nosso caso:</p>
+            <ul>
+              <li>evitar bloqueios no código (tudo que pode travar, vai travar em escala)</li>
+              <li>separar responsabilidades (cada parte do sistema faz uma coisa)</li>
+              <li>usar filas para distribuir tarefas</li>
+              <li>pensar sempre em crescimento desde o início</li>
+            </ul>
+            
+            <h4>Conclusão</h4>
+            <p>Automação hoje não é só sobre "facilitar a vida", mas sobre criar sistemas que funcionam sozinhos e escalam.</p>
+            
+            <p>Quando você junta automação + IA + uma arquitetura bem pensada, o resultado é um sistema que não depende de operação manual e consegue crescer sem quebrar.</p>
+            
+            <p>E no final, é isso que todo produto precisa: rodar bem, escalar e não dar dor de cabeça.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal do Artigo de Segurança -->
+    <div id="securityModal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Segurança nativa em plataformas SaaS multi-tenant</h2>
+          <span class="close" onclick="closeSecurityModal()">&times;</span>
+        </div>
+        <div class="modal-body">
+          <div class="article-content">
+            <h3>Quando se fala em SaaS hoje, muita gente pensa só em funcionalidade e escala. Mas existe um ponto que não pode ficar em segundo plano: segurança.</h3>
+            
+            <p>Principalmente em sistemas multi-tenant, onde vários usuários compartilham a mesma estrutura, qualquer falha pode impactar muita gente ao mesmo tempo. Por isso, segurança não pode ser algo "adicionado depois". Ela precisa fazer parte do sistema desde o início.</p>
+            
+            <h4>O desafio do multi-tenant</h4>
+            <p>Em uma arquitetura multi-tenant, diferentes usuários utilizam a mesma aplicação, mas com seus dados totalmente separados. Isso exige um cuidado maior com:</p>
+            <ul>
+              <li>isolamento de dados</li>
+              <li>controle de acesso</li>
+              <li>validação de requisições</li>
+            </ul>
+            <p>Se isso não for bem feito, um usuário pode acabar acessando dados de outro - o que é um problema sério.</p>
+            
+            <h4>Segurança desde o desenvolvimento</h4>
+            <p>Na prática, o que funciona melhor é tratar segurança como parte do código, não como algo externo.</p>
+            
+            <p>Algumas práticas essenciais:</p>
+            <ul>
+              <li>validação de dados em todas as entradas</li>
+              <li>controle rigoroso de autenticação e autorização</li>
+              <li>separação lógica dos dados por usuário</li>
+              <li>uso de tokens seguros para acesso às APIs</li>
+            </ul>
+            <p>Isso já evita a maioria dos problemas mais comuns.</p>
+            
+            <h4>Proteção de dados</h4>
+            <p>Outro ponto importante é a proteção das informações.</p>
+            
+            <p>Dependendo do tipo de sistema, isso inclui:</p>
+            <ul>
+              <li>criptografia de dados sensíveis</li>
+              <li>uso de conexões seguras (HTTPS)</li>
+              <li>armazenamento seguro de credenciais</li>
+            </ul>
+            <p>Mesmo em sistemas menores, isso já faz uma grande diferença.</p>
+            
+            <h4>Monitoramento e prevenção</h4>
+            <p>Segurança não é só prevenir, mas também detectar.</p>
+            
+            <p>Por isso, é importante ter:</p>
+            <ul>
+              <li>logs de acesso</li>
+              <li>monitoramento de atividades suspeitas</li>
+              <li>limites de requisição (rate limit)</li>
+              <li>alertas em tempo real</li>
+            </ul>
+            <p>Isso ajuda a identificar problemas antes que eles cresçam.</p>
+            
+            <h4>O papel da arquitetura</h4>
+            <p>No fim das contas, a arquitetura do sistema é o que mais influencia na segurança.</p>
+            
+            <p>Quando você constrói pensando em:</p>
+            <ul>
+              <li>separação de responsabilidades</li>
+              <li>uso de filas e processamento controlado</li>
+              <li>sistemas assíncronos bem definidos</li>
+            </ul>
+            <p>você reduz muito as chances de falha.</p>
+            
+            <h4>Conclusão</h4>
+            <p>Segurança em SaaS multi-tenant não é um extra - é parte da base.</p>
+            
+            <p>Quando você desenvolve já pensando nisso, o sistema fica mais estável, mais confiável e preparado para crescer sem riscos.</p>
+            
+            <p>E no final, isso não é só sobre tecnologia. É sobre confiança de quem usa sua plataforma.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text=Olá%20Francilino,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar.&type=phone_number&app_absent=0" 
+       target="_blank" class="whatsapp-float" title="Fale comigo no WhatsApp">
+      <i class="bx bxl-whatsapp"></i>
+    </a>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <script src="js/script.js"></script>
+    <script>
+
+      document.getElementById('sendMessageBtn').addEventListener('click', function() {
+      
+        const name = document.getElementById('name').value;
+        
+        const message = document.getElementById('message').value;
+    
+        if (!name || !message) {
+          alert('Por favor, preencha todos os campos.');
+          return;
+        }
+    
+        const whatsappMessage = `Olá, meu nome é ${name}.\n Mensagem: ${message}`;
+    
+        const whatsappLink = `https://api.whatsapp.com/send?phone=5588996015972&text=${encodeURIComponent(whatsappMessage)}`;
+    
+        window.open(whatsappLink, '_blank');
+      });
+      document.addEventListener('DOMContentLoaded', () => {
+          document.querySelectorAll('.link-external5').forEach(link => {
+              
+              if (link.getAttribute('href') === 'dese' || !link.getAttribute('href')) {
+                  link.addEventListener('click', (event) => {
+                      event.preventDefault(); 
+                      alert('Este projeto está em desenvolvimento :)');
+                  });
+              }
+          });
+          document.querySelectorAll('.link-external6').forEach(link => {
+            
+            if (link.getAttribute('href') === 'dese' || !link.getAttribute('href')) {
+                link.addEventListener('click', (event) => {
+                    event.preventDefault(); 
+                    alert('Só é uma demonstração, ele esta dispobivél no site de Apps Android :)');
+                });
+            }
+        });
+      });
+      function toggleText(event) {
+        event.preventDefault(); 
+        const serviceBox = event.target.closest('.services-box'); 
+        const textContent = serviceBox.querySelector('.text-content'); 
+      
+        if (textContent.classList.contains('expanded')) {
+          textContent.classList.remove('expanded'); 
+          serviceBox.classList.remove('expanded'); 
+          event.target.textContent = 'Ler Mais'; 
+        } else {
+          textContent.classList.add('expanded'); 
+          serviceBox.classList.add('expanded'); 
+          event.target.textContent = 'Ler Menos'; 
+        }
+      }
+
+      // Modal functions
+      function showFullArticle(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        console.log('Tentando abrir modal do artigo...');
+        const modal = document.getElementById('articleModal');
+        if (modal) {
+          modal.style.display = 'block';
+          document.body.style.overflow = 'hidden';
+          document.body.style.position = 'fixed';
+          console.log('Modal do artigo aberto com sucesso!');
+        } else {
+          console.error('Modal do artigo não encontrado!');
+        }
+      }
+
+      function closeArticleModal() {
+        document.getElementById('articleModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.body.style.position = 'relative';
+        document.body.style.top = 'auto';
+        document.body.style.left = 'auto';
+        document.body.style.right = 'auto';
+        document.body.style.bottom = 'auto';
+        document.body.style.width = 'auto';
+        document.body.style.height = 'auto';
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        const modal = document.getElementById('articleModal');
+        if (event.target == modal) {
+          closeArticleModal();
+        }
+        const securityModal = document.getElementById('securityModal');
+        if (event.target == securityModal) {
+          closeSecurityModal();
+        }
+      }
+
+      // Close modal with ESC key
+      document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+          closeArticleModal();
+          closeSecurityModal();
+        }
+      });
+
+      // Security modal functions
+      function showSecurityArticle(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        console.log('Tentando abrir modal de segurança...');
+        const modal = document.getElementById('securityModal');
+        if (modal) {
+          modal.style.display = 'block';
+          document.body.style.overflow = 'hidden';
+          document.body.style.position = 'fixed';
+          console.log('Modal de segurança aberto com sucesso!');
+        } else {
+          console.error('Modal de segurança não encontrado!');
+        }
+      }
+
+      function closeSecurityModal() {
+        document.getElementById('securityModal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+        document.body.style.position = 'relative';
+        document.body.style.top = 'auto';
+        document.body.style.left = 'auto';
+        document.body.style.right = 'auto';
+        document.body.style.bottom = 'auto';
+        document.body.style.width = 'auto';
+        document.body.style.height = 'auto';
+      }
+
+      // Função para pré-preencher o formulário com assunto de perícia
+      function setForensicsMessage() {
+        const messageField = document.getElementById('message');
+        if (messageField) {
+          messageField.value = 'Olá Francilino, gostaria de solicitar uma análise de perícia cibernética. Podemos conversar?';
+        }
+        // Scroll suave até o contato
+        document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      }
+
+      // Função para abrir vídeos do YouTube diretamente
+      function openFeaturedVideo(projectType) {
+        if (projectType === 'automa-saas') {
+          // Vídeo de demonstração do Automa SaaS
+          window.open('https://www.youtube.com/watch?v=rsUMSEgP_Ys', '_blank');
+        } else if (projectType === 'cassino') {
+          // Playlist completa do Cassino
+          window.open('https://www.youtube.com/watch?v=H29trPNZeJM&list=PLeuV_Zugyc23N9X0w-Pifk1PioXbVIFwY', '_blank');
+        }
+      }
+    </script>
+    
+    <!-- WhatsApp Float Button -->
+    <a href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text=Olá%20Francilino%2C%20gostaria%20de%20solicitar%20um%20orçamento." 
+       target="_blank" 
+       class="whatsapp-float">
+      <i class='bx bxl-whatsapp'></i>
+    </a>
+    
+  </body>
+</html>

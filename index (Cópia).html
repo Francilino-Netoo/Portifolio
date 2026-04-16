@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Desenvolvedor Full Stack especializado em sites, sistemas personalizados, automações web e perícia cibernética. Soluções digitais que geram resultados reais." />
-    <meta name="keywords" content="desenvolvedor, sites, sistemas, automação, python, react, saas, perícia cibernética" />
-    <meta name="author" content="Francilino Neto" />
-    <title>Francilino Neto | Soluções Digitais que Geram Resultados</title>
+    <title>Francilino Neto</title>
 
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -15,249 +12,6 @@
     />
 
     <link rel="stylesheet" href="css/style.css" />
-    
-    <style>
-      /* Estilos adicionais para as novas seções - mantenha a consistência com seu CSS original */
-      .btn-secondary {
-        background: transparent;
-        border: 2px solid var(--main-color);
-        color: var(--main-color);
-        margin-left: 1rem;
-      }
-      .btn-secondary:hover {
-        background: var(--main-color);
-        color: var(--second-bg-color);
-        box-shadow: 0 0 1rem var(--main-color);
-        transform: scale(1.05);
-      }
-      
-      .cta-buttons {
-        display: flex;
-        gap: 1rem;
-        margin-top: 2rem;
-        flex-wrap: wrap;
-      }
-      
-      /* Seção Diferenciais */
-      .differentials {
-        background: var(--second-bg-color);
-        padding: 8rem 9% 4rem;
-      }
-      
-      .differentials-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 2rem;
-        margin-top: 4rem;
-      }
-      
-      .differential-card {
-        background: var(--bg-color);
-        padding: 2rem;
-        border-radius: 2rem;
-        text-align: center;
-        transition: 0.3s ease;
-        border: 1px solid var(--main-color);
-      }
-      
-      .differential-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 0 1.5rem rgba(0, 255, 255, 0.2);
-      }
-      
-      .differential-card i {
-        font-size: 4.5rem;
-        color: var(--main-color);
-        margin-bottom: 1.5rem;
-      }
-      
-      .differential-card h3 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-      
-      .differential-card p {
-        font-size: 1.4rem;
-        color: var(--text-color);
-        line-height: 1.6;
-      }
-      
-      /* Seção Processo */
-      .process {
-        padding: 8rem 9% 4rem;
-      }
-      
-      .process-container {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        gap: 2rem;
-        margin-top: 4rem;
-      }
-      
-      .process-step {
-        flex: 1;
-        min-width: 200px;
-        text-align: center;
-        background: var(--second-bg-color);
-        padding: 2rem;
-        border-radius: 2rem;
-        transition: 0.3s ease;
-        border-bottom: 3px solid var(--main-color);
-      }
-      
-      .process-step:hover {
-        transform: translateY(-5px);
-      }
-      
-      .step-number {
-        width: 50px;
-        height: 50px;
-        background: var(--main-color);
-        color: var(--second-bg-color);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 2rem;
-        font-weight: bold;
-        margin: 0 auto 1.5rem;
-      }
-      
-      .process-step h3 {
-        font-size: 2rem;
-        margin-bottom: 1rem;
-      }
-      
-      .process-step p {
-        font-size: 1.4rem;
-        color: var(--text-color);
-      }
-      
-      /* Ajustes responsivos */
-      @media (max-width: 768px) {
-        .cta-buttons {
-          flex-direction: column;
-        }
-        .btn-secondary {
-          margin-left: 0;
-        }
-        .process-container {
-          flex-direction: column;
-        }
-        .differentials-container {
-          grid-template-columns: 1fr;
-        }
-      }
-      
-      /* Melhorias nos modais */
-      .modal {
-        display: none;
-        position: fixed;
-        z-index: 2000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.8);
-        backdrop-filter: blur(5px);
-      }
-      
-      .modal-content {
-        background-color: var(--second-bg-color);
-        margin: 5% auto;
-        padding: 0;
-        border: 1px solid var(--main-color);
-        border-radius: 2rem;
-        width: 90%;
-        max-width: 800px;
-        max-height: 85vh;
-        overflow-y: auto;
-        position: relative;
-      }
-      
-      .modal-header {
-        padding: 2rem;
-        border-bottom: 1px solid var(--main-color);
-        position: sticky;
-        top: 0;
-        background: var(--second-bg-color);
-        border-radius: 2rem 2rem 0 0;
-      }
-      
-      .modal-header h2 {
-        font-size: 2rem;
-        color: var(--main-color);
-        padding-right: 3rem;
-      }
-      
-      .close {
-        position: absolute;
-        right: 2rem;
-        top: 1.5rem;
-        font-size: 3rem;
-        cursor: pointer;
-        color: var(--text-color);
-        transition: 0.3s;
-      }
-      
-      .close:hover {
-        color: var(--main-color);
-      }
-      
-      .modal-body {
-        padding: 2rem;
-      }
-      
-      .article-content h3 {
-        font-size: 1.8rem;
-        color: var(--main-color);
-        margin: 2rem 0 1rem;
-      }
-      
-      .article-content h4 {
-        font-size: 1.6rem;
-        margin: 1.5rem 0 1rem;
-      }
-      
-      .article-content p {
-        margin-bottom: 1.5rem;
-        line-height: 1.8;
-      }
-      
-      .article-content ul {
-        margin: 1rem 0 1.5rem 2rem;
-      }
-      
-      .article-content li {
-        margin-bottom: 0.5rem;
-      }
-      
-      /* WhatsApp Float */
-      .whatsapp-float {
-        position: fixed;
-        bottom: 2rem;
-        right: 2rem;
-        background: #25d366;
-        color: white;
-        width: 5.5rem;
-        height: 5.5rem;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        box-shadow: 0 0 1rem rgba(37, 211, 102, 0.5);
-        transition: 0.3s;
-        z-index: 100;
-      }
-      
-      .whatsapp-float:hover {
-        transform: scale(1.1);
-        color: white;
-        box-shadow: 0 0 2rem rgba(37, 211, 102, 0.8);
-      }
-    </style>
   </head>
 
   <body>
@@ -270,11 +24,9 @@
         <a href="#home" class="active"><i class="bx bx-home-alt"></i>Home</a>
         <a href="#about"><i class="bx bx-user"></i>Sobre</a>
         <a href="#services"><i class="bx bx-briefcase-alt"></i>Serviços</a>
-        <a href="#differentials"><i class="bx bx-star"></i>Diferenciais</a>
-        <a href="#process"><i class="bx bx-cog"></i>Processo</a>
         <a href="#proof"><i class="bx bx-award"></i>Provas</a>
-        <a href="#forensics"><i class="bx bx-shield-alt-2"></i>Perícia</a>
         <a href="#featured-projects"><i class="bx bx-star"></i>Destaque</a>
+        <a href="#forensics"><i class="bx bx-shield-alt-2"></i>Perícia</a>
         <a href="#blog"><i class="bx bx-file"></i>Artigos</a>
         <a href="#portfolio"><i class="bx bx-folder-open"></i>Projetos</a>
         <a href="#contact"><i class="bx bx-envelope"></i>Contato</a>
@@ -285,29 +37,36 @@
 
     <section class="home" id="home">
       <div class="home-contente">
-        <h3>SOLICITAR ORÇAMENTO MENSAGEM BONITO Transformo ideias em</h3>
-        <h1>Sites, Sistemas e Automações</h1>
-        <h3>que geram <span class="multiple-text">resultados reais|</span></h3>
+        <h3>Olá, eu sou</h3>
+        <h1>Francilino Neto</h1>
+        <h3><span class="multiple-text"></span></h3>
         <p>
-          Desenvolvo soluções digitais modernas para empresas, negócios locais e empreendedores que desejam vender mais, organizar processos e crescer no digital.
+          Criador de plataformas SaaS B2B2C com 600+ usuários ativos. Soluções de automações web. Desenvolvimento de sistemas self-service com Python assíncrono, Redis e expertise em Full Stack + Automação + Segurança.
         </p>
 
         <div class="social-media">
-          <a href="https://t.me/programador_python" target="_blank"><i class='bx bxl-telegram'></i></a>
+          <a href="https://t.me/programador_python" target="_blank"><i class='bx bxl-telegram'></i></i></a>
           <a href="https://www.instagram.com/programador_afobado/" target="_blank"><i class="bx bxl-instagram-alt"></i></a>
-          <a href="https://www.linkedin.com/in/francilino-neto" target="_blank"><i class="bx bxl-linkedin"></i></a>
-          <a href="https://github.com/Francilino-Netoo" target="_blank"><i class="bx bxl-github"></i></a>
+          <a href="https://www.linkedin.com/in/francilino-neto" target="_blank"
+            ><i class="bx bxl-linkedin"></i
+          ></a>
+          <a href="https://github.com/Francilino-Netoo" target="_blank" title="GitHub com repositórios documentados"
+            ><i class="bx bxl-github"></i
+          ></a>
           <a href="https://www.youtube.com/@AutomaWeb" target="_blank"><i class="bx bxl-youtube"></i></a>
-          <a href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text&type=phone_number&app_absent=0" target="_blank"><i class="bx bxl-whatsapp"></i></a>
+          <a
+            href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text&type=phone_number&app_absent=0"
+            target="_blank"
+            ><i class="bx bxl-whatsapp"></i
+          ></a>
         </div>
-        
         <div class="cta-buttons">
-          <a href="#portfolio" class="btn">Ver Projetos</a>
-          <a href="#contact" class="btn btn-secondary">Solicitar Orçamento</a>
+          <a href="./images/curriculo.pdf"
+          download="curriculo" class="btn">Download CV</a>
         </div>
       </div>
       <div class="home-img">
-        <img src="images/home.png" alt="Francilino Neto - Desenvolvedor Full Stack" />
+        <img src="images/home.png" alt="" />
       </div>
     </section>
 
@@ -319,12 +78,9 @@
         <h2 class="heading">Sobre <span>mim</span></h2>
         <h3>Tech Lead & Desenvolvedor Full Stack</h3>
         <p>
-          Desenvolvedor Full Stack com pós-graduação em Cybersecurity e criador de plataformas SaaS B2B2C. Atuo no desenvolvimento de soluções de automação, análise de dados e sistemas digitais voltados para parceiros estratégicos com grande audiência no Telegram.
-
-Minha expertise envolve desenvolvimento Full Stack, automação, segurança e arquitetura de sistemas escaláveis, com experiência em backends de alta performance utilizando Python e AsyncIO, inteligência artificial, DevOps e interfaces modernas com React.js.
-
-Tenho foco na criação de plataformas self-service, produtos digitais robustos e soluções seguras, sempre priorizando performance, usabilidade e crescimento sustentável.
+          Desenvolvedor Full Stack com Pós-graduação em Cybersecurity e criador de plataformas SaaS B2B2C. Desenvolvi soluções de automação e análise de dados que atendem parceiros estratégicos com audiência significativa no Telegram. Minha expertise abrange Full Stack, Automação e Segurança, com experiência em arquiteturas escaláveis, backends de alta performance (Python/AsyncIO), Inteligência Artificial, React Native e DevOps. Foco em desenvolvimento de sistemas self-service e segurança nativa.
         </p>
+        <a href="#5" class="btn">Ler Mais</a>
       </div>
     </section>
 
@@ -371,124 +127,6 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
             Extração de dados em escala com Playwright, Puppeteer e Scrapy. Integração com modelos de IA para análise preditiva, geração de leads e detecção de padrões. Desenvolvimento de robôs resistentes a antibots, sistemas de cache inteligente e processamento paralelo para máxima eficiência na coleta de dados.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
-        </div>
-        
-        <div class="services-box">
-          <i class="bx bx-code-alt"></i>
-          <h3>Sites Profissionais</h3>
-          <p class="text-content">
-            Criação de sites modernos, rápidos e responsivos para empresas, marcas e profissionais que desejam presença online forte. Design focado em conversão e SEO otimizado.
-          </p>
-          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
-        </div>
-
-        <div class="services-box">
-          <i class="bx bx-cog"></i>
-          <h3>Sistemas Personalizados</h3>
-          <p class="text-content">
-            Desenvolvimento de sistemas sob medida para controle de vendas, clientes, estoque, relatórios e processos internos. Soluções escaláveis com Python, Node.js e React.
-          </p>
-          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
-        </div>
-        
-        <div class="services-box">
-          <i class='bx bx-bot'></i>
-          <h3>Automações</h3>
-          <p class="text-content">
-            Automatização de tarefas repetitivas para economizar tempo, reduzir erros e aumentar produtividade. Robôs para coleta de dados, envio de mensagens e integrações.
-          </p>
-          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
-        </div>
-        
-        <div class="services-box">
-          <i class="bx bx-landscape"></i>
-          <h3>Landing Pages</h3>
-          <p class="text-content">
-            Páginas estratégicas criadas para vender produtos, captar clientes e gerar oportunidades. Alta conversão, carregamento rápido e design persuasivo.
-          </p>
-          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
-        </div>
-
-        <div class="services-box">
-          <i class="bx bx-link-alt"></i>
-          <h3>Integrações</h3>
-          <p class="text-content">
-            Conexão entre APIs, plataformas, bancos de dados e ferramentas para centralizar processos. Integração com WhatsApp, Telegram, sistemas de pagamento e ERPs.
-          </p>
-          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
-        </div>
-
-        <div class="services-box">
-          <i class="bx bx-support"></i>
-          <h3>Suporte e Melhorias</h3>
-          <p class="text-content">
-            Manutenção, ajustes e evolução de projetos já existentes. Garantia de segurança, atualizações e novas funcionalidades sob demanda.
-          </p>
-          <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção Diferenciais -->
-    <section class="differentials" id="differentials">
-      <h2 class="heading">Por que trabalhar <span>comigo?</span></h2>
-      <div class="differentials-container">
-        <div class="differential-card">
-          <i class='bx bx-message-rounded-dots'></i>
-          <h3>Atendimento direto e rápido</h3>
-          <p>Comunicação clara e sem burocracia. Você fala diretamente com o desenvolvedor.</p>
-        </div>
-        <div class="differential-card">
-          <i class='bx bx-customize'></i>
-          <h3>Soluções personalizadas</h3>
-          <p>Cada projeto é único e desenvolvido sob medida para sua necessidade específica.</p>
-        </div>
-        <div class="differential-card">
-          <i class='bx bx-paint'></i>
-          <h3>Design moderno e funcional</h3>
-          <p>Interface bonita e intuitiva que seus usuários vão adorar usar.</p>
-        </div>
-        <div class="differential-card">
-          <i class='bx bx-code-block'></i>
-          <h3>Código limpo e organizado</h3>
-          <p>Manutenção facilitada e segurança desde a primeira linha de código.</p>
-        </div>
-        <div class="differential-card">
-          <i class='bx bx-trending-up'></i>
-          <h3>Foco em resultado real</h3>
-          <p>Não apenas código bonito, mas soluções que trazem ROI para seu negócio.</p>
-        </div>
-        <div class="differential-card">
-          <i class='bx bx-headphone'></i>
-          <h3>Suporte e acompanhamento</h3>
-          <p>Acompanhamento contínuo mesmo após a entrega do projeto.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Seção Processo de Trabalho -->
-    <section class="process" id="process">
-      <h2 class="heading">Como <span>funciona</span></h2>
-      <div class="process-container">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <h3>Entendimento</h3>
-          <p>Conversamos sobre sua necessidade, objetivo e ideias. Entendo seu negócio e seus desafios.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <h3>Planejamento</h3>
-          <p>Definimos a melhor solução para seu projeto, tecnologias e prazos realistas.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <h3>Desenvolvimento</h3>
-          <p>Criação do sistema, site ou automação com foco em qualidade, segurança e performance.</p>
-        </div>
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <h3>Entrega</h3>
-          <p>Projeto pronto para uso, com suporte inicial, treinamento e ajustes finos.</p>
         </div>
       </div>
     </section>
@@ -1194,13 +832,6 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
         }
       }
     </script>
-    
-    <!-- WhatsApp Float Button -->
-    <a href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text=Olá%20Francilino%2C%20gostaria%20de%20solicitar%20um%20orçamento." 
-       target="_blank" 
-       class="whatsapp-float">
-      <i class='bx bxl-whatsapp'></i>
-    </a>
     
   </body>
 </html>

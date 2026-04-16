@@ -90,10 +90,10 @@ ScrollReveal().reveal(".home-contente p, .about-content", { origin: "right" });
 if (document.querySelector(".multiple-text")) {
   new Typed(".multiple-text", {
     strings: [
-      "Criador de plataformas SaaS",
-      "Especialista em automação web",
-      "Desenvolvedor de sistemas",
-      "Automações escaláveis de alta performance"
+      "resultados reais",
+      "automações inteligentes",
+      "sistemas eficientes",
+      "crescimento digital"
     ],
     typeSpeed: 70,
     backSpeed: 50,

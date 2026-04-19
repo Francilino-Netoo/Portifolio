@@ -135,6 +135,21 @@
       }
       
       /* Ajustes responsivos */
+      @media (max-width: 1024px) {
+        .differentials-container {
+          grid-template-columns: 1fr !important;
+        }
+        .differential-card {
+          font-size: 1.3rem;
+        }
+        .differential-card h3 {
+          font-size: 1.8rem;
+        }
+        .differential-card p {
+          font-size: 1.2rem;
+        }
+      }
+      
       @media (max-width: 768px) {
         .cta-buttons {
           flex-direction: column;
@@ -146,7 +161,35 @@
           flex-direction: column;
         }
         .differentials-container {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr !important;
+        }
+        .differentials {
+          padding: 6rem 4% 3rem;
+        }
+        .process {
+          padding: 6rem 4% 3rem;
+        }
+        .differential-card {
+          padding: 1.5rem;
+        }
+        .differential-card i {
+          font-size: 3rem;
+        }
+        .differential-card h3 {
+          font-size: 1.5rem;
+        }
+        .differential-card p {
+          font-size: 1.1rem;
+        }
+        .process-step {
+          min-width: 100%;
+          padding: 1.5rem;
+        }
+        .process-step h3 {
+          font-size: 1.5rem;
+        }
+        .process-step p {
+          font-size: 1.1rem;
         }
       }
       

@@ -1609,8 +1609,8 @@ span.multiple-text {
 }
 
 /* RESPONSIVE DESIGN
-   Desktop:  > 1280px  → navbar horizontal
-   Notebook: ≤ 1280px  → sidebar hambúrguer (igual mobile)
+   Desktop:  > 1440px  → navbar horizontal
+   Notebook: ≤ 1440px  → sidebar hambúrguer
    Tablet:   ≤ 768px
    Mobile:   ≤ 450px
 */
@@ -1633,18 +1633,19 @@ span.multiple-text {
   opacity: 1;
 }
 
-@media (max-width: 1280px) {
-  html { font-size: 55%; }
+/* ---- Notebook / Small desktop (≤ 1440px) ---- */
+@media (max-width: 1440px) {
+  html { font-size: 58%; }
 
   /* Ativa menu hambúrguer */
   #menu-icon { display: block; }
 
-  /* Esconde navbar horizontal e vira sidebar */
+  /* Vira sidebar */
   .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 280px;
+    width: 300px;
     height: 100vh;
     background: rgba(10, 15, 30, 0.98);
     backdrop-filter: blur(24px);
@@ -1655,7 +1656,7 @@ span.multiple-text {
     transform: translateX(-110%);
     transition: transform 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: 100000;
-    padding: 5rem 0 2rem;
+    padding: 6rem 0 2rem;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -1665,27 +1666,27 @@ span.multiple-text {
   .navbar a {
     display: flex;
     align-items: center;
-    gap: 1.2rem;
-    font-size: 1.6rem;
+    gap: 1.4rem;
+    font-size: 1.7rem;
     margin: 0.4rem 1rem;
-    padding: 1.2rem 1.5rem;
+    padding: 1.3rem 1.8rem;
     color: #e2e8f0;
     border-radius: 1rem;
     transition: all 0.2s ease;
     font-weight: 500;
-    margin-left: 0;  /* reseta o margin-left do desktop */
+    margin-left: 0;
   }
 
   .navbar a i {
     display: flex !important;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: #64748b;
     min-width: 2.4rem;
     justify-content: center;
     transition: color 0.2s ease;
   }
 
-  .navbar a::after { display: none; } /* remove sublinhado desktop */
+  .navbar a::after { display: none; }
 
   .navbar a:hover,
   .navbar a.active {
@@ -1698,7 +1699,7 @@ span.multiple-text {
   .navbar a:hover i,
   .navbar a.active i { color: var(--nain-color); }
 
-  /* Restante do header */
+  /* Header */
   .header {
     padding: 1.5rem 5%;
     justify-content: space-between;
@@ -1707,26 +1708,18 @@ span.multiple-text {
 
   /* Seções */
   section {
-    padding: 8rem 5% 4rem;
+    padding: 8rem 6% 4rem;
     min-height: auto;
   }
 
-  /* Home e About empilhados */
+  /* Home e About lado a lado ainda em 1440 mas menores */
   .home {
-    flex-direction: column;
-    text-align: center;
-    gap: 3rem;
+    gap: 4rem;
     margin-top: 10rem !important;
-    padding: 2rem 5% !important;
+    padding: 2rem 6% !important;
   }
 
-  .about {
-    flex-direction: column-reverse;
-    text-align: center;
-    gap: 3rem;
-  }
-
-  .home-img img, .about-img img { width: 28vw; }
+  .home-img img, .about-img img { width: 20vw; }
 
   /* Grids: 2 colunas */
   .services-container { gap: 2rem; }
@@ -1738,15 +1731,38 @@ span.multiple-text {
     overflow: visible;
     min-height: auto;
   }
-  .services-box .btn { position: relative; bottom: auto; left: auto; transform: none; display: inline-block; margin-top: 1.5rem; }
+  .services-box .btn {
+    position: relative; bottom: auto; left: auto;
+    transform: none; display: inline-block; margin-top: 1.5rem;
+  }
 
-  .differentials-container { grid-template-columns: repeat(2, 1fr); }
-  .blog-container          { grid-template-columns: repeat(2, 1fr); }
-  .porfolio-container      { grid-template-columns: repeat(2, 1fr); }
-  .forensics-container     { grid-template-columns: repeat(2, 1fr); }
-  .featured-projects-container { grid-template-columns: 1fr; }
+  .differentials-container       { grid-template-columns: repeat(2, 1fr); }
+  .blog-container                { grid-template-columns: repeat(2, 1fr); }
+  .porfolio-container            { grid-template-columns: repeat(2, 1fr); }
+  .forensics-container           { grid-template-columns: repeat(2, 1fr); }
+  .featured-projects-container   { grid-template-columns: 1fr; }
+
+  .heading { font-size: 4rem; }
+}
+
+/* ---- Notebook médio/pequeno (≤ 1280px) ---- */
+@media (max-width: 1280px) {
+  html { font-size: 54%; }
+
+  .home {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .about {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 3rem;
+  }
 
   .about-content h2 { text-align: center; }
+  .home-img img, .about-img img { width: 32vw; }
   .heading { font-size: 3.8rem; }
 }
 

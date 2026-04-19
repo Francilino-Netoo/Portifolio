@@ -231,6 +231,10 @@
       }
       
       .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
         padding: 2rem;
         border-bottom: 1px solid var(--main-color);
         position: sticky;
@@ -242,21 +246,32 @@
       .modal-header h2 {
         font-size: 2rem;
         color: var(--main-color);
-        padding-right: 3rem;
+        padding-right: 0;
+        margin: 0;
+        line-height: 1.3;
+        flex: 1;
       }
       
       .close {
-        position: absolute;
-        right: 2rem;
-        top: 1.5rem;
+        position: static;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 4.2rem;
+        height: 4.2rem;
         font-size: 3rem;
+        line-height: 1;
+        margin-left: 1rem;
         cursor: pointer;
         color: var(--text-color);
-        transition: 0.3s;
+        transition: transform 0.3s ease, color 0.3s ease;
+        flex-shrink: 0;
+        transform-origin: center center;
       }
       
       .close:hover {
         color: var(--main-color);
+        transform: rotate(90deg);
       }
       
       .modal-body {

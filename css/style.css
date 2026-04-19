@@ -1683,7 +1683,7 @@ span.multiple-text {
   }
 
   .navbar a:first-child {
-    margin-top: 0 !important;
+    margin-top: 0.8rem !important;
   }
 
   .navbar a i {

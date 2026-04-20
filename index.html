@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Desenvolvedor Full Stack especializado em sites, sistemas personalizados, automações web e perícia cibernética. Soluções digitais que geram resultados reais." />
+  <meta name="description" content="Criação de sites profissionais, sistemas personalizados e automações para empresas e negócios locais." />
     <meta name="keywords" content="desenvolvedor, sites, sistemas, automação, python, react, saas, perícia cibernética" />
     <meta name="author" content="Francilino Neto" />
-    <title>Francilino Neto | Soluções Digitais que Geram Resultados</title>
+  <title>Desenvolvimento de Sites, Sistemas e Automações | Francilino Neto</title>
 
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
@@ -135,6 +135,21 @@
       }
       
       /* Ajustes responsivos */
+      @media (max-width: 1024px) {
+        .differentials-container {
+          grid-template-columns: 1fr !important;
+        }
+        .differential-card {
+          font-size: 1.3rem;
+        }
+        .differential-card h3 {
+          font-size: 1.8rem;
+        }
+        .differential-card p {
+          font-size: 1.2rem;
+        }
+      }
+      
       @media (max-width: 768px) {
         .cta-buttons {
           flex-direction: column;
@@ -146,7 +161,35 @@
           flex-direction: column;
         }
         .differentials-container {
-          grid-template-columns: 1fr;
+          grid-template-columns: 1fr !important;
+        }
+        .differentials {
+          padding: 6rem 4% 3rem;
+        }
+        .process {
+          padding: 6rem 4% 3rem;
+        }
+        .differential-card {
+          padding: 1.5rem;
+        }
+        .differential-card i {
+          font-size: 3rem;
+        }
+        .differential-card h3 {
+          font-size: 1.5rem;
+        }
+        .differential-card p {
+          font-size: 1.1rem;
+        }
+        .process-step {
+          min-width: 100%;
+          padding: 1.5rem;
+        }
+        .process-step h3 {
+          font-size: 1.5rem;
+        }
+        .process-step p {
+          font-size: 1.1rem;
         }
       }
       
@@ -164,55 +207,71 @@
       .modal {
         display: none;
         position: fixed;
-        z-index: 2000;
+        z-index: 999999;
         left: 0;
         top: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.8);
-        backdrop-filter: blur(5px);
+        background-color: rgba(0,0,0,0.95);
+        backdrop-filter: blur(8px);
       }
       
       .modal-content {
         background-color: var(--second-bg-color);
-        margin: 5% auto;
+        margin: 0;
         padding: 0;
         border: 1px solid var(--main-color);
-        border-radius: 2rem;
-        width: 90%;
-        max-width: 800px;
-        max-height: 85vh;
+        border-radius: 0;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        max-height: none;
         overflow-y: auto;
         position: relative;
       }
       
       .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 1rem;
         padding: 2rem;
         border-bottom: 1px solid var(--main-color);
         position: sticky;
         top: 0;
         background: var(--second-bg-color);
-        border-radius: 2rem 2rem 0 0;
+        border-radius: 0;
       }
       
       .modal-header h2 {
         font-size: 2rem;
         color: var(--main-color);
-        padding-right: 3rem;
+        padding-right: 0;
+        margin: 0;
+        line-height: 1.3;
+        flex: 1;
       }
       
       .close {
-        position: absolute;
-        right: 2rem;
-        top: 1.5rem;
+        position: static;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 4.2rem;
+        height: 4.2rem;
         font-size: 3rem;
+        line-height: 1;
+        margin-left: 1rem;
         cursor: pointer;
         color: var(--text-color);
-        transition: 0.3s;
+        transition: transform 0.3s ease, color 0.3s ease;
+        flex-shrink: 0;
+        transform-origin: center center;
       }
       
       .close:hover {
         color: var(--main-color);
+        transform: rotate(90deg);
       }
       
       .modal-body {
@@ -267,6 +326,41 @@
         color: white;
         box-shadow: 0 0 2rem rgba(37, 211, 102, 0.8);
       }
+
+      /* CTA Final */
+      .final-cta {
+        background: linear-gradient(135deg, rgba(0, 229, 255, 0.08), rgba(139, 92, 246, 0.08));
+        border-top: 1px solid rgba(0, 229, 255, 0.2);
+        border-bottom: 1px solid rgba(0, 229, 255, 0.2);
+        text-align: center;
+        padding: 7rem 9% 5rem;
+      }
+
+      .final-cta h2 {
+        font-size: 3.4rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .final-cta p {
+        font-size: 1.7rem;
+        max-width: 800px;
+        margin: 0 auto 2.2rem;
+        color: #cbd5e1;
+      }
+
+      @media (max-width: 768px) {
+        .final-cta {
+          padding: 5rem 4% 3.5rem;
+        }
+
+        .final-cta h2 {
+          font-size: 2.4rem;
+        }
+
+        .final-cta p {
+          font-size: 1.5rem;
+        }
+      }
     </style>
   </head>
 
@@ -295,9 +389,9 @@
 
     <section class="home" id="home">
       <div class="home-contente">
-        <h3>SOLICITAR ORÇAMENTO MENSAGEM BONITO Transformo ideias em</h3>
-        <h1>Sites, Sistemas e Automações</h1>
-        <h3>que geram <span class="multiple-text">sistemas eficien|</span></h3>
+        <h3>Transformo ideias em</h3>
+        <h1>Sites, Sistemas e Automações que geram resultados reais.</h1>
+        <h3>Soluções com <span class="multiple-text">resultados reais</span></h3>
         <p>
           Desenvolvo soluções digitais modernas para empresas, negócios locais e empreendedores que desejam vender mais, organizar processos e crescer no digital.
         </p>
@@ -312,8 +406,8 @@
         </div>
         
         <div class="cta-buttons">
-          <a href="#portfolio" class="btn">Ver Projetos</a>
           <a href="#contact" class="btn btn-secondary">Solicitar Orçamento</a>
+          <a href="#portfolio" class="btn">Ver Projetos</a>
         </div>
       </div>
       <div class="home-img">
@@ -329,11 +423,7 @@
         <h2 class="heading">Sobre <span>mim</span></h2>
         <h3>Tech Lead & Desenvolvedor Full Stack</h3>
         <p>
-          Desenvolvedor Full Stack com pós-graduação em Cybersecurity e criador de plataformas SaaS B2B2C. Atuo no desenvolvimento de soluções de automação, análise de dados e sistemas digitais voltados para parceiros estratégicos com grande audiência no Telegram.
-
-Minha expertise envolve desenvolvimento Full Stack, automação, segurança e arquitetura de sistemas escaláveis, com experiência em backends de alta performance utilizando Python e AsyncIO, inteligência artificial, DevOps e interfaces modernas com React.js.
-
-Tenho foco na criação de plataformas self-service, produtos digitais robustos e soluções seguras, sempre priorizando performance, usabilidade e crescimento sustentável.
+          Sou Desenvolvedor Full Stack especializado em criar sites, sistemas e automações para empresas que querem crescer no digital. Uno tecnologia, segurança e performance para entregar soluções modernas, rápidas e fáceis de usar.
         </p>
       </div>
     </section>
@@ -346,7 +436,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class="bx bx-code"></i>
           <h3>Back-End & APIs</h3>
           <p class="text-content">
-            Desenvolvimento de APIs robustas e escaláveis com Python (AsyncIO), Node.js, Flask e FastAPI. Implementação de sistemas de filas com Redis para alta concorrência e baixa latência.
+            Estruturo o núcleo do seu sistema para operar com estabilidade, velocidade e integração fácil com app, site e automações do seu negócio.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -355,7 +445,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class="bx bxs-paint"></i>
           <h3>Front-End & Dashboards</h3>
           <p class="text-content">
-            Criação de interfaces modernas com React.js, TypeScript e Redux. Desenvolvimento de dashboards administrativos e plataformas SaaS com UX otimizada e integração total com APIs REST.
+            Crio interfaces e painéis intuitivos para facilitar decisões, acelerar operações e melhorar a experiência dos seus clientes e da sua equipe.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -363,7 +453,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class='bx bx-bot' ></i>
           <h3>Chatbots & Automação</h3>
           <p class="text-content">
-            Desenvolvimento de chatbots para Telegram e WhatsApp com arquitetura multi-tenant. Sistemas automatizados para entrega de conteúdo e monetização em escala.
+            Automatizo atendimento, notificações e fluxos de vendas com bots que reduzem trabalho manual e aumentam a conversão do seu negócio.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -371,7 +461,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class="bx bxs-cog"></i>
           <h3>DevOps & Automação</h3>
           <p class="text-content">
-            Orquestração de contêineres com Docker, CI/CD e automação de processos. Scripts inteligentes para otimização de fluxos e aumento de eficiência operacional. Implementação de pipelines automatizados para deploy contínuo, monitoramento de infraestrutura e escalonamento horizontal de aplicações.
+            Organizo deploy, monitoramento e processos para que seu projeto fique mais confiável, escalável e pronto para crescer sem dor de cabeça.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -379,7 +469,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class="bx bxs-search"></i> 
           <h3>Data Scraping & IA</h3>
           <p class="text-content">
-            Extração de dados em escala com Playwright, Puppeteer e Scrapy. Integração com modelos de IA para análise preditiva, geração de leads e detecção de padrões. Desenvolvimento de robôs resistentes a antibots, sistemas de cache inteligente e processamento paralelo para máxima eficiência na coleta de dados.
+            Transformo dados em vantagem competitiva com coleta inteligente e automações que ajudam você a identificar oportunidades e vender mais.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -388,7 +478,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class="bx bx-code-alt"></i>
           <h3>Sites Profissionais</h3>
           <p class="text-content">
-            Criação de sites modernos, rápidos e responsivos para empresas, marcas e profissionais que desejam presença online forte. Design focado em conversão e SEO otimizado.
+            Desenvolvo sites profissionais com foco em autoridade, velocidade e conversão para transformar visitantes em clientes.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -397,7 +487,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class="bx bx-cog"></i>
           <h3>Sistemas Personalizados</h3>
           <p class="text-content">
-            Desenvolvimento de sistemas sob medida para controle de vendas, clientes, estoque, relatórios e processos internos. Soluções escaláveis com Python, Node.js e React.
+            Crio sistemas sob medida para organizar processos, reduzir retrabalho e dar mais controle sobre vendas, equipe e operação.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -406,7 +496,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class='bx bx-bot'></i>
           <h3>Automações</h3>
           <p class="text-content">
-            Automatização de tarefas repetitivas para economizar tempo, reduzir erros e aumentar produtividade. Robôs para coleta de dados, envio de mensagens e integrações.
+            Automatizo tarefas repetitivas para sua operação ganhar tempo, reduzir erros e escalar com mais produtividade.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -415,7 +505,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class="bx bx-landscape"></i>
           <h3>Landing Pages</h3>
           <p class="text-content">
-            Páginas estratégicas criadas para vender produtos, captar clientes e gerar oportunidades. Alta conversão, carregamento rápido e design persuasivo.
+            Crio landing pages estratégicas para campanhas que captam leads qualificados e aumentam suas vendas.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -424,7 +514,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class="bx bx-link-alt"></i>
           <h3>Integrações</h3>
           <p class="text-content">
-            Conexão entre APIs, plataformas, bancos de dados e ferramentas para centralizar processos. Integração com WhatsApp, Telegram, sistemas de pagamento e ERPs.
+            Conecto suas ferramentas para centralizar dados e processos, eliminando gargalos e melhorando o fluxo do negócio.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -433,7 +523,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <i class="bx bx-support"></i>
           <h3>Suporte e Melhorias</h3>
           <p class="text-content">
-            Manutenção, ajustes e evolução de projetos já existentes. Garantia de segurança, atualizações e novas funcionalidades sob demanda.
+            Mantenho e evoluo seu projeto com melhorias contínuas, correções e novas funcionalidades conforme o seu crescimento.
           </p>
           <a href="#" class="btn" onclick="toggleText(event)">Ler Mais</a>
         </div>
@@ -451,8 +541,8 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
         </div>
         <div class="differential-card">
           <i class='bx bx-customize'></i>
-          <h3>Soluções personalizadas</h3>
-          <p>Cada projeto é único e desenvolvido sob medida para sua necessidade específica.</p>
+          <h3>Soluções sob medida</h3>
+          <p>Cada projeto é planejado de acordo com sua operação, meta e realidade de mercado.</p>
         </div>
         <div class="differential-card">
           <i class='bx bx-paint'></i>
@@ -461,8 +551,8 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
         </div>
         <div class="differential-card">
           <i class='bx bx-code-block'></i>
-          <h3>Código limpo e organizado</h3>
-          <p>Manutenção facilitada e segurança desde a primeira linha de código.</p>
+          <h3>Código limpo e seguro</h3>
+          <p>Arquitetura bem estruturada para facilitar manutenção e garantir confiabilidade.</p>
         </div>
         <div class="differential-card">
           <i class='bx bx-trending-up'></i>
@@ -471,8 +561,8 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
         </div>
         <div class="differential-card">
           <i class='bx bx-headphone'></i>
-          <h3>Suporte e acompanhamento</h3>
-          <p>Acompanhamento contínuo mesmo após a entrega do projeto.</p>
+          <h3>Suporte contínuo</h3>
+          <p>Acompanhamento após a entrega para otimizar resultados e evolução do projeto.</p>
         </div>
       </div>
     </section>
@@ -484,28 +574,28 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
         <div class="process-step">
           <div class="step-number">1</div>
           <h3>Entendimento</h3>
-          <p>Conversamos sobre sua necessidade, objetivo e ideias. Entendo seu negócio e seus desafios.</p>
+          <p>Alinhamos objetivos, cenário atual e prioridades para construir uma solução certa desde o início.</p>
         </div>
         <div class="process-step">
           <div class="step-number">2</div>
           <h3>Planejamento</h3>
-          <p>Definimos a melhor solução para seu projeto, tecnologias e prazos realistas.</p>
+          <p>Defino escopo, cronograma e estratégia com foco em resultado, clareza e previsibilidade de entrega.</p>
         </div>
         <div class="process-step">
           <div class="step-number">3</div>
           <h3>Desenvolvimento</h3>
-          <p>Criação do sistema, site ou automação com foco em qualidade, segurança e performance.</p>
+          <p>Executo o projeto com qualidade técnica, segurança e performance, mantendo você atualizado em cada etapa.</p>
         </div>
         <div class="process-step">
           <div class="step-number">4</div>
           <h3>Entrega</h3>
-          <p>Projeto pronto para uso, com suporte inicial, treinamento e ajustes finos.</p>
+          <p>Publicação assistida, validação final e suporte inicial para garantir uso rápido e consistente.</p>
         </div>
       </div>
     </section>
 
     <section class="proof" id="proof">
-      <h2 class="heading">Provas de <span>Conceito</span></h2>
+      <h2 class="heading">Provas e <span>Resultados</span></h2>
       <div class="proof-container">
         <div class="proof-box featured">
           <div class="proof-content">
@@ -514,7 +604,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
               <span>Ferramenta Principal</span>
             </div>
             <h3>Automa Data Engine</h3>
-            <p>Plataforma robusta de automação e extração de dados com <strong>600+ usuários ativos</strong>. Minha principal fonte de renda passiva e ferramenta preferida dos clientes e afiliados.</p>
+            <p>Plataforma robusta de automação e extração de dados com <strong>+600 usuários ativos</strong>, casos reais em produção e estrutura pronta para escalar.</p>
             
             <div class="proof-stats">
               <div class="stat">
@@ -523,11 +613,11 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
               </div>
               <div class="stat">
                 <i class="bx bx-data"></i>
-                <span>Sistema escalável</span>
+                <span>Projetos em produção</span>
               </div>
               <div class="stat">
                 <i class="bx bx-time"></i>
-                <span>Automação avançada</span>
+                <span>Soluções escaláveis</span>
               </div>
             </div>
             
@@ -559,7 +649,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
             <i class='bx bxs-shield-alt-2'></i>
           </div>
           <h3>Laudo Técnico Pericial</h3>
-          <p>Elaboração de laudos com validade técnica para processos judiciais, arbitragens e investigações internas. Análise de logs, metadados e cadeia de custódia digital.</p>
+          <p>Laudos técnicos objetivos para processos judiciais, arbitragens e investigações internas com cadeia de custódia digital.</p>
           <ul class="forensics-list">
             <li><i class='bx bx-check-circle'></i> Conformidade com ISO 27001</li>
             <li><i class='bx bx-check-circle'></i> Cadeia de custódia rastreável</li>
@@ -572,7 +662,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
             <i class='bx bx-search-alt-2'></i>
           </div>
           <h3>Análise de Casos</h3>
-          <p>Investigação de incidentes cibernéticos: invasões, vazamento de dados, fraudes eletrônicas, engenharia social e recuperação de evidências digitais.</p>
+          <p>Investigação de incidentes cibernéticos com rastreabilidade de evidências e relatório técnico para tomada de decisão.</p>
           <ul class="forensics-list">
             <li><i class='bx bx-check-circle'></i> Análise de invasões</li>
             <li><i class='bx bx-check-circle'></i> Rastreamento de origem</li>
@@ -585,7 +675,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
             <i class='bx bx-fingerprint'></i>
           </div>
           <h3>Coleta de Vestígios</h3>
-          <p>Extração forense de discos, memória RAM, dispositivos móveis, e-mails, mensagens (WhatsApp/Telegram) e nuvem com preservação da cadeia de custódia.</p>
+          <p>Coleta forense de dispositivos, e-mails, nuvem e mensageria com métodos técnicos de preservação e integridade.</p>
           <ul class="forensics-list">
             <li><i class='bx bx-check-circle'></i> WhatsApp/Telegram</li>
             <li><i class='bx bx-check-circle'></i> E-mails e logs</li>
@@ -702,7 +792,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
       <div class="blog-container">
         <div class="blog-box">
           <div class="blog-content">
-            <h3>Como usamos automação no dia a dia para escalar vendas e atender milhares de usuários</h3>
+            <h3>Automação para empresas: como escalar vendas e atendimento com menos operação</h3>
             <p>Hoje em dia, automação não é mais algo "avançado" - virou necessidade. Quem trabalha com sistemas, vendas online ou serviços digitais já percebeu que fazer tudo manualmente simplesmente não escala.</p>
             <div class="blog-tags">
               <span class="tag">Automação</span>
@@ -716,7 +806,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
         
         <div class="blog-box">
           <div class="blog-content">
-            <h3>Segurança nativa em plataformas SaaS multi-tenant</h3>
+            <h3>Segurança em SaaS multi-tenant: práticas para proteger dados e escalar com confiança</h3>
             <p>Quando se fala em SaaS hoje, muita gente pensa só em funcionalidade e escala. Mas existe um ponto que não pode ficar em segundo plano: segurança.</p>
             <div class="blog-tags">
               <span class="tag">Segurança</span>
@@ -736,10 +826,19 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
       <div class="porfolio-container">
 
         <div class="portfolio-box">
+          <img src="images/portfolio16.png" alt="Mercadinho Macaxeira" />
+          <div class="portfolio-layer">
+            <h4>Mercadinho Macaxeira</h4>
+            <p>Plataforma web para supermercado local com catálogo digital e jornada mobile-first, facilitando pedidos e aumentando vendas.</p>
+            <a href="https://mercadinho-macaxeira.vercel.app/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
           <img src="images/portfolio14.png" alt="" />
           <div class="portfolio-layer">
             <h4>Automa SaaS White-Label</h4>
-            <p>Plataforma SaaS no-code self-service, multi-tenant, com receita recorrente. Sistema completo de automação que permite empresas criarem suas próprias soluções white-label com gestão total de usuários e monetização.</p>
+            <p>Plataforma SaaS em produção com receita recorrente, gestão multi-tenant e automações para escalar operação e monetização.</p>
             <a href="https://www.automa-web.dev.br/app/?utm_source=ig&utm_medium=social&utm_content=link_in_bio" target="_blank"><i class="bx bx-link-external"></i></a>
           </div>
         </div>
@@ -747,18 +846,26 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <img src="images/portfolio5.jpg" alt="" />
           <div class="portfolio-layer">
             <h4>Plataforma de Automação Web</h4>
-            <p>Este projeto foi desenvolvido para automatizar execuções baseadas em regras e estratégias definidas pelo próprio usuário, reduzindo tarefas repetitivas e otimizando o tempo de operação. A solução permite maior praticidade, acompanhamento em tempo real e melhor experiência de uso em ambientes web.</p>
+            <p>Sistema de automação com regras personalizadas para reduzir tarefas repetitivas e melhorar produtividade com acompanhamento em tempo real.</p>
             <a  href="https://automa-cassinos.dev.br/app/" target="_blank"><i class="bx bx-link-external"></i></a>
           </div>
         </div>
-        
 
         <div class="portfolio-box">
-          <img src="images/portfolio16.png" alt="" />
+          <img src="images/portfolio13.png" alt="" />
           <div class="portfolio-layer">
-            <h4>Mercadinho Macaxeira</h4>
-            <p>Desenvolvi uma plataforma web para supermercado local, com catálogo digital, carrinho de compras e experiência mobile-first, focada em facilitar pedidos online e ampliar as vendas do negócio.</p>
-            <a href="https://mercadinho-macaxeira.vercel.app/" target="_blank"><i class="bx bx-link-external"></i></a>
+            <h4>Sistema Empresarial (Marketplace)</h4>
+            <p>Projeto full stack com gestão de anúncios e usuários para simular um ambiente de marketplace, focado em operação e escala.</p>
+            <a href="https://automa-web-olx.vercel.app/" target="_blank"><i class="bx bx-link-external"></i></a>
+          </div>
+        </div>
+
+        <div class="portfolio-box">
+          <img src="images/portfolio12.png" alt="" />
+          <div class="portfolio-layer">
+            <h4>Bots e Integrações Telegram</h4>
+            <p>Automação de entradas com integração ao Telegram para reduzir operação manual e acelerar resposta em cenários de alto volume.</p>
+            <a  href="https://t.me/Automa_Web_bot" target="_blank"><i class="bx bx-link-external"></i></a>
           </div>
         </div>
 
@@ -774,17 +881,8 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
           <img src="images/portfolio10.png" alt="" />
           <div class="portfolio-layer">
             <h4>Calculadora IMC</h4>
-            <p>About
-              Esta é uma Calculadora de IMC (Índice de Massa Corpórea) desenvolvida em React + TypeScript.</p>
+            <p>Aplicação em React + TypeScript para cálculo de IMC com foco em experiência do usuário e validação de dados.</p>
             <a href="https://francilino-netoo.github.io/calculador-imc/" target="_blank"><i class="bx bx-link-external"></i></a>
-          </div>
-        </div>
-        <div class="portfolio-box">
-          <img src="images/portfolio13.png" alt="" />
-          <div class="portfolio-layer">
-            <h4>Inspirado na OLX</h4>
-            <p>Este projeto foi desenvolvido com o objetivo de mostrar minhas hablidades Full Stack. Usei Reac.js, Node.js para criar API e MongoDB para banco de dados.</p>
-            <a href="https://automa-web-olx.vercel.app/" target="_blank"><i class="bx bx-link-external"></i></a>
           </div>
         </div>
         <div class="portfolio-box">
@@ -799,15 +897,6 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
             <a href="https://francilino-netoo.github.io/portfolio-3d/" target="_blank"><i class="bx bx-link-external"></i></a>
           </div>
         </div>
-        <div class="portfolio-box">
-          <img src="images/portfolio12.png" alt="" />
-          <div class="portfolio-layer">
-            <h4>Automação Web Cassino Telegram</h4>
-            <p>Este projeto automatiza entradas em diversos jogos de um cassino online, utilizando as estratégias do próprio usuário. Dessa forma, evita-se que o usuário passe muito tempo na tela do computador ou celular.</p>
-            <a  href="https://t.me/Automa_Web_bot" target="_blank"><i class="bx bx-link-external"></i></a>
-          </div>
-        </div>
-        
         <div class="portfolio-box">
           <img src="images/portfolio1.jpg" alt="" />
           <div class="portfolio-layer">
@@ -869,13 +958,19 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
       <h2 class="heading">Entre em <span>Contato!</span></h2>
       <form action="#">
         <div class="input-box">
-          <input type="text" id="name" placeholder="Escreva seu nome" required />
+          <input type="text" id="name" placeholder="Seu nome" required />
         </div>
         
-        <textarea id="message" cols="30" rows="10" placeholder="Sua mensagem" required></textarea>
+        <textarea id="message" cols="30" rows="10" placeholder="Conte brevemente seu projeto" required></textarea>
         
         <button type="button" class="btn" id="sendMessageBtn">Enviar Mensagem</button>
       </form>
+    </section>
+
+    <section class="final-cta">
+      <h2>Pronto para levar seu negócio para o próximo nível?</h2>
+      <p>Solicite um orçamento e descubra como um site, sistema ou automação pode aumentar seus resultados.</p>
+      <a href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text=Olá%20Francilino%2C%20quero%20falar%20agora%20sobre%20um%20novo%20projeto.&type=phone_number&app_absent=0" target="_blank" class="btn">Falar Agora</a>
     </section>
    
     <footer class="footer">
@@ -892,7 +987,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
     <div id="articleModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Como usamos automação no dia a dia para escalar vendas e atender milhares de usuários</h2>
+          <h2>Automação para empresas: como escalar vendas e atendimento com menos operação</h2>
           <span class="close" onclick="closeArticleModal()">&times;</span>
         </div>
         <div class="modal-body">
@@ -967,7 +1062,7 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
     <div id="securityModal" class="modal">
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Segurança nativa em plataformas SaaS multi-tenant</h2>
+          <h2>Segurança em SaaS multi-tenant: práticas para proteger dados e escalar com confiança</h2>
           <span class="close" onclick="closeSecurityModal()">&times;</span>
         </div>
         <div class="modal-body">
@@ -1205,13 +1300,6 @@ Tenho foco na criação de plataformas self-service, produtos digitais robustos 
         }
       }
     </script>
-    
-    <!-- WhatsApp Float Button -->
-    <a href="https://api.whatsapp.com/send/?phone=%2B5588996015972&text=Olá%20Francilino%2C%20gostaria%20de%20solicitar%20um%20orçamento." 
-       target="_blank" 
-       class="whatsapp-float">
-      <i class='bx bxl-whatsapp'></i>
-    </a>
     
   </body>
 </html>

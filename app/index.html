@@ -978,6 +978,21 @@
             line-height: 1.5;
         }
 
+        .plan-preview {
+            margin-top: 0.7rem;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(0,212,255,0.25);
+            box-shadow: 0 10px 24px rgba(0,0,0,0.35);
+        }
+
+        .plan-preview img {
+            width: 100%;
+            display: block;
+            height: auto;
+            object-fit: cover;
+        }
+
         .plan-price {
             margin-top: 0.55rem;
             display: block;
@@ -1420,6 +1435,9 @@
             <article class="plan-item">
                 <h4>API Games (Evolution + Pragmatic)</h4>
                 <p>API para quase todos os games das provedoras Evolution e Pragmatic.</p>
+                <div class="plan-preview">
+                    <img src="images/api.png" alt="Preview da API para games Evolution e Pragmatic" loading="lazy">
+                </div>
                 <span class="plan-price">R$ 160 mensal</span>
             </article>
         </div>

@@ -494,6 +494,9 @@
         }
 
         .price-card {
+            --plan-accent: var(--neon-blue);
+            --plan-soft: rgba(0,212,255,0.12);
+            --plan-border: rgba(0,212,255,0.28);
             background: var(--card-bg);
             border: 1px solid rgba(255,255,255,0.06);
             border-radius: 18px;
@@ -505,12 +508,22 @@
             position: relative;
             overflow: hidden;
             transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            border-color: var(--plan-border);
+        }
+
+        .price-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient(180deg, var(--plan-soft), transparent 35%);
+            opacity: 0.7;
         }
 
         .price-card:hover {
             transform: translateY(-5px);
-            border-color: rgba(0,212,255,0.25);
-            box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 30px rgba(0,212,255,0.06);
+            border-color: var(--plan-accent);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.4), 0 0 30px var(--plan-soft);
         }
 
         .price-card.featured {
@@ -536,7 +549,7 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #475569;
+            color: var(--plan-accent);
             font-family: var(--mono);
         }
 
@@ -551,7 +564,7 @@
         .price-value {
             font-size: 1.3rem;
             font-weight: 800;
-            color: var(--neon-blue);
+            color: var(--plan-accent);
             font-family: var(--mono);
         }
 
@@ -569,15 +582,26 @@
         }
 
         .price-btn-default {
-            background: rgba(0,212,255,0.08);
-            color: var(--neon-blue);
-            border: 1px solid rgba(0,212,255,0.2);
+            background: var(--plan-soft);
+            color: var(--plan-accent);
+            border: 1px solid var(--plan-border);
         }
 
         .price-btn-default:hover {
-            background: var(--neon-blue);
+            background: var(--plan-accent);
             color: var(--dark-bg);
         }
+
+        .plan-starter { --plan-accent: #22c55e; --plan-soft: rgba(34,197,94,0.14); --plan-border: rgba(34,197,94,0.34); }
+        .plan-growth { --plan-accent: #06b6d4; --plan-soft: rgba(6,182,212,0.14); --plan-border: rgba(6,182,212,0.34); }
+        .plan-plus { --plan-accent: #3b82f6; --plan-soft: rgba(59,130,246,0.14); --plan-border: rgba(59,130,246,0.34); }
+        .plan-pro { --plan-accent: #8b5cf6; --plan-soft: rgba(139,92,246,0.14); --plan-border: rgba(139,92,246,0.34); }
+        .plan-advanced { --plan-accent: #a855f7; --plan-soft: rgba(168,85,247,0.14); --plan-border: rgba(168,85,247,0.34); }
+        .plan-business { --plan-accent: #ec4899; --plan-soft: rgba(236,72,153,0.14); --plan-border: rgba(236,72,153,0.34); }
+        .plan-business-plus { --plan-accent: #f97316; --plan-soft: rgba(249,115,22,0.14); --plan-border: rgba(249,115,22,0.34); }
+        .plan-scale { --plan-accent: #14b8a6; --plan-soft: rgba(20,184,166,0.14); --plan-border: rgba(20,184,166,0.34); }
+        .plan-scale-plus { --plan-accent: #eab308; --plan-soft: rgba(234,179,8,0.14); --plan-border: rgba(234,179,8,0.34); }
+        .plan-enterprise { --plan-accent: #f59e0b; --plan-soft: rgba(245,158,11,0.16); --plan-border: rgba(245,158,11,0.44); }
 
         .price-btn-featured {
             background: linear-gradient(135deg, #0099ff, #a855f7);
@@ -935,7 +959,7 @@
 
         <div class="pricing-grid">
 
-            <div class="price-card" data-aos="fade-up" data-aos-delay="50">
+            <div class="price-card plan-starter" data-aos="fade-up" data-aos-delay="50">
                 <div class="price-tier">Starter</div>
                 <div class="price-clients">10 <span>usuários</span></div>
                 <div class="price-value">R$ 30<small>/usuário</small></div>
@@ -943,15 +967,15 @@
                 <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Starter (10 usuários, R$ 30 por usuário, total R$ 300). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
-            <div class="price-card featured" data-aos="fade-up" data-aos-delay="100">
+            <div class="price-card plan-growth" data-aos="fade-up" data-aos-delay="100">
                 <div class="price-tier">Growth</div>
                 <div class="price-clients">20 <span>usuários</span></div>
                 <div class="price-value">R$ 28<small>/usuário</small></div>
                 <p style="margin-top:.4rem;color:#94a3b8;font-size:.85rem;">Total: R$ 560</p>
-                <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Growth (20 usuários, R$ 28 por usuário, total R$ 560). Podem me ajudar?" target="_blank" class="price-btn price-btn-featured">Selecionar</a>
+                <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Growth (20 usuários, R$ 28 por usuário, total R$ 560). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
-            <div class="price-card" data-aos="fade-up" data-aos-delay="150">
+            <div class="price-card plan-plus" data-aos="fade-up" data-aos-delay="150">
                 <div class="price-tier">Plus</div>
                 <div class="price-clients">30 <span>usuários</span></div>
                 <div class="price-value">R$ 26<small>/usuário</small></div>
@@ -959,7 +983,7 @@
                 <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Plus (30 usuários, R$ 26 por usuário, total R$ 780). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
-            <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="price-card plan-pro" data-aos="fade-up" data-aos-delay="200">
                 <div class="price-tier">Pro</div>
                 <div class="price-clients">40 <span>usuários</span></div>
                 <div class="price-value">R$ 24<small>/usuário</small></div>
@@ -967,7 +991,7 @@
                 <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Pro (40 usuários, R$ 24 por usuário, total R$ 960). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
-            <div class="price-card" data-aos="fade-up" data-aos-delay="250">
+            <div class="price-card plan-advanced" data-aos="fade-up" data-aos-delay="250">
                 <div class="price-tier">Advanced</div>
                 <div class="price-clients">50 <span>usuários</span></div>
                 <div class="price-value">R$ 22<small>/usuário</small></div>
@@ -975,7 +999,7 @@
                 <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Advanced (50 usuários, R$ 22 por usuário, total R$ 1.100). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
-            <div class="price-card" data-aos="fade-up" data-aos-delay="300">
+            <div class="price-card plan-business" data-aos="fade-up" data-aos-delay="300">
                 <div class="price-tier">Business</div>
                 <div class="price-clients">60 <span>usuários</span></div>
                 <div class="price-value">R$ 21<small>/usuário</small></div>
@@ -983,7 +1007,7 @@
                 <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Business (60 usuários, R$ 21 por usuário, total R$ 1.260). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
-            <div class="price-card" data-aos="fade-up" data-aos-delay="350">
+            <div class="price-card plan-business-plus" data-aos="fade-up" data-aos-delay="350">
                 <div class="price-tier">Business+</div>
                 <div class="price-clients">70 <span>usuários</span></div>
                 <div class="price-value">R$ 20<small>/usuário</small></div>
@@ -991,7 +1015,7 @@
                 <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Business+ (70 usuários, R$ 20 por usuário, total R$ 1.400). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
-            <div class="price-card" data-aos="fade-up" data-aos-delay="400">
+            <div class="price-card plan-scale" data-aos="fade-up" data-aos-delay="400">
                 <div class="price-tier">Scale</div>
                 <div class="price-clients">80 <span>usuários</span></div>
                 <div class="price-value">R$ 19<small>/usuário</small></div>
@@ -999,7 +1023,7 @@
                 <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Scale (80 usuários, R$ 19 por usuário, total R$ 1.520). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
-            <div class="price-card" data-aos="fade-up" data-aos-delay="450">
+            <div class="price-card plan-scale-plus" data-aos="fade-up" data-aos-delay="450">
                 <div class="price-tier">Scale+</div>
                 <div class="price-clients">90 <span>usuários</span></div>
                 <div class="price-value">R$ 18<small>/usuário</small></div>
@@ -1007,12 +1031,12 @@
                 <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Scale+ (90 usuários, R$ 18 por usuário, total R$ 1.620). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
-            <div class="price-card" data-aos="fade-up" data-aos-delay="500">
+            <div class="price-card plan-enterprise" data-aos="fade-up" data-aos-delay="500">
                 <div class="price-tier">Enterprise</div>
                 <div class="price-clients">100 <span>usuários</span></div>
-                <div class="price-value" style="color:#c084fc;">R$ 17<small>/usuário</small></div>
+                <div class="price-value">R$ 17<small>/usuário</small></div>
                 <p style="margin-top:.4rem;color:#94a3b8;font-size:.85rem;">Total: R$ 1.700</p>
-                <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Enterprise (100 usuários, R$ 17 por usuário, total R$ 1.700). Podem me ajudar?" target="_blank" class="price-btn" style="background:rgba(168,85,247,0.1);border:1px solid rgba(168,85,247,0.3);color:#c084fc;text-align:center;padding:9px;border-radius:10px;font-size:.8rem;font-weight:700;text-decoration:none;display:block;transition:all .3s;" onmouseover="this.style.background='#a855f7';this.style.color='#fff';" onmouseout="this.style.background='rgba(168,85,247,0.1)';this.style.color='#c084fc';">Selecionar</a>
+                <a href="https://t.me/Automa_Web_Suporte?text=Olá! Tenho interesse no plano Enterprise (100 usuários, R$ 17 por usuário, total R$ 1.700). Podem me ajudar?" target="_blank" class="price-btn price-btn-default">Selecionar</a>
             </div>
 
         </div>

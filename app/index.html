@@ -351,11 +351,24 @@
             border: 1px solid rgba(0,212,255,0.35);
             cursor: pointer;
             transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
+            animation: plans-blink 1.1s ease-in-out infinite;
         }
         .btn-plans:hover {
             transform: translateY(-3px);
             border-color: rgba(0,212,255,0.7);
             box-shadow: 0 0 35px rgba(0,212,255,0.3);
+            animation-play-state: paused;
+        }
+
+        @keyframes plans-blink {
+            0%, 100% {
+                opacity: 1;
+                box-shadow: 0 0 14px rgba(0,212,255,0.2);
+            }
+            50% {
+                opacity: 0.58;
+                box-shadow: 0 0 34px rgba(0,212,255,0.55);
+            }
         }
 
         .btn-dl {
@@ -848,7 +861,7 @@
         #imageModal {
             position: fixed;
             inset: 0;
-            z-index: 500;
+            z-index: 700;
             background: rgba(0,0,0,0.95);
             backdrop-filter: blur(14px);
             display: none;
@@ -991,6 +1004,7 @@
             display: block;
             height: auto;
             object-fit: cover;
+            cursor: zoom-in;
         }
 
         .plan-price {
@@ -1436,7 +1450,7 @@
                 <h4>API Games (Evolution + Pragmatic)</h4>
                 <p>API para quase todos os games das provedoras Evolution e Pragmatic.</p>
                 <div class="plan-preview">
-                    <img src="images/api.png" alt="Preview da API para games Evolution e Pragmatic" loading="lazy">
+                    <img src="images/api.png" alt="Preview da API para games Evolution e Pragmatic" loading="lazy" onclick="openModal('images/api.png')">
                 </div>
                 <span class="plan-price">R$ 160 mensal</span>
             </article>
@@ -1565,7 +1579,9 @@
 
     document.addEventListener('keydown', e=>{
         if(e.key === 'Escape'){
-            if(plansModal.classList.contains('open')) {
+            if(modal.classList.contains('open')) {
+                closeModal();
+            } else if(plansModal.classList.contains('open')) {
                 closePlansModal();
             } else {
                 closeModal();

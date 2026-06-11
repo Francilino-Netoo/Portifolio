@@ -544,7 +544,6 @@ html {
   background: var(--bg-color);
   border-bottom: 2px solid rgba(139, 92, 246, 0.1);
   padding: 12rem 9% 4rem;
-  width: 100%;
   margin-top: 0;
 }
 
@@ -621,9 +620,9 @@ html {
 
 .blog-content .btn {
   margin-top: auto;
-  padding: 1rem 2rem;
-  font-size: 1.4rem;
-  border-radius: 3rem;
+  padding: 0.8rem 1.6rem !important;
+  font-size: 1.3rem !important;
+  border-radius: 2rem !important;
   width: fit-content;
   align-self: center;
 }
@@ -1244,6 +1243,32 @@ span.multiple-text {
   filter: brightness(0.4);
 }
 
+.portfolio-box .portfolio-badge {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: linear-gradient(135deg, var(--main-color), #8b5cf6);
+  color: #fff;
+  padding: 0.6rem 1.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 5rem;
+  z-index: 5;
+  box-shadow: 0 4px 15px rgba(0, 229, 255, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+
+.portfolio-box:hover .portfolio-badge {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
 .portfolio-box .portfolio-layer {
   position: absolute;
   bottom: 0;
@@ -1610,11 +1635,152 @@ span.multiple-text {
 }
 
 /* RESPONSIVE DESIGN
-   Desktop:  > 1440px  → navbar horizontal
+   Desktop:  > 1440px  → sidebar fixa permanente à esquerda
    Notebook: ≤ 1440px  → sidebar hambúrguer
    Tablet:   ≤ 768px
    Mobile:   ≤ 450px
 */
+
+/* Sidebar brand — oculto por padrão, visível apenas no desktop */
+.sidebar-brand {
+  display: none;
+}
+
+/* ---- Desktop (> 1440px) — sidebar permanente ---- */
+@media (min-width: 1441px) {
+  /* Oculta o botão hambúrguer e o backdrop */
+  #menu-icon { display: none !important; }
+  .menu-backdrop { display: none !important; }
+
+  /* Sidebar fixa sempre visível */
+  .navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 260px !important;
+    height: 100vh !important;
+    background: linear-gradient(180deg, rgba(8, 12, 24, 0.99), rgba(10, 15, 30, 0.97)) !important;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-right: 1px solid rgba(0, 229, 255, 0.18) !important;
+    box-shadow: 4px 0 40px rgba(0, 0, 0, 0.5) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    padding: 0 0 2rem !important;
+    gap: 0.3rem !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    z-index: 99998 !important;
+    transform: translateX(0) !important;
+    margin: 0 !important;
+  }
+
+  .navbar a {
+    display: flex !important;
+    align-items: center !important;
+    gap: 1.4rem !important;
+    font-size: 1.6rem !important;
+    margin: 0 0.8rem !important;
+    padding: 1.15rem 1.4rem !important;
+    color: #e2e8f0 !important;
+    border-radius: 1rem !important;
+    border: 1px solid transparent !important;
+    transition: all 0.2s ease !important;
+    font-weight: 500 !important;
+    text-shadow: none !important;
+    transform: none !important;
+    width: auto !important;
+  }
+
+  .navbar a i {
+    display: flex !important;
+    font-size: 2.2rem;
+    color: #64748b;
+    min-width: 2.4rem;
+    justify-content: center;
+    transition: color 0.2s ease;
+  }
+
+  .navbar a::after { display: none; }
+
+  .navbar a:hover,
+  .navbar a.active {
+    background: rgba(0, 229, 255, 0.14) !important;
+    border-color: rgba(0, 229, 255, 0.28) !important;
+    color: var(--nain-color) !important;
+    transform: translateX(3px) !important;
+    text-shadow: none !important;
+  }
+
+  .navbar a:hover i,
+  .navbar a.active i { color: var(--nain-color) !important; }
+
+  /* Header oculto no desktop para evitar logos duplicados e liberar espaço */
+  .header {
+    display: none !important;
+  }
+
+  /* Todo o conteúdo afastado da sidebar */
+  section,
+  footer {
+    margin-left: 260px;
+  }
+
+  /* Seções com padding ajustado */
+  section {
+    padding: 8rem 6% 4rem;
+  }
+
+  .home {
+    width: auto !important;
+    margin-top: 5rem !important;
+    padding: 2rem 6% !important;
+  }
+
+  /* Logo da sidebar */
+  .sidebar-brand {
+    display: block;
+    padding: 2rem 2rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 229, 255, 0.15);
+    margin-bottom: 0.5rem;
+    order: -1;
+    flex-shrink: 0;
+  }
+
+  .sidebar-brand a {
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    letter-spacing: 1px;
+    text-shadow: 0 0 20px rgba(0, 229, 255, 0.3);
+    display: block !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    background: none !important;
+    transform: none !important;
+  }
+
+  .sidebar-brand a:hover {
+    transform: scale(1.04) !important;
+    background: none !important;
+    border-color: transparent !important;
+  }
+
+  .sidebar-brand span {
+    background: linear-gradient(45deg, var(--nain-color), var(--accent-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+  }
+
+  /* Scrollbar da sidebar */
+  .navbar::-webkit-scrollbar { width: 4px; }
+  .navbar::-webkit-scrollbar-track { background: rgba(255,255,255,0.04); }
+  .navbar::-webkit-scrollbar-thumb { background: linear-gradient(180deg, var(--nain-color), var(--accent-color)); border-radius: 2px; }
+}
 
 /* Menu backdrop (overlay escuro ao abrir o menu) */
 .menu-backdrop {
@@ -2081,13 +2247,17 @@ span.multiple-text {
 
 .featured-project-actions .btn {
   flex: 1;
-  min-width: 150px;
+  min-width: 120px;
   text-align: center;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   text-decoration: none;
+  font-size: 1.3rem !important;
+  padding: 0.8rem 1.4rem !important;
+  border-radius: 2rem !important;
+  margin: 0 !important;
 }
 
 .btn-secondary {

@@ -1646,8 +1646,8 @@ span.multiple-text {
   display: none;
 }
 
-/* ---- Desktop (> 1440px) — sidebar permanente ---- */
-@media (min-width: 1441px) {
+/* ---- Desktop (> 1200px) — sidebar permanente ---- */
+@media (min-width: 1201px) {
   /* Oculta o botão hambúrguer e o backdrop */
   #menu-icon { display: none !important; }
   .menu-backdrop { display: none !important; }
@@ -1800,8 +1800,8 @@ span.multiple-text {
   opacity: 1;
 }
 
-/* ---- Notebook / Small desktop (≤ 1440px) ---- */
-@media (max-width: 1440px) {
+/* ---- Notebook / Small desktop (≤ 1200px) ---- */
+@media (max-width: 1200px) {
   html { font-size: 58%; }
 
   /* Ativa menu hambúrguer */
